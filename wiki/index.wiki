@@ -1,15 +1,15 @@
 %title wiki 
 
 = 标签: =
-== [[./python/python|Python]] ==
-== [[./blog/blog|Blog]] ==
-== [[./html/css|CSS&HTML]] ==
-== [[./web|Web]] ==
-== [[./git/git|Git]] ==
-== [[./cpp/cpp|C++]] ==
-== [[./vim/vim|Vim]] ==
-== [[./linux/linux|Linux]] ==
-== [[./latex|Latex]] ==
-== [[./algorithm|算法]] ==
-==[[./robot/robot| Humanoid Robot]] ==
-== [[./sim/sim|Simulation System]] ==
+=== [[./python/python|Python]] ===
+=== [[./blog/blog|Blog]] ===
+=== [[./html/css|CSS&HTML]] ===
+=== [[./web|Web]] ===
+=== [[./git/git|Git]] ===
+=== [[./cpp/cpp|C++]] ===
+=== [[./vim/vim|Vim]] ===
+=== [[./linux/linux|Linux]] ===
+=== [[./latex|Latex]] ===
+=== [[./algorithm|算法]] ===
+===[[./robot/robot| Humanoid Robot]] ===
+=== [[./sim/sim|Simulation System]] ===

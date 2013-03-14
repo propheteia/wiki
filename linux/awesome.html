@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/> 
+        <meta name="author" content=""/> 
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+        <link rel="Stylesheet" type="text/css" href="../template/style.css" />
+        <script type="text/javascript" src="../template/scripts/shCore.js"></script>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCoreFadeToGrey.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shThemeDefault.css"/>
+        <script type="text/javascript" src="../template/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../template/scripts/shBrushPython.js"></script>
+        <script type="text/javascript">
+        SyntaxHighlighter.all();
+        </script>
+        <title>Winoi's wiki</title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+        <div id="container">
+
+        <div class="header">
+	        <h1>笔记本</a></h1>
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">首页</a>
+            <a href="../guestbook.html">目录</a>
+            <a href="../about.html">关于</a>
+        <div class="clearer"></div>
+        </div>
+
+        <div class=content>
+        
+<h1 id="toc_1"> Awesome 平铺式面板</h1>
+<h2 id="toc_1.1"> 安装</h2>
+<h3 id="toc_1.1.1"> rpm包安装</h3>
+<p>
+<a href="http://awesome.naquadah.org/wiki/Awesome-3-fedora">安装包</a>
+</p>
+<blockquote>
+u -c 'wget -nd -P /etc/yum.repos.d <a href="http://repos.fedorapeople.org/repos/thm/awesome/fedora-awesome.repo'">http://repos.fedorapeople.org/repos/thm/awesome/fedora-awesome.repo'</a>  <br>
+su -c 'yum install awesome'
+</blockquote>
+<h3 id="toc_1.1.2"> 在gnome-session中用awesome的命令（我的GNOME是3.2版本）</h3>
+<p>
+ <a href="http://awesome.naquadah.org/wiki/Quickly_Setting_up_Awesome_with_Gnome">Quickly Setting up Awesome with Gnome</a>
+</p>
+
+<p>
+注意这条命令：gsettings set org.gnome.desktop.session session-name awesome
+</p>
+
+<p>
+（Doing this means that selecting "Gnome" in your display manager now runs awesome.）
+</p>
+
+<p>
+如果选择登录Gnome，同样会登录awesome.可通过将指令中的“awesome"改为”gnome"恢复Gnome登录。
+</p>
+<h2 id="toc_1.2"> 配置</h2>
+<p>
+<strong>参考：</strong> <a href="http://josephpan.net/blog/?p=992">Joseph Pan's Blog </a>
+</p>
+
+<p>
+打开~/.config/awesome/rc.lua
+</p>
+
+<p>
+<strong>我的必要配置</strong> 
+</p>
+
+<h4 id="toc_1.2.0.1">1 终端:</h4>
+<blockquote>
+terminal="gnome-terminal"
+</blockquote>
+
+<p>
+ 　　并且在gnome-terminal首选项中将菜单栏和滚条去掉，美观一点。
+</p>
+
+<h4 id="toc_1.2.0.2">2 加入widget一些注意的地方:</h4>
+<p>
+<strong>参考：</strong> <a href="http://awesome.naquadah.org/wiki/Wicked/zh-hans#Source_Mage_GNU.2FLinux">http://awesome.naquadah.org/wiki/Wicked/zh-hans#Source_Mage_GNU.2FLinux</a>
+</p>
+
+<p>
+cpuwidget =awful.widget.graph() 这句话必须在声明“awful”包(require("awful"))之后
+</p>
+
+<p>
+增加底栏的wibox：
+</p>
+<blockquote>
+mywibox2=awful.wibox({position="bottom",screen=1})<br>
+mywibox2.widgets={memwidget,cpuwidget,layout = awful.widget.layout.horizontal.rightleft}
+</blockquote>
+<p>
+可以添加在默认的mywibox[s]执行完毕（end）之后
+</p>
+
+<h4 id="toc_1.2.0.3">3 开机自启动:</h4>
+<pre class="brush:python">
+-- Autorun programs
+autorun = true
+autorunApps = 
+{ 
+    "firefox",
+    "thunderbird",
+     “ibus-daemon",
+}
+
+if autorun then
+    for app = 1, #autorunApps do
+        awful.util.spawn_with_shell(autorunApps[app])
+    end
+end
+</pre>
+<h4 id="toc_1.2.0.4">4 某个tag下固定的工作环境创建:</h4>
+<p>
+增加快捷键，自动在某个工作界面下(tag)打开需要的应用。代码如下:
+</p>
+<pre class="brush:python">
+stv_code = "/home/user/project"
+awful.key({ modkey, "Shift" }, "n",
+    function()
+    awful.tag.setmwfact(0.15, tags[1][5])
+    awful.tag.viewonly(tags[1][5])
+    awful.util.spawn_with_shell(terminal .. " --working-directory=" ..stv_code )
+    awful.util.spawn_with_shell(terminal .. " --working-directory=" ..stv_code )
+    awful.util.spawn_with_shell(terminal .. " --working-directory=" ..stv_code )
+    end),
+</pre>
+<p>
+这里注意lua语言字符串相加是用' .. ',由于spawn_with_shell是用shell脚本打开的，所以要注意命令要有空格
+参考: <img src="http://stackoverflow.com/questions/5120399/setting-windows-layout-for-a-specific-application-in-awesome-wm" alt="stackoverflow" />
+</p>
+<h4 id="toc_1.2.0.5">5 自定义快捷键:</h4>
+<p>
+增加xlock锁屏和firefox的快捷键
+</p>
+<pre class="brush:python">
+    awful.key({  }, "F12", function () awful.util.spawn("xlock") end),
+    awful.key({  }, "F11", function () awful.util.spawn("firefox") end),
+</pre>
+<h2 id="toc_1.3"> 使用感想:</h2>
+<p>
+用了两个月了，Awesome给我工作和学习带来了极大的方便。难以想像没有它，我需要在不同的窗口中切来切去。同时查看code,debug,log，节省了大量时间。
+</p>
+
+<p>
+除此之外，它还具有众多 <a href="http://awesome.naquadah.org/wiki/Main_Page">插件</a> ，一切都替你做好了，你可以变得更“懒”-.-
+</p>
+
+        </div>
+
+	    <div class="footer">
+		
+	    	<div class="left">
+		    	Copyright &copy; 2013 <a href="index.html">winoi.com</a>
+		    </div>
+
+		    <div class="right">
+                <script language="javascript" type="text/javascript" src="http://js.users.51.la/15309803.js"></script>
+                <noscript><a href="http://www.51.la/?15309803" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/15309803.asp" style="border:none" /></a></noscript>
+		    </div>
+
+		    <div class="clearer"></div>
+
+	    </div>
+
+        </div>
+        </div>
+    </body>
+</html>

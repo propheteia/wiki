@@ -1,0 +1,31 @@
+=Linux　工具=
+== Crontab: ==
+=== 定时运行上传git脚本: ===
+==== 写脚本. ====
+#!/bin/bash不要少，告诉linux该文件的类型。如果脚本是用python写的，那么就写：
+    #!/usr/bin/python2.7
+这里要记得cd到工作树的目录!
+==== 改变脚本的属性 ====
+     chmod a+x gitpush.sh
+==== 设置crontab服务 ====
+进入编辑界面
+    crontab -e
+设置半小时提交一次
+    */30 * * * * env DISPLAY=:0 /home/wenbin/winoi.com/gitpush.sh
+这里env DISPLAY=:0 启用了显示服务.如果要显示已提交信息还需要在脚本中用notify-send工具
+    notify-send  -t 2000 "<span color=\"green\">git@gibhub has been synchronized</span>"
+    
+    
+    
+== scp: ==
+{{{
+设有两机，均为局域网，两机可相互通信无问题，中间无防火墙。
+两机IP分别为：A:192.168.1.240 B:192.168.1.102
+假设A，B机的SSH都允许root登录
+设要把 A上的 /root/abc.zip 传到 B机并放到/abc目录，可以在A机上用命令
+    scp  /root/abc.zip  root@192.168.1.102:/abc/
+若SSH端口不是默认的22，比如，是端口1234 则加-P参数：
+    scp  -P 1234 /root/abc.zip  root@192.168.1.102:/abc/
+也可以在B机上用命令：
+    scp  root@192.168.1.240:/root/abc.zip  /abc/ 
+}}}

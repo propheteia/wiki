@@ -1,0 +1,452 @@
+/*
+Template name: Natural Essence
+Template URI: http://www.cssmoban.com/natural-essence-website-template/
+Release date: 2007-02-20
+Description: Soft and natural single/two-column template.
+Author: Viktor Persson
+Author URI: http://cssmoban.com/
+
+This template is licensed under a Creative Commons Attribution 2.5 License:
+http://www.cssmoban.com/license/
+*/
+
+
+/* default elements */
+* {margin: 0; padding: 0;}
+
+body {
+	background: #7C6F5C url(img/bg.jpg);
+	color: #222;
+	font: normal 72.5% sans-serif;
+	padding: 0% 0;
+}
+
+a {color: #444444;
+    text-decoration:none;
+}
+a:hover {color: black;}
+
+big {font-size: 1.1em;}
+
+#main {
+    padding: 10px 20px;
+    position: relative;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Microsoft Yahei", sans-serif;
+    margin: 0;
+    padding: 0.15em 0;
+    color:black;
+}
+
+h1 {
+    font-size: 1.7em;
+    padding-bottom: 0.1em;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+    
+}
+
+h02 {
+    font-size: 1.52em;
+    /*border-bottom: 1px solid #29362E;*/
+    /*border-bottom: 1px solid rgba(255,230,0,0.1);*/
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+
+}
+
+h2 {
+    font-size: 1.30em;
+    width: 100%;
+    /*border-bottom: 1px dashed #29362E;*/
+    /*border-bottom: 1px dashed  rgba(255,230,0,0.1);*/
+    margin-top: 1.5em;
+    margin-bottom: 0.4em;
+}
+
+h3 {
+    font-size: 1.15em;
+    margin-top: 0.3em;
+    padding-left: 0.6em;
+	margin-left:1.2em;
+}
+
+h4 {
+    font-size: 0.95em;
+    margin-top: 0.3em;
+    padding-left: 0.9em;
+	margin-left:1.2em;
+}
+h5 {
+    font-size: 1.05em;
+}
+h6 {
+    font-size: 1.0em;
+}
+
+form,table {margin-bottom: 1.2em;}
+li {
+    margin: 0.3em auto;
+    list-style-position: inside;
+}
+
+p{ 
+  /*  text-indent:2em;*/
+    padding: 2px 0 1px;
+    padding-left:0.6em;
+}
+small,.small {font: normal 0.9em sans-serif;}
+ul {padding: 0 2em 0.2em;}
+
+/* structure */
+#wrapper {
+	background: #332 url(img/wrapper.gif) no-repeat;
+	background-position: center center;
+	margin:  auto;
+	width: 900px;
+}
+#container {
+	background: #FBF9F4;
+	border-top: none solid #332;
+	font-size: 1.3em;
+	line-height: 1.3em;
+	margin: auto;
+	width: 900px;
+}
+
+/* header */
+/*.title {
+	background: #E2DED4;
+	border-top: 1px solid #996;
+}
+.title h1 {
+	color: #441;
+	font: normal 2.2em Georgia,"Trebuchet MS",sans-serif;
+	padding: 10px 0 10px 250px;
+}*/
+
+.header {
+	border-top: 2px solid #441;
+	background:  url(img/header.jpg) repeat left bottom;
+	height: 180px;
+}
+.header h1 {
+	color: white;
+	font:  3.0em Georgia,"Trebuchet MS",sans-serif;
+	padding: 60px 0 10px 50px;
+}
+
+.header h1 a{
+	color: #FFFFFF;
+}
+
+.header h2 {
+	color: #000;
+	font:  1.6em Georgia,"Trebuchet MS",sans-serif;
+	padding: 20px 0 10px 250px;
+}
+
+/* navigation */
+.navigation {
+	background: #DED9D0 url(img/nav.gif) repeat-x; height: 41px;
+	border-top: 1px solid #996;
+}
+.navigation a {
+	background: #FFF url(img/nav.gif) repeat-x;
+	border-right: 1px solid #C9C6B3;
+	color: #553;
+	float: left;
+	font: bold 1em Tahoma,sans-serif;
+	padding: 0 14px;
+	line-height: 41px;
+	text-align: center;
+	text-decoration: none;
+}
+.navigation a:hover,
+.navigation a#active {background-position: left bottom; color: #331;}
+
+/* main */
+.main#two-columns {background: #FFF url(img/two-columns.gif) repeat-y;}
+.catalog {
+	background: #DCDAC9 url(img/bottom.gif) no-repeat;
+    width: 49%;
+    padding: 0px 0px 0px 100px;
+}
+
+/* bottom */
+.bottom {
+	background: #DCDAC9 url(img/bottom.gif) no-repeat left bottom;
+	border-top: 1px solid #AA8;
+	color: #444;
+	padding: 14px 20px;
+}
+.bottom .left,.bottom .right {width: 49%;}
+
+/* footer */
+.footer {
+	background: #332;
+	color: #EED;
+	padding: 10px;
+}
+.footer .left {width: 66%;}
+.footer .right {
+	width: 33%;
+	text-align: right;
+}
+.footer a {
+	color: #FFF;
+	text-decoration: none;
+}
+.footer a:hover, .footer .right a:hover {
+	color: #FFF;
+	text-decoration: underline;
+}
+.footer .right, .footer .right a {color: #7D7D75;}
+
+/* gallery */
+.gallery td {
+	vertical-align: top;
+	text-align: center;
+}
+.gallery em {display: block;}
+
+/* misc */
+.clear,.clearer {clear: both;} 
+.clearer {font-size: 0;}
+.col2 .left {width: 64%;}
+.col2 .right .content {background: #FFF;}
+.col2 .right {width: 33%;}
+.content {padding: 18px 20px;}
+.left {float: left;}
+.right {float: right;}
+.center{float:center;}
+.right a {color: red;font-style: italic;}
+.right .content {padding: 18px 12px 12px;}
+
+/* block list */
+ul.block {
+	border-top: 1px dashed #BCBAAC;
+	margin: 4px 0;
+	padding: 0;
+	width: 90%;
+}
+.block li {
+	border-bottom: 1px dashed #BCBAAC;
+	list-style: none;
+}
+.block li a,.block li em {
+	color: #553;
+	display: block;
+}
+.block li em {
+	font-size: 0.9em;
+	font-style: normal;
+}
+.block li a {
+	padding: 4px 3%;
+	text-decoration: none;
+	width: 94%;
+}
+.block li a span {font-weight: bold;}
+.block li a:hover {
+	background: #D2D0C0;
+	color: #553;
+}
+
+.right .block,.right .block li {border-color: #DCDACC;}
+.right .block li a:hover {background: #F2F0EA;}
+
+
+.tocWrap {
+    position: fixed;
+    width: 20px;
+    z-index: 100;
+    top: 16%;
+    right: 2.8%;
+    display: auto;
+}
+
+.toc {
+    display: auto;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 1px solid black;
+    border-radius: 0 0 1px 1px;
+    -moz-border-radius: 0 0 1px 1px;
+    color: #111;
+    background: rgba(120,130,20,0.3);
+    padding: 12px 0 0 2px;
+    box-shadow: 0 1px 8px #000;
+    -webkit-box-shadow: 0 1px 8px #000;
+    -moz-box-shadow: 0 1px 8px #000;
+}
+
+.tocWrap .toggler {
+    text-align: center;
+    font-size: 12px;
+    background: #F0C81E;
+    border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+    color: #122;
+    position: relative;
+    z-index: 101;
+    cursor: pointer;
+}
+
+.toc ul {
+    margin: 0;
+}
+
+.toc li {
+    color: black;
+}
+
+.toc a {
+    color: #000;
+}
+
+.todo {
+    font-weight: bold;
+    background-color: #f0ece8;
+    color: #a03020;
+}
+
+.justleft {
+    text-align: left;
+
+}
+
+.justright {
+    text-align: right;
+
+}
+
+.justcenter {
+    text-align: center;
+
+}
+
+#top-nav {
+    position: relative;
+    top: -25px;
+    width: 280px;
+    margin: 0 auto;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#top-nav li {
+    float: left;
+    list-style: none;
+    margin-right: 10px;
+}
+
+p, pre, blockquote, table, ul, ol, dl {
+    margin: 0.1em 4.0em 0.8em 1.6em;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+code {
+    padding: 2px 4px;
+    color: #00FF00;
+    font-family: 'Lucida Console', 'Courier New', Courier, monospace;
+}
+
+/* 下面这三段语句负责代码框的特效 */
+/*blockquote, pre {
+    padding: 0.4em;
+    background: #39213E;
+      background: rgba(255,30,120,0.12);
+          border: 1px solid #614;
+              position: relative;
+    z-index: 2;
+    font-family: 'Lucida Console', 'Courier New', Courier, monospace;
+    -webkit-transition: all 0.45s linear;
+    -moz-transition: all 0.45s linear;
+    color:black
+
+} */
+
+blockquote,pre {
+    background: rgba(85,107,47,0.2);
+    color:black;
+    border: 1px solid rgba(20,30,120,0.28);
+    margin-left:4.5em;
+    margin-right:6.2em;
+    padding-left:0.8em;
+}
+
+pre,blockquote:hover, pre:hover {
+    color: black;
+    background: rgba(85,107,47,0.6);
+}
+/*
+pre {
+    border-left: 1px solid #c26; 生成代码段前面的竖直红线 
+    margin-left: 1em;
+    padding: 0.4em 0.8em;
+}*/
+
+
+table {
+    border-collapse: collapse;
+}
+
+.syntaxhighlighter table {
+    width: 100%;
+}
+
+.syntaxhighlighter td.gutter {
+    width: 1em;
+}
+
+.syntaxhighlighter .gutter .line {
+    padding-right: 0.3em;
+}
+
+
+th, td {
+    border: 1px solid #256;
+    padding: 0.3em 0.5em;
+
+}
+
+th {
+    background-color: #f0f0f0;
+
+}
+
+hr {
+     border-style:solid;
+     border-width:0.3em;
+     border-top: #ccc  ;
+}
+
+del {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+strong, b {
+    font-weight: 600;
+    color: black;
+}
+
+em, i {
+    font-family: Candara, "Microsoft Yahei", sans-serif;
+    font-style: italic;
+}
+
+textarea {
+    background: transparent;
+    color: #fff;
+    resize: none;
+}
+

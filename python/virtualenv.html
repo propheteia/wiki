@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/> 
+        <meta name="author" content=""/> 
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+        <link rel="Stylesheet" type="text/css" href="../template/style.css" />
+        <script type="text/javascript" src="../template/scripts/shCore.js"></script>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCoreFadeToGrey.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shThemeDefault.css"/>
+        <script type="text/javascript" src="../template/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../template/scripts/shBrushPython.js"></script>
+        <script type="text/javascript">
+        SyntaxHighlighter.all();
+        </script>
+        <title>Winoi's wiki</title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+        <div id="container">
+
+        <div class="header">
+	        <h1>笔记本</a></h1>
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">首页</a>
+            <a href="../guestbook.html">目录</a>
+            <a href="../about.html">关于</a>
+        <div class="clearer"></div>
+        </div>
+
+        <div class=content>
+        
+<h1 id="toc_1"> Virtualenv</h1>
+<h2 id="toc_1.1"> 基本使用方法</h2>
+<h4 id="toc_1.1.0.1"> 以安装Flask环境为例:</h4>
+<pre>
+cd project  
+virtualenv env
+. env/bin/active (或source env/bin/active)
+easy_install Flask (用easy_install -m Flask卸载)
+</pre>
+<blockquote>
+退出环境：deactivate
+</blockquote>
+<h4 id="toc_1.1.0.2"> 简单分析</h4>
+<p>
+来自:<a href="http://www.cnblogs.com/babykick/archive/2011/12/05/2276825.html">http://www.cnblogs.com/babykick/archive/2011/12/05/2276825.html</a>
+</p>
+<blockquote>
+在创建虚拟环境时，我们可以添加 "--no-site-packages" 参数指示虚拟环境不要访问 global site-packages。
+$ virtualenv --no-site-packages test2
+搜索路径中除了 Python 基本库路径外，已经没有了 global site-packages。这样即便我们在安装了大量开发包的的系统里，也可以隔离出一个干净的测试环境。
+</blockquote>
+<h2 id="toc_1.2"> setup.py的安装和卸载</h2>
+<pre>
+cd project
+virtualenv env
+. env/bin/active (或source env/bin/active)
+python setup.py install  --record log
+</pre>
+<p>
+这是所有的安装细节都写到log中了,查看：
+</p>
+<pre>
+env/lib/python2.7/site-packages/ReText/htmldialog.py
+env/lib/python2.7/site-packages/ReText/highlighter.py
+env/lib/python2.7/site-packages/ReText/__init__.py
+env/lib/python2.7/site-packages/ReText/webpages.py
+env/lib/python2.7/site-packages/ReText/window.py
+env/lib/python2.7/site-packages/ReText/editor.py
+env/lib/python2.7/site-packages/ReText/htmldialog.pyc
+env/lib/python2.7/site-packages/ReText/highlighter.pyc
+env/lib/python2.7/site-packages/ReText/__init__.pyc
+env/lib/python2.7/site-packages/ReText/webpages.pyc
+env/lib/python2.7/site-packages/ReText/window.pyc
+env/lib/python2.7/site-packages/ReText/editor.pyc
+env/bin/retext.py
+env/bin/wpgen.py
+env/lib/python2.7/site-packages/ReText-4.0.0-py2.7.egg-info
+</pre>
+<p>
+是装在当前项目的环境之下
+</p>
+
+<p>
+卸载的话也很方便:
+</p>
+<blockquote>
+cat log ｜ xagrs rm －rf
+</blockquote>
+
+<p>
+当然setup模块应该有直接删除的命令。
+</p>
+<h2 id="toc_1.3"> 隔离环境能否访问全局的site-packages目录？</h2>
+<p>
+在隔离环境下安装Retext时发现没有pyqt.core模块，但在全局环境下就没有这个问题。
+经过比较,发现默认情况下使用--no-site-packages,于是不能访问系统全局的site-packages目录。
+</p>
+
+<p>
+$ virtualenv [OPTIONS] DEST_DIR
+</p>
+
+<p>
+-h, --help
+</p>
+<blockquote>
+显示帮助信息。
+</blockquote>
+
+<p>
+--no-site-packages
+</p>
+<blockquote>
+令隔离环境不能访问系统全局的site-packages目录。
+sys.path得到的site-package仅在env环境下
+</blockquote>
+
+<p>
+--system-site-packages
+</p>
+<blockquote>
+令隔离环境可以访问系统全局的site-packages目录。
+sys.path看到包含系统全局目录
+(virtualenv --system-site-packages ENV 创建的隔离环境能直接引用 /usr/lib/python2.7/site-packages (即是本机全局site-packages路径)中的模块。
+</blockquote>
+    
+
+<p>
+只在拥有全局site-packages目录的读写权限，并且你的应用要依赖其中的模块的情况下，该参数会很有用。其他情况下没必要使用该参数。PYTHON_EXE, --python=PYTHON_EXE
+</p>
+<blockquote>
+指定所用的python解析器的版本，比如 --python=python2.5 就使用2.5版本的解析器创建新的隔离环境。 默认使用的是当前系统安装(/usr/bin/python)的python解析器
+</blockquote>
+
+<p>
+参考：<a href="https://virtualenv-chinese-docs.readthedocs.org/en/latest/\#id16">virtualenv_doc</a>
+</p>
+
+<p>
+<a href="http://stackoverflow.com/questions/3371136/revert-the-no-site-packages-option-with-virtualenv">Revert the --no-site-packages option with virtualenv</a>
+</p>
+<h2 id="toc_1.4"> 关于site-packages目录</h2>
+<p>
+<a href="http://stackoverflow.com/questions/249283/virtualenv-on-ubuntu-with-no-site-packages">site-package</a>
+</p>
+
+        </div>
+
+	    <div class="footer">
+		
+	    	<div class="left">
+		    	Copyright &copy; 2013 <a href="index.html">winoi.com</a>
+		    </div>
+
+		    <div class="right">
+                <script language="javascript" type="text/javascript" src="http://js.users.51.la/15309803.js"></script>
+                <noscript><a href="http://www.51.la/?15309803" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/15309803.asp" style="border:none" /></a></noscript>
+		    </div>
+
+		    <div class="clearer"></div>
+
+	    </div>
+
+        </div>
+        </div>
+    </body>
+</html>

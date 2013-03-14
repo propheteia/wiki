@@ -1,0 +1,17 @@
+= web框架 =
+== 使用Flask框架 ==
+editing ...
+=== 1 ===
+    def get_article_by_page(self, pid, per_page):
+        p = Article.query.order_by(Article.created_time.desc()).paginate(pid, per_page)
+        return p
+[[http://stackoverflow.com/questions/11530196/flask-sqlalchemy-query-specify-column-names|注解:]]
+[[http://docs.sqlalchemy.org/en/rel_0_8/orm/tutorial.html]]
+    You can use Model.query, because the Model (or usually its base class, especially in cases where declarative extension is used) is assigned Sesssion.query_property. In this case the Model.query is equivalent to Session.query(Model)
+http://pythonhosted.org/Flask-SQLAlchemy/api.html
+=== 2 ===
+管理员后台操作：https://github.com/mrjoes/flask-admin
+=== SAE ===
+$ svn revert --
+
+=== [[在SAE上部署代码]] ===

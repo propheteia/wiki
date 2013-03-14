@@ -1,0 +1,55 @@
+=shell命令学习=
+== 查找目录下的文件是否含有某个字符串 ==
+*(find .|xargs grep -ri "IBM" -l)*
+=== xargs: ===
+xargs产生grep命令的参数,即:
+     grep -ri "IBM" (find .　产生的文件）
+-l:只列出文件名
+=== grep: ===
+    -r:读文件
+    -i:忽略大小写
+=== 如何自定义变量? ===
+*  /etc/profile 全局用户，应用于所有的Shell。
+* ~/.bashrc
+    当前用户，应用于Bash Shell。
+
+修改~/.bashrc:
+    添加:export strive="~/workshop/strive"
+    source .bashrc
+变量strive在所有的shell中都有效
+== 你可能不知道的shell ==
+* 在 bash 里，使用 Ctrl-R 而不是上下光标键来查找历史命令。
+* 在 bash里，使用 Ctrl-W 来删除最后一个单词，使用 Ctrl-U 来删除一行。
+* 请man bash后查找Readline Key Bindings一节来看看bash的默认热键，比如：Alt-. 把上一次命令的最后一个参数打出来，而Alt-* 则列出你可以输入的命令。
+* !$是一个特殊的环境变量，它代表了上一个命令的最后一个字符串。
+* sudo !! 以root的身份执行上一条命令 。
+* ^old^new 替换前一条命令里的部分字符串。
+转载:http://coolshell.cn/articles/8619.html
+== 常用快捷键 ==
+{{{
+Ctrl + 方向键:bash输入命令行时，左/右跳一个单词
+Linux 命令行快捷键
+↑ 或 Ctrl+p 	显示上一条命令
+↓ 或 Ctrl+n 	显示下一条命令
+→ 或 Ctrl+f 	光标向右移动一个字符
+← 或 Ctrl+b 	光标向左移动一个字符
+Alt+f 	光标向右移动一个单词
+Alt+b 	光标向左移动一个单词
+Ctrl+r 	逆向搜索包含输入字符串的命令，继续按 Ctrl+r，再向上搜索，可使用 Ctrl+c 中断命令
+Ctrl+s 	正向搜索包含输入字体串的命令，用法与 Ctrl+r 相同
+Ctrl+a 	光标移动到开头
+Ctrl+e 	光标移动到结尾
+Ctrl+l 	清屏
+Ctrl+u 	剪切光标所在处之前的所有字符 (不包括自身)
+Ctrl+k 	剪切光标所在处之后的所有字符 (包括自身)
+Ctrl+w 	剪切光标所在处之前的一个词 (以空格、标点等为分隔符)
+Ctrl+y 	粘贴
+Alt+u 	将光标所在处的单词转为大写 (从光标处到词的结尾)
+Alt+l 	将光标所在处的单词转为小写 (从光标处到词的结尾)
+Alt+c 	将光标所在处的单词转为首字母大写 (从光标处到词的结尾)
+Ctrl+c 	中断命令
+Ctrl+s 	挂起当前 shell
+Ctrl+q 	重新启用挂起的 shell
+Ctrl+z 	暂停命令 (恢复命令请看后面的说明)
+}}}
+

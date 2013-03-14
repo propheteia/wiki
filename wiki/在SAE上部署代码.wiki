@@ -1,0 +1,66 @@
+
+= 如何使用virtualenv管理依赖关系 =
+http://python.sinaapp.com/doc/faq.html#id5
+pip 和 easy_install 分别用作什么？区别？
+
+= 导出virtualenv.bundle时出错 = 
+http://www.douban.com/group/topic/27994689/
+svn co https://svn.sinaapp.com/winoi
+
+= 不是工作副本 =
+创建版本:
+	wino
+		|-1/
+		|-1/*
+
+svn add 1/* 会出现
+"."不是当前副本 的错误。是因为新建了文件夹1却没有把1添加到版本库。
+
+svn: 包含工作副本管理数据的目录“env/.svn”丢失了
+文件夹还在，但那是.svn文件丢失了
+只要移除文件夹即可
+
+svn: 提交失败(细节如下):
+svn: 服务器发送了意外的返回值(405 Method Not Allowed)，在响应 “MKCOL” 的请求 “/svn/!svn/wrk/c
+SVN出现这个错误的原因是我删除了一个文件夹后又创建了一个同名文件夹。
+在svn server端，好像是不能区分这两个文件夹，所以出现了错误。
+
+解决方法：
+
+1. 删除出现错误的文件夹 
+2. SVN Update 
+3. 这时服务器上存在的文件夹会出现在本地 
+4. 删除原有的文件夹 
+5. SVN Commit 
+6、重新创建文件夹 
+7. SVN Commit
+
+from flask.ext.sqlalchemy import SQLAlchemy
+该sqlalchemy来自flask_sqlalchemy
+import sqlalchemy
+来自sqlalchemy文件
+
+from flask.ext.sqlalchemy import SQLAlchemy
+该sqlalchemy来自flask_sqlalchemy
+
+config.py
+http://stackoverflow.com/questions/9845102/using-mysql-in-flask
+= 增加MySQLdb环境 =
+Adding MySQLdb to sys.path in a virtualenv?
+Copy anything start with mysql* from C:\Python27\Lib\site-packages to V_ENV\Lib\site-packages
+
+= 流程 =
+* 查看服务器端提供的库，哪些已经具备，哪些版本不够要重新
+* 更改cofig文件,用于配置数据库信息
+* 在index.wisg中添加db.create_all()用与创建数据表
+* 将flask传到virtutal.bundle中，用于扩展模块(ext.sql...)
+	* egg是什么？为什么要用pip而不是easy_install才能转化成功？
+	* 直接从site-package拷贝到virtual.bundle也能实现，有什么区别。
+* 在控制台初始化数据库
+* 之前为什么浪费很多时间？哪里走了弯路？
+	* 跳出500错误，于是我关了@app.errorhandler(500) def internal_error(error):
+	这是非常愚蠢的做法，会显示（当然会）找不到view模块
+	* 正确的做法是启动DEBUG，将其设为True
+	* 用svn控制版本存在延时，所以给调试不能很快显示正确的出错信息。
+	* svn使用不熟悉
+

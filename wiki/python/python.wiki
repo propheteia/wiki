@@ -1,0 +1,11 @@
+=Python=
+* [[./tips|python使用记录]]
+* [[./unittest|测试单元]]
+* [[./regular_exp|python正则表达式]]
+* [[./excel|python操作Excel]]
+* [[./autotest|总结用python做自动测试平台]] 
+* [[./virtualenv|python环境隔离virtualenv]]
+* [[日志管理模块]]
+* [[./setup|setup.py安装脚本]]
+* [[./project|python构建完整项目]]
+

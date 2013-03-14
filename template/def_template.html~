@@ -1,0 +1,56 @@
+<html>
+	<link rel="icon" type="image/ico" href="%root_path%image/5.png"/>
+	<div class=page>
+     <center style="font-family: 华文行楷; font-size: xx-large;font-weight: large; color: black">Winoi</center><br/>
+	 <div align="right" style="font-size:normal;font-weight:large; color: black">Contact Me: Winoiv@gmail.com</div>
+    <head>
+        <title>%title%</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+         <link rel="Stylesheet" type="text/css" href="%root_path%style.css" />
+        <script type="text/javascript" src="%root_path%scripts/shCore.js"></script>
+        <link type="text/css" rel="stylesheet" href="%root_path%styles/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="%root_path%styles/shCoreFadeToGrey.css"/>
+         <link type="text/css" rel="stylesheet" href="%root_path%styles/shThemeMidnight.css"/>
+        <script type="text/javascript" src="%root_path%scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="%root_path%scripts/shBrushPython.js"></script>
+         <script type="text/javascript">
+        SyntaxHighlighter.all();
+         </script>
+    </head>
+    <body>
+        <div class="content"> 
+        %content%
+        </div>
+	    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'winoi'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+    </body>
+	<div id="footer">
+		    <p>&copy; 2012 Winoi &nbsp;&nbsp; <a href="http://www.winoi.com">My github</a></p>
+		</div>
+</div>
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'winoi'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</html>

@@ -1,0 +1,17 @@
+= Latex =
+== 一些常用命令 ==
+=== 中文每段段首缩进 ===
+中文习惯在段首缩进两格，在LaTeX中，/parindent 表示段首缩进的长度，我们将它设置为当前字号的两个大写字母M的宽度，大约正好是两个汉字的宽度：
+    \parindent=2em
+LaTeX 默认每节的第一段的段首不缩进，这不符合中文排版习惯。我们希望正文的每一段都要缩进，使用indentfirst宏包就可办到：
+    \usepackage{indentfirst}
+=== 折叠(folding) ===
+* 打开/关闭折叠: za
+* Refresh: /rf
+=== 编译 ===
+在.vimrc中加入:
+    let g:Tex_DefaultTargetFormat='pdf'</br>
+    let g:Tex_ViewRule_pdf = 'evince
+调试和查看：<leader>ll  ; <leader>lv
+== Latex和Word ==
+Word写简历和海报等操作密集的，用Latex写论文。各取所长！

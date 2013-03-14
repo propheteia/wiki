@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/> 
+        <meta name="author" content=""/> 
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+        <link rel="Stylesheet" type="text/css" href="../template/style.css" />
+        <script type="text/javascript" src="../template/scripts/shCore.js"></script>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCoreFadeToGrey.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shThemeDefault.css"/>
+        <script type="text/javascript" src="../template/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../template/scripts/shBrushPython.js"></script>
+        <script type="text/javascript">
+        SyntaxHighlighter.all();
+        </script>
+        <title>Winoi's wiki</title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+        <div id="container">
+
+        <div class="header">
+	        <h1>笔记本</a></h1>
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">首页</a>
+            <a href="../guestbook.html">目录</a>
+            <a href="../about.html">关于</a>
+        <div class="clearer"></div>
+        </div>
+
+        <div class=content>
+        
+<h1 id="toc_1"> 视频解码的问题</h1>
+<h2 id="toc_1.1"> 少了哪个解码器?</h2>
+<p>
+下载了720P,格式是mp4的视频。用Totem和Kmplayer均无法播放。Totem显示:
+</p>
+<blockquote>
+没有MPEG4-AAC插件
+</blockquote>
+<p>
+搜索了一下，发现需要解码插件: gstreamer-ffmpeg. 于是用yum搜索插件:
+</p>
+<blockquote>
+yum search gstreamer-ffmpeg*
+</blockquote>
+<p>
+显示没有这个软件包,去掉末尾的*,再试:
+</p>
+<blockquote>
+yum search gstreamer-ffmpeg
+</blockquote>
+<p>
+显示:
+</p>
+<pre>
+     N/S 匹配：gstreamer-ffmpe 
+gstreamer-ffmpeg.i686 : GStreamer FFmpeg-based plug-ins
+gstreamer-ffmpeg.x86_64 : GStreamer FFmpeg-based plug-ins
+</pre>
+<p>
+说明yum search命令行不支持正则表达式，而yum info是支持的。但yum info gstream-ffmpeg显示没有该软件包。
+那就来探究一下，这两个指令的区别:
+</p>
+<pre>
+yum search:This is used to find packages when you know something about
+          the package but aren't sure of it's name. By default search
+          will try searching just package names and summaries, but if
+          that "fails" it will then try descriptions and url.
+
+          Yum search orders the results so that those packages match‐
+          ing more terms will appear first.
+yum info:Is used to list a description and summary information about
+          available packages;
+</pre>
+<p>
+这样看来，search先在包名和简介里面搜索，然后在搜相关网页中的描述是否有该关键词，*被认为字符。info直奔包名，支持匹配。
+</p>
+
+<p>
+用了两年Linux,居然一直用Info加正则匹配找需要的软件包，真是惭愧！
+</p>
+<h2 id="toc_1.2"> Rpmfusion是什么?</h2>
+<p>
+另外，Gstreamer解码器是在安装了rpmfusion之后才能搜索到，那么<a href="http://rpmfusion.org/">rpmfusion</a>是个什么样的仓库?
+</p>
+<blockquote>
+RPM Fusion provides software that the Fedora Project or Red Hat doesn't want to ship. That software is provided as precompiled RPMs for all current Fedora versions and Red Hat Enterprise Linux 5 and 6; you can use the RPM Fusion repositories with tools like yum and PackageKit.</br></br>RPM Fusion is a merger of Dribble, Freshrpms, and Livna; our goal is to simplify end-user experience by grouping as much add-on software as possible in a single location. Also see our FoundingPrinciples.  
+</blockquote>
+
+<p>
+它整合了Dribble, Freshrpms, and Livna的软件资源，简化用户安装。 
+</p>
+
+<p>
+安装方法在<a href="http://www.fedorafaq.org/\#getsoftware">这里</a>:
+</p>
+<blockquote>
+sudo yum --nogpgcheck install <a href="http://rpm.livna.org/livna-release.rpm">http://rpm.livna.org/livna-release.rpm</a> <a href="http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm">http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm</a> <a href="http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm">http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm</a>
+</blockquote>
+
+        </div>
+
+	    <div class="footer">
+		
+	    	<div class="left">
+		    	Copyright &copy; 2013 <a href="index.html">winoi.com</a>
+		    </div>
+
+		    <div class="right">
+                <script language="javascript" type="text/javascript" src="http://js.users.51.la/15309803.js"></script>
+                <noscript><a href="http://www.51.la/?15309803" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/15309803.asp" style="border:none" /></a></noscript>
+		    </div>
+
+		    <div class="clearer"></div>
+
+	    </div>
+
+        </div>
+        </div>
+    </body>
+</html>

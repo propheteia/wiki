@@ -1,0 +1,59 @@
+%title GitHub
+= Git和Github =
+==  GitHub ssh免密码登录==
+===   SSh密钥  ===
+参照 [[https://help.github.com/articles/generating-ssh-keys|gitHub:help]]
+    Enter passphrase (empty for no passphrase): [Type a passphrase]<br>
+    Enter same passphrase again: [Type passphrase again]
+	此处直接回车，否则会导致无法自动登录.
+	鉴于这个 key 并不那么容易被泄露，不要 passphrase 还是可以接受的.
+=== 写自动push的脚本 ===
+   {{{class="brush:python"
+	git add .
+	git commit -a -m "auto"
+	git remote add origin git@github.com:username/name.git
+	git push orign gh-pages
+	}}}
+=== 可能出现的问题　===
+运行脚本后，在Shell输入:
+    vim $WORKDIR/.git/config(仓库的优先级更高)
+    
+看到：
+    url = https://github.com/username/name.git
+将其改为：）
+    url = git@github.com:username/name.git
+[[http://josephj.com/article/understand-ssh-key/|更多ssh免密码登录]] 
+
+==  不错的网站　==
+* [[http://rogerdudler.github.com/git-guide/index.zh.html|简易指南]]
+* [[http://www.yangzhiping.com/tech/github.html|如何高效使用GitHub]]
+* [[http://blog.jobbole.com/34503/|常用命令]]
+* [[http://marklodato.github.com/visual-git-guide/index-en.html|visual-git-guide]]
+* [[http://gitbook.liuhui998.com/3_3.html|git_book]]
+== 一些常用命令 ==
+=== Git强制推送 ===
+创建了一个新的仓库，要替代原先的内容。
+    git push -f origin master
+=== Git多人协作 ===
+   {{{class="brush:python"
+    mkdir project.git
+    cd project.git
+    git --bare  init --shared
+    }}}
+查看.git/config:
+    [core]
+    repositoryformatversion = 0
+    filemode = true
+    bare = true
+    sharedrepository = 1
+    [receive]
+    denyNonFastforwards = true
+比较与git init仓库的区别： 
+    [core]
+    repositoryformatversion = 0
+    filemode = true
+    bare = false
+    logallrefupdates = true
+=== Git版本恢复 ===
+    git log --pretty=oneline 文件名 (查看某个文件变动)
+    git show 版本号 (并查看改动细节)

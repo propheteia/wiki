@@ -1,0 +1,39 @@
+= 视频解码的问题 =
+== 少了哪个解码器? ==
+下载了720P,格式是mp4的视频。用Totem和Kmplayer均无法播放。Totem显示:
+    没有MPEG4-AAC插件
+搜索了一下，发现需要解码插件: gstreamer-ffmpeg. 于是用yum搜索插件:
+    yum search gstreamer-ffmpeg*
+显示没有这个软件包,去掉末尾的*,再试:
+    yum search gstreamer-ffmpeg
+显示:
+{{{
+     N/S 匹配：gstreamer-ffmpe 
+gstreamer-ffmpeg.i686 : GStreamer FFmpeg-based plug-ins
+gstreamer-ffmpeg.x86_64 : GStreamer FFmpeg-based plug-ins
+}}}
+说明yum search命令行不支持正则表达式，而yum info是支持的。但yum info gstream-ffmpeg显示没有该软件包。
+那就来探究一下，这两个指令的区别:
+{{{
+yum search:This is used to find packages when you know something about
+          the package but aren't sure of it's name. By default search
+          will try searching just package names and summaries, but if
+          that "fails" it will then try descriptions and url.
+
+          Yum search orders the results so that those packages match‐
+          ing more terms will appear first.
+yum info:Is used to list a description and summary information about
+          available packages;
+}}}
+这样看来，search先在包名和简介里面搜索，然后在搜相关网页中的描述是否有该关键词，*被认为字符。info直奔包名，支持匹配。
+
+用了两年Linux,居然一直用Info加正则匹配找需要的软件包，真是惭愧！
+== Rpmfusion是什么? ==
+另外，Gstreamer解码器是在安装了rpmfusion之后才能搜索到，那么[[http://rpmfusion.org/|rpmfusion]]是个什么样的仓库?
+
+    RPM Fusion provides software that the Fedora Project or Red Hat doesn't want to ship. That software is provided as precompiled RPMs for all current Fedora versions and Red Hat Enterprise Linux 5 and 6; you can use the RPM Fusion repositories with tools like yum and PackageKit.</br></br>RPM Fusion is a merger of Dribble, Freshrpms, and Livna; our goal is to simplify end-user experience by grouping as much add-on software as possible in a single location. Also see our FoundingPrinciples.  
+
+它整合了Dribble, Freshrpms, and Livna的软件资源，简化用户安装。 
+
+安装方法在[[http://www.fedorafaq.org/#getsoftware|这里]]:
+    sudo yum --nogpgcheck install http://rpm.livna.org/livna-release.rpm http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm

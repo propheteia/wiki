@@ -1,0 +1,30 @@
+%title blog
+= 创建独立Blog的几个过程　=
+== 注册域名Godaddy ==
+使用了coupon，两年17.34$
+
+== 购买空间 ==
+
+本来打算用000webhost,国内用户确实很难注册．单位用的美国的服务器，注册后激活马上生效．到学校注册的一直处于Processing状态．邮件也不予理睬．
+最后考虑使用了Github pages.
+
+== 网站生成 ==
+*参考*:　[[http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html|阮一峰博客]]
+网上使用Github pages托管博客的人大多采用Jekyll静态网站生成系统．由于习惯了 [[http://wiki.ktmud.com/tips/vim/vimwiki-guide.html|Vimwiki]] ,并且为了减少学习成本，我直接push生成的HTML到gh-pages.链接用相对路径．
+
+== 网站风格 ==
+即是博客，也是个人维基系统，所以希望要求：
+* 简洁
+* 条理清晰
+* 本地编辑
+* 自动同步
+
+用Vimwiki和Github pages能同时满足以上条件.同时为方便交流，使用了Disqus评论插件
+
+修改了css和HTML模板,使其看起来简洁，干净．
+
+== 还需要做的　==
+# 更多互动插件，如分享
+# 发布自己的维基 
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/> 
+        <meta name="author" content=""/> 
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+        <link rel="Stylesheet" type="text/css" href="../template/style.css" />
+        <script type="text/javascript" src="../template/scripts/shCore.js"></script>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCoreFadeToGrey.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shThemeDefault.css"/>
+        <script type="text/javascript" src="../template/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../template/scripts/shBrushPython.js"></script>
+        <script type="text/javascript">
+        SyntaxHighlighter.all();
+        </script>
+        <title>Winoi's wiki</title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+        <div id="container">
+
+        <div class="header">
+	        <h1>笔记本</a></h1>
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">首页</a>
+            <a href="../guestbook.html">目录</a>
+            <a href="../about.html">关于</a>
+        <div class="clearer"></div>
+        </div>
+
+        <div class=content>
+        
+<h1 id="toc_1"> 总结用python做自动测试平台:</h1>
+<p>
+国庆过后试着投了几份简历寻找实习。一个星期先后收到了罗克韦尔和思科的电话。在和罗克韦尔的工程师简单交谈中了解到他们需要做一个将自动测试的平台。简单的说，就是将来自DEVICENET的参数信息与产品的参数表做匹配，自动生成出错日志。由于python有支持同excel的包，所以用写python脚本进行。对于python语言我之前并没有经验，脚本语言也只用过Bash。
+</p>
+
+<p>
+在最开始的一段时间，我一边了解产品一边尝试用python解决一些简单的问题，包括邮件提醒，休息提醒等。然后开始着手这个任务。我按照自己的想法边做边测，很快作出了可以检测出错误的程序。但自动检测程序启动时，虽然确实能检错，在做Demo时也得到了Leader的认可，但是我却感觉到不安。Excel相当与一个小型的数据库，包含近百个事件列表，每个列表又有几十个参数。我疑虑的是：
+</p>
+<ul>
+<li>
+不是所有的模块都进过严格的测试。比如，主程序的代码过长，实现功能太多而增加了测试难度。
+
+<li>
+参数是否全部覆盖?
+
+<li>
+错误都检出了吗?有没有未检出的错误的可能?
+
+<li>
+在做新的测试时，还有哪些代码可以用?
+
+</ul>
+
+<p>
+<a href="我比之前更加认识到:这项工作需要足够的细心和责任感。我把待解决的问题列了一个表:.html">我比之前更加认识到:这项工作需要足够的细心和责任感。我把待解决的问题列了一个表:</a>
+</p>
+<ul>
+<li>
+模块要做细化。实现相同功能的代码绝对不出现两次。
+
+<li>
+Check模块不做单元测试，直接遍历列表。 
+
+<li>
+健全错误输出流,确保每一种错误情况都必须观察到。
+
+<li>
+
+
+</ul>
+
+
+<p>
+我的Leader给了我非常开放和自由的工作环境,每个星期允许我最少去两天。这也让我有足够的时间应付学校的事。在最开始的半个月，我做出了第一个可以遍历整个list的程序，并且能够检测到表格中
+</p>
+
+        </div>
+
+	    <div class="footer">
+		
+	    	<div class="left">
+		    	Copyright &copy; 2013 <a href="index.html">winoi.com</a>
+		    </div>
+
+		    <div class="right">
+                <script language="javascript" type="text/javascript" src="http://js.users.51.la/15309803.js"></script>
+                <noscript><a href="http://www.51.la/?15309803" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/15309803.asp" style="border:none" /></a></noscript>
+		    </div>
+
+		    <div class="clearer"></div>
+
+	    </div>
+
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+= 构建完整项目 =
+[[http://www.python.org/dev/peps/pep-0008/|PEP8规范]]
+
+[[http://blog.jobbole.com/12649/|创建成功的Python项目]] 
+

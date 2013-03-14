@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/> 
+        <meta name="author" content=""/> 
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+        <link rel="Stylesheet" type="text/css" href="template/style.css" />
+        <script type="text/javascript" src="template/scripts/shCore.js"></script>
+        <link type="text/css" rel="stylesheet" href="template/styles/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="template/styles/shCoreFadeToGrey.css"/>
+        <link type="text/css" rel="stylesheet" href="template/styles/shThemeDefault.css"/>
+        <script type="text/javascript" src="template/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="template/scripts/shBrushPython.js"></script>
+        <script type="text/javascript">
+        SyntaxHighlighter.all();
+        </script>
+        <title>Winoi's wiki</title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+        <div id="container">
+
+        <div class="header">
+	        <h1>笔记本</a></h1>
+        </div>
+
+        <div class="navigation">
+            <a href="index.html">首页</a>
+            <a href="guestbook.html">目录</a>
+            <a href="about.html">关于</a>
+        <div class="clearer"></div>
+        </div>
+
+        <div class=content>
+        
+
+<h1 id="toc_1"> 如何使用virtualenv管理依赖关系</h1>
+<p>
+<a href="http://python.sinaapp.com/doc/faq.html#id5">http://python.sinaapp.com/doc/faq.html#id5</a>
+pip 和 easy_install 分别用作什么？区别？
+</p>
+
+<h1 id="toc_2"> 导出virtualenv.bundle时出错</h1>
+<p>
+<a href="http://www.douban.com/group/topic/27994689/">http://www.douban.com/group/topic/27994689/</a>
+svn co <a href="https://svn.sinaapp.com/winoi">https://svn.sinaapp.com/winoi</a>
+</p>
+
+<h1 id="toc_3"> 不是工作副本</h1>
+<p>
+创建版本:
+	wino
+		|-1/
+		|-1/*
+</p>
+
+<p>
+svn add 1/* 会出现
+"."不是当前副本 的错误。是因为新建了文件夹1却没有把1添加到版本库。
+</p>
+
+<p>
+svn: 包含工作副本管理数据的目录“env/.svn”丢失了
+文件夹还在，但那是.svn文件丢失了
+只要移除文件夹即可
+</p>
+
+<p>
+svn: 提交失败(细节如下):
+svn: 服务器发送了意外的返回值(405 Method Not Allowed)，在响应 “MKCOL” 的请求 “/svn/!svn/wrk/c
+SVN出现这个错误的原因是我删除了一个文件夹后又创建了一个同名文件夹。
+在svn server端，好像是不能区分这两个文件夹，所以出现了错误。
+</p>
+
+<p>
+解决方法：
+</p>
+
+<p>
+1. 删除出现错误的文件夹 
+2. SVN Update 
+3. 这时服务器上存在的文件夹会出现在本地 
+4. 删除原有的文件夹 
+5. SVN Commit 
+6、重新创建文件夹 
+7. SVN Commit
+</p>
+
+<p>
+from flask.ext.sqlalchemy import SQLAlchemy
+该sqlalchemy来自flask_sqlalchemy
+import sqlalchemy
+来自sqlalchemy文件
+</p>
+
+<p>
+from flask.ext.sqlalchemy import SQLAlchemy
+该sqlalchemy来自flask_sqlalchemy
+</p>
+
+<p>
+config.py
+<a href="http://stackoverflow.com/questions/9845102/using-mysql-in-flask">http://stackoverflow.com/questions/9845102/using-mysql-in-flask</a>
+</p>
+<h1 id="toc_4"> 增加MySQLdb环境</h1>
+<p>
+Adding MySQLdb to sys.path in a virtualenv?
+Copy anything start with mysql* from C:\Python27\Lib\site-packages to V_ENV\Lib\site-packages
+</p>
+
+<h1 id="toc_5"> 流程</h1>
+<ul>
+<li>
+查看服务器端提供的库，哪些已经具备，哪些版本不够要重新
+
+<li>
+更改cofig文件,用于配置数据库信息
+
+<li>
+在index.wisg中添加db.create_all()用与创建数据表
+
+<li>
+将flask传到virtutal.bundle中，用于扩展模块(ext.sql...)
+
+<ul>
+<li>
+egg是什么？为什么要用pip而不是easy_install才能转化成功？
+
+<li>
+直接从site-package拷贝到virtual.bundle也能实现，有什么区别。
+
+</ul>
+<li>
+在控制台初始化数据库
+
+<li>
+之前为什么浪费很多时间？哪里走了弯路？
+
+<ul>
+<li>
+跳出500错误，于是我关了@app.errorhandler(500) def internal_error(error):
+	这是非常愚蠢的做法，会显示（当然会）找不到view模块
+
+<li>
+正确的做法是启动DEBUG，将其设为True
+
+<li>
+用svn控制版本存在延时，所以给调试不能很快显示正确的出错信息。
+
+<li>
+svn使用不熟悉
+
+</ul>
+</ul>
+
+        </div>
+
+	    <div class="footer">
+		
+	    	<div class="left">
+		    	Copyright &copy; 2013 <a href="index.html">winoi.com</a>
+		    </div>
+
+		    <div class="right">
+                <script language="javascript" type="text/javascript" src="http://js.users.51.la/15309803.js"></script>
+                <noscript><a href="http://www.51.la/?15309803" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/15309803.asp" style="border:none" /></a></noscript>
+		    </div>
+
+		    <div class="clearer"></div>
+
+	    </div>
+
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+= CSS: =
+==做个下拉菜单？ ==
+editing ...
+== 简单的访问权限设置 ==
+=== 目的: ===
+做一个链接，用于个人任务及进度管理。访客需要权限。输入正确的密码可以进入。
+=== 实现方法: Javascript===
+{{{class="brush:python"
+function password() {
+var times = 1;
+while (times < 3) {
+var pwd = prompt('请您输入作者给您的密码:','');
+if (pwd==null)
+history.go(-1);
+if (pwd == "12345") {
+break;
+}
+else
+times+=1;
+}
+if (times ==3)
+history.go(-1);
+return "";
+}
+document.write(password());
+}}}
+在任务首页的head中插入以上脚本。
+=== 不足： ===
+但是这样只能限定任务目录入口，但是依然可以进入具体任务页面。如果把每一个页面都给限定，会大大降低效率。

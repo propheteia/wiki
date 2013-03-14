@@ -1,0 +1,20 @@
+=Vimwiki =
+== 安装和使用==
+参考了以下文章:</br>
+    [[http://www.ruchee.com/code/linux/vim/2011-05-18.html|vimwiki使用入门]]   
+    [[http://wiki.ktmud.com/|丘迟的维基世界]]
+== 一些问题==
+=== 模板问题:　===
+Issue 156: Add multiple HTML templates. See　vimwiki-option-template_path. Options html_header and html_footer are　no longer exist.
+ 因此之前的方法不能使用。
+
+  取而代之：
+    \'template_path':'/home/wenbin/wiki/html/template/',
+    \'template_default':'def_template',
+    \'template_ext':'.html',
+===VimwikiAll2HTML:===
+如果使用VimwikiAll2Html,需要在~/.vimrc中添加:
+    let g:vimwiki_user_htmls = "def_template.html"
+否则模板会被当成non_user.html删除
+=== 还要做的事 ===
+* 对代码的复制，粘帖插件。

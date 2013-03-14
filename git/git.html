@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/> 
+        <meta name="author" content=""/> 
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+        <link rel="Stylesheet" type="text/css" href="../template/style.css" />
+        <script type="text/javascript" src="../template/scripts/shCore.js"></script>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCoreFadeToGrey.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shThemeDefault.css"/>
+        <script type="text/javascript" src="../template/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../template/scripts/shBrushPython.js"></script>
+        <script type="text/javascript">
+        SyntaxHighlighter.all();
+        </script>
+        <title>Winoi's wiki</title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+        <div id="container">
+
+        <div class="header">
+	        <h1>笔记本</a></h1>
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html">首页</a>
+            <a href="../guestbook.html">目录</a>
+            <a href="../about.html">关于</a>
+        <div class="clearer"></div>
+        </div>
+
+        <div class=content>
+        
+<h1 id="toc_1"> Git和Github</h1>
+<h2 id="toc_1.1"> GitHub ssh免密码登录</h2>
+<h3 id="toc_1.1.1"> SSh密钥</h3>
+<p>
+参照 <a href="https://help.github.com/articles/generating-ssh-keys">gitHub:help</a>
+</p>
+<blockquote>
+Enter passphrase (empty for no passphrase): [Type a passphrase]<br>
+Enter same passphrase again: [Type passphrase again]
+</blockquote>
+<p>
+	此处直接回车，否则会导致无法自动登录.
+	鉴于这个 key 并不那么容易被泄露，不要 passphrase 还是可以接受的.
+</p>
+<h3 id="toc_1.1.2"> 写自动push的脚本</h3>
+<pre class="brush:python">
+	git add .
+	git commit -a -m "auto"
+	git remote add origin git@github.com:username/name.git
+	git push orign gh-pages
+</pre>
+<h3 id="toc_1.1.3"> 可能出现的问题　</h3>
+<p>
+运行脚本后，在Shell输入:
+</p>
+<blockquote>
+vim $WORKDIR/.git/config(仓库的优先级更高)
+</blockquote>
+    
+<p>
+看到：
+</p>
+<blockquote>
+url = <a href="https://github.com/username/name.git">https://github.com/username/name.git</a>
+</blockquote>
+<p>
+将其改为：）
+</p>
+<blockquote>
+url = git@github.com:username/name.git
+</blockquote>
+<p>
+<a href="http://josephj.com/article/understand-ssh-key/">更多ssh免密码登录</a> 
+</p>
+
+<h2 id="toc_1.2"> 不错的网站　</h2>
+<ul>
+<li>
+<a href="http://rogerdudler.github.com/git-guide/index.zh.html">简易指南</a>
+
+<li>
+<a href="http://www.yangzhiping.com/tech/github.html">如何高效使用GitHub</a>
+
+<li>
+<a href="http://blog.jobbole.com/34503/">常用命令</a>
+
+<li>
+<a href="http://marklodato.github.com/visual-git-guide/index-en.html">visual-git-guide</a>
+
+<li>
+<a href="http://gitbook.liuhui998.com/3_3.html">git_book</a>
+
+</ul>
+<h2 id="toc_1.3"> 一些常用命令</h2>
+<h3 id="toc_1.3.1"> Git强制推送</h3>
+<p>
+创建了一个新的仓库，要替代原先的内容。
+</p>
+<blockquote>
+git push -f origin master
+</blockquote>
+<h3 id="toc_1.3.2"> Git多人协作</h3>
+<pre class="brush:python">
+    mkdir project.git
+    cd project.git
+    git --bare  init --shared
+</pre>
+<p>
+查看.git/config:
+</p>
+<blockquote>
+[core]
+repositoryformatversion = 0
+filemode = true
+bare = true
+sharedrepository = 1
+[receive]
+denyNonFastforwards = true
+</blockquote>
+<p>
+比较与git init仓库的区别： 
+</p>
+<blockquote>
+[core]
+repositoryformatversion = 0
+filemode = true
+bare = false
+logallrefupdates = true
+</blockquote>
+<h3 id="toc_1.3.3"> Git版本恢复</h3>
+<blockquote>
+git log --pretty=oneline 文件名 (查看某个文件变动)
+git show 版本号 (并查看改动细节)
+</blockquote>
+
+        </div>
+
+	    <div class="footer">
+		
+	    	<div class="left">
+		    	Copyright &copy; 2013 <a href="index.html">winoi.com</a>
+		    </div>
+
+		    <div class="right">
+                <script language="javascript" type="text/javascript" src="http://js.users.51.la/15309803.js"></script>
+                <noscript><a href="http://www.51.la/?15309803" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/15309803.asp" style="border:none" /></a></noscript>
+		    </div>
+
+		    <div class="clearer"></div>
+
+	    </div>
+
+        </div>
+        </div>
+    </body>
+</html>

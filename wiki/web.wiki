@@ -9,6 +9,16 @@ editing ...
 [[http://docs.sqlalchemy.org/en/rel_0_8/orm/tutorial.html]]
     You can use Model.query, because the Model (or usually its base class, especially in cases where declarative extension is used) is assigned Sesssion.query_property. In this case the Model.query is equivalent to Session.query(Model)
 http://pythonhosted.org/Flask-SQLAlchemy/api.html
+
+mysql数据无法显示中文
+Python操作MySQL中文乱码的问题
+Posted by harrietlq on 2012/09/19 Leave a comment (0) Go to comments
+
+1 Python文件设置编码 utf-8 （文件前面加上 #encoding=utf-8)
+2 MySQL数据库charset=utf-8
+3 Python连接MySQL是加上参数 charset=utf8
+4 设置Python的默认编码为 utf-8 (sys.setdefaultencoding(utf-8)
+
 === 2 ===
 管理员后台操作：https://github.com/mrjoes/flask-admin
 === SAE ===

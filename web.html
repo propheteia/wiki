@@ -57,6 +57,20 @@ You can use Model.query, because the Model (or usually its base class, especiall
 <p>
 <a href="http://pythonhosted.org/Flask-SQLAlchemy/api.html">http://pythonhosted.org/Flask-SQLAlchemy/api.html</a>
 </p>
+
+<p>
+mysql数据无法显示中文
+Python操作MySQL中文乱码的问题
+Posted by harrietlq on 2012/09/19 Leave a comment (0) Go to comments
+</p>
+
+<p>
+1 Python文件设置编码 utf-8 （文件前面加上 #encoding=utf-8)
+2 MySQL数据库charset=utf-8
+3 Python连接MySQL是加上参数 charset=utf8
+4 设置Python的默认编码为 utf-8 (sys.setdefaultencoding(utf-8)
+</p>
+
 <h3 id="toc_1.1.2"> 2</h3>
 <p>
 管理员后台操作：<a href="https://github.com/mrjoes/flask-admin">https://github.com/mrjoes/flask-admin</a>

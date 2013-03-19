@@ -27,3 +27,9 @@ document.write(password());
 在任务首页的head中插入以上脚本。
 === 不足： ===
 但是这样只能限定任务目录入口，但是依然可以进入具体任务页面。如果把每一个页面都给限定，会大大降低效率。
+= 记录 =
+=== 让段落字体处于两边对齐的位置 ===
+p{
+text-align:justify; 
+text-justify:inter-ideograph;
+}

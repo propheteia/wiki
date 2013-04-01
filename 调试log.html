@@ -36,14 +36,32 @@
 
         <div class=content>
         
-<h2 id="toc_0.1"> 4.1</h2>
-<h3 id="toc_0.1.1"> forward2off 当球在(4.6-fieldlength/2,-8)位置时,出现numerical method failed: leg错误</h3>
+<h2 id="toc_0.1"> 4.2</h2>
+<ul>
+<li class="done0">
+forward2off 当球在(4.6-fieldlength/2,-8)位置时,出现numerical method failed: leg错误 
+
+</ul>
 <blockquote>
 GoToPoint中dest和self位置重合时,行走参数为0,会出现这种情况.
 解决:
 </blockquote>
+
 <ul>
 <li class="done0">
+mOppNearestToBall指针错误,吐核 
+
+</ul>
+<blockquote>
+解决:构造时显式设为NULL
+</blockquote>
+
+<ul>
+<li class="done0">
+CoverTeammate(dist) 在(4.6-fieldlength/2,-8)位置时,出现错误.
+
+<li class="done0">
+self 在无法定位的时候 信息为(0,0)
 
 </ul>
 

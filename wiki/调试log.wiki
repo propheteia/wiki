@@ -4,9 +4,10 @@
     GoToPoint中dest和self位置重合时,行走参数为0,会出现这种情况.
     解决:
 
-* [ ] mOppNearestToBall指针错误,吐核 
+* [X] mOppNearestToBall指针错误,吐核 
 
     解决:构造时显式设为NULL
 
 * [ ] CoverTeammate(dist) 在(4.6-fieldlength/2,-8)位置时,出现错误.
 * [ ] self 在无法定位的时候 信息为(0,0)
+* [ ] 

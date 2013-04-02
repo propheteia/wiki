@@ -57,3 +57,7 @@
 === Git版本恢复 ===
     git log --pretty=oneline 文件名 (查看某个文件变动)
     git show 版本号 (并查看改动细节)
+
+=== 常用 ===
+    git reset --hard HEAD~
+    git branch -D develop

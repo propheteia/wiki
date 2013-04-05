@@ -23,4 +23,14 @@ error_log:
 1.gdb -> update hear information
 2.  mThreadBarrierNew!=NULL!
 
+solve:
+1. l -> @
+2. r -> #
+
+BaseAgent : Report
+
+WM:
+setHearInfo
+UpdateHearInfo
+
 

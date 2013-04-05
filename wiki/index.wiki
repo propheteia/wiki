@@ -17,3 +17,10 @@
 [[调试log]]
 report_support :改了g3,4,5,6,7
 
+nexus
+error_log:
+
+1.gdb -> update hear information
+2.  mThreadBarrierNew!=NULL!
+
+

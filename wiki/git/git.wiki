@@ -61,3 +61,4 @@
 === 常用 ===
     git reset --hard HEAD~
     git branch -D develop
+    git show HEAD 当前分支最新更新

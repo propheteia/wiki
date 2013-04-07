@@ -27,7 +27,8 @@ solve:
 2. r -> #
 
 BaseAgent : Report
-
+分层学习
+加强学习
 WM:
 setHearInfo
 UpdateHearInfo

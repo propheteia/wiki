@@ -59,6 +59,7 @@
     git show 版本号 (并查看改动细节)
 
 === 常用 ===
-    git reset --hard HEAD~
-    git branch -D develop
+    git reset --hard HEAD~ 退回到前一个commit
+    git branch -D develop 删除分支
     git show HEAD 当前分支最新更新
+    

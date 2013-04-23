@@ -49,6 +49,10 @@
 <p>
 多个TCP连接或多个应用程序进程可能需要通过同一个 TCP协议端口传输数据。为了区别不同的应用程序进程和连接，许多计算机操作系统为应用程序与TCP/IP协议交互提供了称为套接字(Socket)的接口。简单的举例说明下:Socket=Ip address+ TCP/UDP port。
 </p>
+<h2 id="toc_1.4"> freeaddrinfo</h2>
+<p>
+  freeaddrinfo接口用来释放getaddrinfo接口返回的res指向的链表，如果调用getaddrinfo接口后没有释放内存，会造成内存泄露，所以一定要记得调用这个接口来释放内存
+</p>
 
         </div>
 

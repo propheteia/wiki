@@ -1,0 +1,7 @@
+= 网站 =
+* http://www.cnblogs.com/skynet/archive/2010/12/12/1903949.html
+* http://www.linuxhowtos.org/C_C++/socket.htm
+= 片段 =
+Notice that the client needs to know of the existence of and the address of the server, but the server does not need to know the address of (or even the existence of) the client prior to the connection being established.
+
+

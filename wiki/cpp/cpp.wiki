@@ -1,2 +1,2 @@
 = C++ =
-* Linux socket编程
+* [[Linux socket编程]]

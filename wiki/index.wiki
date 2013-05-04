@@ -1,6 +1,6 @@
 %title wiki 
 = 标签: =
-=== [[./python/python|Python]] ===
+[[===]] [[./python/python|Python]] ===
 === [[./blog/blog|Blog]] ===
 === [[./html/css|CSS&HTML]] ===
 === [[./web|Web]] ===

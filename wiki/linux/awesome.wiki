@@ -77,3 +77,5 @@ awful.key({ modkey, "Shift" }, "n",
 用了两个月了，Awesome给我工作和学习带来了极大的方便。难以想像没有它，我需要在不同的窗口中切来切去。同时查看code,debug,log，节省了大量时间。
 
 除此之外，它还具有众多 [[http://awesome.naquadah.org/wiki/Main_Page|插件]] ，一切都替你做好了，你可以变得更“懒”-.-
+
+== 配置脚本 ==

@@ -79,3 +79,8 @@ awful.key({ modkey, "Shift" }, "n",
 除此之外，它还具有众多 [[http://awesome.naquadah.org/wiki/Main_Page|插件]] ，一切都替你做好了，你可以变得更“懒”-.-
 
 == 配置脚本 ==
+==== 有关lua语言 ====
+网址:http://www.cnblogs.com/ly4cn/archive/2006/08/04/467550.html
+
+Table是怎样定义的?<br>
+

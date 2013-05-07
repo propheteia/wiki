@@ -6,6 +6,7 @@
 === [[./web|Web]] ===
 === [[./git/git|Git]] ===
 === [[./cpp/cpp|C++]] ===
+=== [[lua]] ===
 === [[./vim/vim|Vim]] ===
 === [[./linux/linux|Linux]] ===
 === [[./latex|Latex]] ===

@@ -83,4 +83,8 @@ awful.key({ modkey, "Shift" }, "n",
 网址:http://www.cnblogs.com/ly4cn/archive/2006/08/04/467550.html
 
 Table是怎样定义的?<br>
+==== 添加vicious.widget.hddtemp ====
+首先要安装hddtemp
+
+然后启动服务 --> hddtemp -d
 

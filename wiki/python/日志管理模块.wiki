@@ -96,4 +96,3 @@ handler.setFormatter(formatter)
 
 sys.addHandler(handler)
 test.addHandler(handler)
-}}}

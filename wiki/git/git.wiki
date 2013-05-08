@@ -72,7 +72,7 @@
         A.开始编辑工作,完成了一个细节的修改
            1> git diff (-stat)     查看工作内容目录和缓存区的内容发生哪些变化
            2> 如果某个文件希望恢复到原来(缓存区)的 -- >  git checkout filename
-           3> 如果某个文件希望恢复到原来(HEAD)的 -- >  git checkout HEAD filename 
+           3> 如果某个文件希望恢复到原来版本(HEAD,HEAD~D等) -- >  git checkout HEAD filename 
               (缓存区和文件目录的内容都被替换)
            4> 确认无误,将修改后的文件添加到缓存区  -- >  git add filename
 
@@ -86,8 +86,26 @@
               查看分支的区别 -- > git diff master develop
               切换到主分支 -- > git checkout master
               合并 -- > git merge develop 
-           3> 合并后实际上保存在HEAD中,可以 git diff HEAD~ 查看修改了哪些内容,对不合理
+           3> 合并后实际上保存在HEAD中,可以 git show HEAD 查看修改了哪些内容,对不合理
               的合并进行修改
+
+        D.如果需要跳回到之前的某个版本编译某个文件
+           1> git checkout master~3 (之前的三个版本 )
+                 这里不属于任何分支,是Detached HEAD
+           2> 如果在这个版本基础上穿件新的分支 -- > git checkout -b new
+           3> git checkout master 回到主分支
+        
+        E.放弃修改
+           1> git reset --hard HEAD (目录,缓存区都恢复到HEAD)
+           2> git reset  HEAD (缓存区恢复到HEAD)
+
+        F.Master分支回到之前的某个版本
+           1> git reset --hard HEAD~ (目录,缓存区都恢复到HEAD~)
+           2> git reset  HEAD~ (缓存区恢复到HEAD~)
+           2> git reset --soft HEAD~ (目录,缓存区都 不 恢复到HEAD~)
+            
+        此外,当前文件目录和某个分支或者HEAD的比较 -- > git diff HEAD~  -- > git diff develop
+
         The checkout command is used to copy files from the history (or stage) to the working directory, and to optionally switch branches.
         When a filename (and/or -p) is given, git copies those files from the given commit to the stage and the working directory. For example,
         git checkout HEAD~ foo.c copies the file foo.c from the commit called HEAD~ (the parent of the current commit) to the working directory,

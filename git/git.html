@@ -151,27 +151,32 @@ git show HEAD 当前分支最新更新
 <h3 id="toc_1.3.5"> 一次实验</h3>
 <pre>
         git init 
-
         git add .
-
         git commit -m "First commit"
 
-        开始编辑工作,完成了一个细节的修改
+        A.开始编辑工作,完成了一个细节的修改
+           1&gt; git diff (-stat)     查看工作内容目录和缓存区的内容发生哪些变化
+           2&gt; 如果某个文件希望恢复到原来(缓存区)的 -- &gt;  git checkout filename
+           3&gt; 如果某个文件希望恢复到原来(HEAD)的 -- &gt;  git checkout HEAD filename 
+              (缓存区和文件目录的内容都被替换)
+           4&gt; 确认无误,将修改后的文件添加到缓存区  -- &gt;  git add filename
 
-        git diff (-stat)     查看工作内容目录和缓存区的内容发生哪些变化
-
-        如果某个文件希望恢复到原来(缓存区)的 -- &gt;  git checkout filename
+        B.按以上方式完成了一个项目的改进,需要生成新的版本 
+           1&gt; 首先查看即将提交的内容(缓存区),与上一版本的区别  -- &gt; git diff --cached
+           2&gt; 如果没有问题,提交  -- &gt; git commit -m "comment"
         
-        确认无误,将修改后的文件添加到缓存区  -- &gt;  git add filename
-
-
-        按以上方式完成了一个项目的改进,需要生成新的版本 
-
-        首先查看即将提交的内容(缓存区),与上一版本的区别  -- &gt; git diff --cached
-
-        如果没有问题,提交  -- &gt; git commit -m "comment"
-        
-        
+        C.这时候需要分支完成另外一个项目
+           1&gt; 创建分支 -- &gt; git checkout -b develop
+           2&gt; 分支修改完毕,要合并到主分支
+              查看分支的区别 -- &gt; git diff master develop
+              切换到主分支 -- &gt; git checkout master
+              合并 -- &gt; git merge develop 
+           3&gt; 合并后实际上保存在HEAD中,可以 git diff HEAD~ 查看修改了哪些内容,对不合理
+              的合并进行修改
+        The checkout command is used to copy files from the history (or stage) to the working directory, and to optionally switch branches.
+        When a filename (and/or -p) is given, git copies those files from the given commit to the stage and the working directory. For example,
+        git checkout HEAD~ foo.c copies the file foo.c from the commit called HEAD~ (the parent of the current commit) to the working directory,
+        and also stages it. (If no commit name is given, files are copied from the stage.) Note that the current branch is not changed.
 </pre>
 
         </div>

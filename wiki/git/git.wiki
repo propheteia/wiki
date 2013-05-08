@@ -63,3 +63,28 @@
     git branch -D develop 删除分支
     git show HEAD 当前分支最新更新
     
+=== 一次实验 ===
+    {{{
+        git init 
+
+        git add .
+
+        git commit -m "First commit"
+
+        开始编辑工作,完成了一个细节的修改
+
+        git diff (-stat)     查看工作内容目录和缓存区的内容发生哪些变化
+
+        如果某个文件希望恢复到原来(缓存区)的 -- >  git checkout filename
+        
+        确认无误,将修改后的文件添加到缓存区  -- >  git add filename
+
+
+        按以上方式完成了一个项目的改进,需要生成新的版本 
+
+        首先查看即将提交的内容(缓存区),与上一版本的区别  -- > git diff --cached
+
+        如果没有问题,提交  -- > git commit -m "comment"
+        
+        
+    }}}

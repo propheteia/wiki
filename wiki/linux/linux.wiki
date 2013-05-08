@@ -6,3 +6,4 @@
 * [[./tar|tar解压]]
 * [[./linux_operation|linux操作系统]]
 * [[视频解码的问题]]
+* [[./deamon|Linux服务]]

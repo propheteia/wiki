@@ -1,0 +1,7 @@
+== 需要hddtemp的服务,如何实现? ==
+    sudo yum install hddtemp
+    hddtemp --help
+    得到:-d   --daemon      :  run hddtemp in TCP/IP daemon mode (port 7634 by default.)
+    运行 hddtemp -d 启动服务
+
+== daemon是怎样的机制? ==

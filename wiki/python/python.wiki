@@ -8,4 +8,5 @@
 * [[日志管理模块]]
 * [[./setup|setup.py安装脚本]]
 * [[./project|python构建完整项目]]
+* [[./pep8|PEP8标准阅读]]
 

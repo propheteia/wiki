@@ -35,4 +35,32 @@ setup(
     long_description="""AutoTest is a test platphome for RA,PowerMonitor development te\
                         team.""",
     )
+运行结果在site-package下面产生包(exercise),
+和一个名为"exercise-0.1.1-py2.7.egg-info"的文件
+内容如下:
+    Metadata-Version: 1.0
+    Name: exercise
+    Version: 0.1.1
+    Summary: Automation Test module for python
+    Home-page: UNKNOWN
+    Author: Wenbin Wang
+    Author-email: wenbin.rc@gmail.com
+    License: RA
+    Description: AutoTest is a test platphome for RA,PowerMonitor development team
+    Platform: UNKNOWN
+}}}
+
+== python寻找模块的顺序 ==
+{{{
+1. 首先判断这个module是不是built-in即内建模块，
+　 如果是则引入内建模块，如果不是则在一个称为sys.path的list中寻找
+
+2. sys.path在python脚本执行时动态生成，包括以下3个部分：
+　　a.脚本执行的位置，即当前路径
+　　b.环境变量中的PYTHONPATH, 即.bash_profile
+　　c.安装python时的依赖位置(通常是"../python2.7/site-packages")
+
+执行python setup.py install 实际上做了两件事:
+1. 将包(模块)添加到python系统路径下(site-packages)
+2. 生成egg-info的文件,包含包的信息
 }}}

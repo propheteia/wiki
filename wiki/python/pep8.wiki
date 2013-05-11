@@ -35,3 +35,6 @@
     2、第三方库导入
     3、本地应用程序/定制库导入
     }}}
+
+= Google Python Style Guide =
+http://google-styleguide.googlecode.com/svn/trunk/pyguide.html

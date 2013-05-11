@@ -64,3 +64,7 @@ setup(
 1. 将包(模块)添加到python系统路径下(site-packages)
 2. 生成egg-info的文件,包含包的信息
 }}}
+
+== 上传包,pip安装 ==
+* http://www.ibm.com/developerworks/opensource/library/os-pythonpackaging/index.html ,
+* http://docs.python.org/2/distutils/packageindex.html#package-index

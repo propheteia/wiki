@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/> 
+        <meta name="author" content=""/> 
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+        <link rel="Stylesheet" type="text/css" href="../template/style.css" />
+        <script type="text/javascript" src="../template/scripts/shCore.js"></script>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shCoreFadeToGrey.css"/>
+        <link type="text/css" rel="stylesheet" href="../template/styles/shThemeDefault.css"/>
+        <script type="text/javascript" src="../template/scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../template/scripts/shBrushPython.js"></script>
+        <script type="text/javascript">
+        SyntaxHighlighter.all();
+        </script>
+        <title>Winoi's wiki</title>
+    </head>
+
+    <body>
+        <div id="wrapper">
+        <div id="container">
+
+        <div class="header">
+	        <h1>笔记本</a></h1>
+        </div>
+
+        <div class="navigation">
+            <a href="http://www.winoi.com">首页</a>
+            <a href="../index.html">笔记目录</a>
+            <a href="../about.html">关于</a>
+        <div class="clearer"></div>
+        </div>
+
+        <div class=content>
+        
+<h1 id="toc_1"> distutils 模块</h1>
+<h2 id="toc_1.1"> 包和模块的文件模型</h2>
+<pre>
+    包和模块模型:
+    exercise
+        |--__init__.py
+        |
+        |--module_a.py
+        |        |-- class football
+        |        |-- class TTException
+        |
+        |--module_b.py
+                 |-- function go_for_basketball
+    如果__init__.py必须有,这样才能导入以下两个模块 
+        import exercise.module_a.football
+
+    如果要通过包直接找到某个类或者函数,则可以通过在__init__.py中import该类或函数
+    此时在__init__.py中添加    
+        from module_a import football
+    那么在调用football方法时,可以这样
+        from exercise import football
+</pre>
+
+<h2 id="toc_1.2"> setup.py</h2>
+<pre>
+from distutils.core import setup
+setup(
+    name="exercise",
+    license="RA",
+    version="0.1.1",
+    description="Automation Test module for python",
+    author="Wenbin Wang",
+    author_email="wenbin.rc@gmail.com",
+    packages=["exercise"],      -- 需要安装的文件夹(包)
+    long_description="""AutoTest is a test platphome for RA,PowerMonitor development te\
+                        team.""",
+    )
+</pre>
+
+        </div>
+
+	    <div class="footer">
+		
+	    	<div class="left">
+		    	Copyright &copy; 2013 <a href="index.html">winoi.com</a>
+		    </div>
+
+		    <div class="right">
+                <script language="javascript" type="text/javascript" src="http://js.users.51.la/15309803.js"></script>
+                <noscript><a href="http://www.51.la/?15309803" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/15309803.asp" style="border:none" /></a></noscript>
+		    </div>
+
+		    <div class="clearer"></div>
+
+	    </div>
+
+        </div>
+        </div>
+    </body>
+</html>

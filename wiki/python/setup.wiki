@@ -1,0 +1,38 @@
+= distutils 模块 =
+== 包和模块的文件模型 ==
+{{{
+    包和模块模型:
+    exercise
+        |--__init__.py
+        |
+        |--module_a.py
+        |        |-- class football
+        |        |-- class TTException
+        |
+        |--module_b.py
+                 |-- function go_for_basketball
+    如果__init__.py必须有,这样才能导入以下两个模块 
+        import exercise.module_a.football
+
+    如果要通过包直接找到某个类或者函数,则可以通过在__init__.py中import该类或函数
+    此时在__init__.py中添加    
+        from module_a import football
+    那么在调用football方法时,可以这样
+        from exercise import football
+}}}
+
+== setup.py ==
+{{{
+from distutils.core import setup
+setup(
+    name="exercise",
+    license="RA",
+    version="0.1.1",
+    description="Automation Test module for python",
+    author="Wenbin Wang",
+    author_email="wenbin.rc@gmail.com",
+    packages=["exercise"],      -- 需要安装的文件夹(包)
+    long_description="""AutoTest is a test platphome for RA,PowerMonitor development te\
+                        team.""",
+    )
+}}}

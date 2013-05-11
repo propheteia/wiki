@@ -37,6 +37,14 @@ text-justify:inter-ideograph;
 === 图标网站 ===
 http://www.iconarchive.com/
 == CSS复合器 ==
-=== 并集 ===
+=== 交集 ===
 p.no    -->     <p class="no"> 
+    对于交集里有的属性,使用并集里的属性
+    对于p 和 no 都具有的属性,使用no(类)的属性
+    只有p或者no中具有的属性,就使用该属性
+
+所以从优先级上 -- >     交集 > class > 标签
+
+=== 并集 ===
+都具有这项属性
 

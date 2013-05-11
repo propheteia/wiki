@@ -70,3 +70,5 @@ setup(
 == 上传包,pip安装 ==
 * http://www.ibm.com/developerworks/opensource/library/os-pythonpackaging/index.html ,
 * http://docs.python.org/2/distutils/packageindex.html#package-index
+* https://pypi.python.org/pypi/mypypi
+

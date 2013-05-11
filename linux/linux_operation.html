@@ -54,6 +54,25 @@ systemctl start mysqld.service
 <p>
 Fedora使用了systemd，所以配置daemon应该用systemctl。而以往系统是通过执行/ect/init.d/mysql start 启动的。
 </p>
+<h3 id="toc_1.2.1"> 查看系统消息</h3>
+<p>
+sudo vim /var/log/message
+</p>
+
+<p>
+估计在开无线的情况下频繁死机的错误消息:
+</p>
+<blockquote>
+May 11 18:50:24 WENBIN NetworkManager[1081]: &lt;info&gt; (wlan0): device state change: need-auth -&gt; failed (reason 'no-secrets') [60 120 7]
+May 11 18:50:24 WENBIN NetworkManager[1081]: &lt;info&gt; Marking connection '自动 Dlink_302' invalid.
+May 11 18:50:24 WENBIN NetworkManager[1081]: &lt;warn&gt; Activation (wlan0) failed for connection '自动 Dlink_302'
+May 11 18:50:24 WENBIN NetworkManager[1081]: &lt;info&gt; (wlan0): device state change: failed -&gt; disconnected (reason 'none') [120 30 0]
+</blockquote>
+
+<p>
+sudo vim /etc/sysconfig/networking/  下删除Dlink_302子类的无线设备
+这可能是之前设置无线网络的失误造成的.
+</p>
 
         </div>
 

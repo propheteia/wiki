@@ -1,4 +1,3 @@
-= Linux操作系统 =
 == 回收站路径： ==
 在这个文件夹下有两个文件：一个是files ,一个是info。 files保存的是被删除的文件，而info里面是文件的信息(路径，删除的时间）。
     ~/.local/share/.Trash

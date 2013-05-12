@@ -433,7 +433,7 @@ footer {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-Serif;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
     font-size: 11px;
-	color: #C2DBE7;
+	color: black;
     overflow: hidden;
     background: url(../images/footer-line.png) repeat-x left top;
 }
@@ -779,7 +779,7 @@ ul.subscribe-stuff li img {
 ----------------------------------------------------------------------------- */
 footer a:link,
 footer a:visited {
-    color: #fff;
+    color: black;
 }
 footer a:hover {
     color: #99CCFF;

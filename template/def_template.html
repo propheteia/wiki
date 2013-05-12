@@ -34,15 +34,14 @@
     <!--header -->
 <div id="header-wrap"><header>
     <hgroup>
-        <h1><a href="/blog">%title%</a></h1>
+        <h1>%title%</h1>
     </hgroup>
 
     <nav>
         <ul>
-            <li ><a href="/blog">首页</a><span></span></li>
-            <li id="current"><a href="/blog/about/">笔记本</a><span></span></li>
-            <li ><a href="/blog/contact/">留言板</a><span></span></li>
-            <li ><a href="/blog/category/">分类</a><span></span></li>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="%root_path%index.html">笔记目录</a></li>
+            <li><a href="%root_path%about.html">关于</a><li>
         </ul>
     </nav>
 
@@ -52,7 +51,6 @@
     
     <!-- content-wrap -->
     <div id="content-wrap">
-    
         <!-- content -->
         <div id="content" class="clearfix">
            %content% 
@@ -61,22 +59,15 @@
 
 <!-- footer -->
 <footer>
-
     <p class="footer-left">
-        &copy; 2012 Copyright Info &nbsp; &nbsp; &nbsp;
-        <a href="#" title="马孔多的博客">马孔多的博客</a> powered by <a href="http://flask.pocoo.org/" target="_blank">Flask</a>
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
     </p>
 
     <p class="footer-right">
-        <a href="/blog">Home</a> |
-        <!--
-        <a href="/sitemap.xml">Sitemap</a> |
-        <a href="/rss/">RSS Feed</a> |
-        -->
+        <a href="%root_path%index.html">Home</a> |
         <a href="#top" class="back-to-top">Back to Top</a>
     </p>
-
-
 <!-- /footer -->
 </footer>
 

@@ -435,7 +435,7 @@ footer {
     font-size: 11px;
 	color: black;
     overflow: hidden;
-    background: url(../images/footer-line.png) repeat-x left top;
+    background: url(../images/footer-line.png) repeat-x right top;
 }
 
 /* --------------------------------------------------------------------------
@@ -453,7 +453,7 @@ header hgroup {
     left: 10px;
 }
 header hgroup h1 {
-    margin: 0;
+    margin: 10px;
     padding: 0;
 }
 header hgroup h1 a {

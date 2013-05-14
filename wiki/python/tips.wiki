@@ -39,4 +39,13 @@ AttributeError: 'module' object has no attribute 'warning'
 错误信息中看出，import搜索的路径当前文件夹处于优先位置。因此
 新建的文件名要避免"普通“
 
+== hasattr()和 getattr() ==
+hasattr()和 getattr()分别判断对象是否有某个属性及获得某个属性值。
+In [35]: hasattr(a, 'split')
+Out[35]: True
+In [36]: getattr(a, 'split')
+Out[36]: <built-in method split of str object at 0x831abe0>
+
+== 函式编程 ==
+
 

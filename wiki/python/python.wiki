@@ -5,17 +5,16 @@
  
 * [[./regular_exp|python正则表达式]]
  
-* [[./excel|python操作Excel]]
- 
-* [[./autotest|总结用python做自动测试平台]] 
+* [[./excel|python操作Excel--xlrd]]
  
 * [[./virtualenv|python环境隔离virtualenv]]
  
 * [[日志管理模块]]
  
-* [[./setup|setup.py安装脚本]]
- 
-* [[./project|python构建完整项目]]
+* [[./setup|distutils生成模块]]
  
 * [[./pep8|PEP8标准阅读]]
+ 
+* [[./project|python构建完整项目]]
 
+* [[./autotest|总结用python做自动测试平台]] 

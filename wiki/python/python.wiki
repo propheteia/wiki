@@ -1,5 +1,5 @@
 =Python=
-* [[./tips|python使用记录]]
+* [[./tips|python]]
 
 * [[./unittest|测试单元]]
  

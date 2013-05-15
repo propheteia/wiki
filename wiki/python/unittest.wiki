@@ -1,4 +1,4 @@
-=Python的单元测试=
+%title Python的单元测试
 == TestCase: ==
 | Method                    | Checks that          |
 |---------------------------|----------------------|

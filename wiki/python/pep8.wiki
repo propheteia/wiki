@@ -1,4 +1,4 @@
-= PEP 8 标准 =
+%title PEP 8 标准 
 == 什么是PEP 8标准 ==
 [[http://www.python.org/dev/peps/pep-0008/|PEP8规范]]
 

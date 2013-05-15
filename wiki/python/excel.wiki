@@ -1,4 +1,4 @@
-=Python操作Excel=
+%title Python操作Excel -- xlrd
 == 基本操作 ==
 Open the workbook
 {{{class="brush:python"

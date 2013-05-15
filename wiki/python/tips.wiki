@@ -1,4 +1,4 @@
-= Python杂记 =
+%title Python
 == with: ==
 {{{class="brush:python"
 import sys

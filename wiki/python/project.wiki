@@ -1,3 +1,3 @@
-= 构建完整项目 =
+%title 构建完整项目 
 [[http://blog.jobbole.com/12649/|创建成功的Python项目]] 
 

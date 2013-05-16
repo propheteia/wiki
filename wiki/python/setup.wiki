@@ -72,3 +72,4 @@ setup(
 * http://docs.python.org/2/distutils/packageindex.html#package-index
 * https://pypi.python.org/pypi/mypypi
 
+== 特殊的__init__.py ==

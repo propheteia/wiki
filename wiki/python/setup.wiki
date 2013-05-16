@@ -73,3 +73,58 @@ setup(
 * https://pypi.python.org/pypi/mypypi
 
 == 特殊的__init__.py ==
+{{{
+run.py
+|--app
+    |--__init__.py
+    |--views.py
+}}}
+
+__init__.py
+{{{
+app=Flask(__name__)
+}}}
+
+views.py
+{{{
+from app import app
+}}}
+
+run.py
+{{{
+    from app import app
+    from app.views import *
+}}}
+
+这样是可行的,但是views.py在模块内不能被引用,只有对其作为包的一部分引用
+
+若想让其在包内可以被作为模块引用,可以这样改:
+
+views.py
+{{{
+from __init__ import app
+}}}
+
+但是这样改在运行run的时候出现问题了,原因在于:
+{{{
+    通过比较app.__setattri__发现
+    run中的app和views中的app指向不同的地址,所以出现无法定向的错误
+    run中引用的是一个包中的某个对象,而views引用的是模块中的对象
+}}}
+
+从python2.7用户手册中了解到,可以这样
+views.py
+{{{
+from . import app
+}}}
+当然也表示从包中引用
+
+但如果__init__.py改为别的名称(比如test),则没有问题.
+run.py
+{{{
+    from app.test import app
+    from app.views import *
+}}}
+他们都是从模块中导入的app
+
+这里可见__init__.py不易被察觉的特殊性

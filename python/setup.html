@@ -139,6 +139,85 @@ setup(
 </ul>
 
 <h2 id="toc_0.5"> 特殊的_<em>init</em>_.py</h2>
+<pre>
+run.py
+|--app
+    |--__init__.py
+    |--views.py
+</pre>
+
+<p>
+_<em>init</em>_.py
+</p>
+<pre>
+app=Flask(__name__)
+</pre>
+
+<p>
+views.py
+</p>
+<pre>
+from app import app
+</pre>
+
+<p>
+run.py
+</p>
+<pre>
+    from app import app
+    from app.views import *
+</pre>
+
+<p>
+这样是可行的,但是views.py在模块内不能被引用,只有对其作为包的一部分引用
+</p>
+
+<p>
+若想让其在包内可以被作为模块引用,可以这样改:
+</p>
+
+<p>
+views.py
+</p>
+<pre>
+from __init__ import app
+</pre>
+
+<p>
+但是这样改在运行run的时候出现问题了,原因在于:
+</p>
+<pre>
+    通过比较app.__setattri__发现
+    run中的app和views中的app指向不同的地址,所以出现无法定向的错误
+    run中引用的是一个包中的某个对象,而views引用的是模块中的对象
+</pre>
+
+<p>
+从python2.7用户手册中了解到,可以这样
+views.py
+</p>
+<pre>
+from . import app
+</pre>
+<p>
+当然也表示从包中引用
+</p>
+
+<p>
+但如果_<em>init</em>_.py改为别的名称(比如test),则没有问题.
+run.py
+</p>
+<pre>
+    from app.test import app
+    from app.views import *
+</pre>
+<p>
+他们都是从模块中导入的app
+</p>
+
+<p>
+这里可见_<em>init</em>_.py不易被察觉的特殊性
+</p>
  
         <div>
    <div>

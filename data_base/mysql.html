@@ -72,6 +72,43 @@ SHOW DATABASES;
 <blockquote>
 USE test
 </blockquote>
+<h2 id="toc_1.4"> 查看表</h2>
+<blockquote>
+SHOW TABLES;
+</blockquote>
+<h2 id="toc_1.5"> 创建表</h2>
+<blockquote>
+-&gt; CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),
+-&gt; species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
+</blockquote>
+<h2 id="toc_1.6"> 查看表的项目</h2>
+<blockquote>
+DESCRIBE pet;
+</blockquote>
+<h2 id="toc_1.7"> 查看表的数据</h2>
+<blockquote>
+SELECT * FROM pet;
+</blockquote>
+<h2 id="toc_1.8"> 创建和删除用户</h2>
+<blockquote>
+<a href="http://minfirefox.iteye.com/blog/267329">http://minfirefox.iteye.com/blog/267329</a>
+</blockquote>
+
+<h1 id="toc_2"> ERROR 1044 (42000)</h1>
+<pre>
+Access denied for user ''@'localhost' to database 'mysql'  
+方法二：
+1.关闭mysql
+   # service mysqld stop
+2.屏蔽权限
+   # mysqld_safe --skip-grant-table
+   屏幕出现： Starting demo from .....
+3.新开起一个终端输入
+   # mysql -u root mysql
+   mysql&gt; delete from user where USER='';
+   mysql&gt; FLUSH PRIVILEGES;//记得要这句话，否则如果关闭先前的终端，又会出现原来的错误
+   mysql&gt; \q
+</pre>
  
         <div>
    <div>

@@ -20,7 +20,7 @@
 == 创建和删除用户 ==
     http://minfirefox.iteye.com/blog/267329
 
-= ERROR 1044 (42000)=
+== ERROR 1044 (42000)==
 {{{
 Access denied for user ''@'localhost' to database 'mysql'  
 方法二：
@@ -35,3 +35,6 @@ Access denied for user ''@'localhost' to database 'mysql'
    mysql> FLUSH PRIVILEGES;//记得要这句话，否则如果关闭先前的终端，又会出现原来的错误
    mysql> \q
 }}}
+== 增加字段 ==
+    ALTER TABLE table_name ADD file_name varchar(10);
+    ALTER TABLE table_name DROP field_name

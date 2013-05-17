@@ -1,0 +1,2 @@
+%title DataBase
+* [[./mysql|MySql的基本使用]]

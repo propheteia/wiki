@@ -1,5 +1,5 @@
 %title 维基 
-| [[./python/python|Python]] | [[./cpp/cpp|C++]]                 | [[lua]]                         | [[./html/css|CSS&HTML]]                        |
-| [[./git/git|Git]]          | [[./blog/blog|Blog]]              |                                 | [[./soft/software|Software]]                   |
-| [[./algorithm|算法]]       | [[./robot/robot| Humanoid Robot]] | [[./sim/sim|Simulation System]] | [[./data_structure/data_structure|data_struc]] |
-| [[./vim/vim|Vim]]          | [[./linux/linux|Linux]]           | [[./latex|Latex]]               | [[./web|Web]]                                  |
+| [[./python/python|Python]] | [[./cpp/cpp|C++]]                 | [[lua]]                            | [[./html/css|CSS&HTML]]                        |
+| [[./git/git|Git]]          | [[./blog/blog|Blog]]              | [[./data_base/data_base|Database]] | [[./soft/software|Software]]                   |
+| [[./algorithm|算法]]       | [[./robot/robot| Humanoid Robot]] | [[./sim/sim|Simulation System]]    | [[./data_structure/data_structure|data_struc]] |
+| [[./vim/vim|Vim]]          | [[./linux/linux|Linux]]           | [[./latex|Latex]]                  | [[./web|Web]]                                  |

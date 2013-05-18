@@ -53,10 +53,36 @@ class Post(db.Model):
         return '<Post %r>' % (self.body) 
 
 }}}
-这样理解:建立了User的表,有四项(id,nickname,email,role)内容.但是
+这样理解:建立了User的表,有四项(id,nickname,email,role).还有一项内容,是一个表(取名为Post).这样某个对象可以对属于它的Post对象进行操作.
 
+所以建立如下关系:
+    posts = db.relationship('Post', backref = 'author', lazy = 'dynamic')
+
+这个句话告诉Post对象,我已经为了开了大门,你只要建立ForeignKey就可以连接到我.第一个参数为Post,所以别的类是连不上我的.只有你能连接我,而且你必须连接我,否则我的后门不是白开了? 你进来的时候只要说"author"就可以了.
+
+你把我和你的关系作为表的一部分.这里选择了user.id(必须是User的primary_key)
+
+那么能否通过Post找到User呢?由于Post有了user_id,所以可以确定能够找到User.这也是上面一条的原因.
+
+那么lazy是什么意思?
 {{{
+    lazy defines when SQLAlchemy will load the data from the database:
+    'select' (which is the default) means that SQLAlchemy will load the data as necessary in one go using a standard select statement.
+    'joined' tells SQLAlchemy to load the relationship in the same query as the parent using a JOIN statement.
+    'subquery' works like 'joined' but instead SQLAlchemy will use a subquery.
+    'dynamic' is special and useful if you have may items. Instead of loading the items SQLAlchemy will return another query object which you can further refine before loading them items. This is usually what you want if you expect more than a handful of items for this relationship.
 }}}
+从目前的需要来看,'select' 和 'dynamic' 会作为我的选择.
 
+如果User只有一个Post,那么选择'select';如果User有多个Post,则选择'dynamic'
 
+在比如,article属于一个目录,却可能有多个标签.那么对于目录,选择'select';对于标签,选择'dynamic'
 
+于此同时,对于一个标签,可能有多篇文章;对于同一个目录,也可以有多篇文章,那么怎样设置backref的lazy状态呢?通过backref()
+    {{{
+    class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    addresses = db.relationship('Address',
+        backref=db.backref('person', lazy='joined'), lazy='dynamic')
+    }}}

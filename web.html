@@ -102,6 +102,38 @@ $ svn revert --
 </p>
 
 <h3 id="toc_1.1.4"> <a href="在SAE上部署代码.html">在SAE上部署代码</a></h3>
+
+<h2 id="toc_1.2"> sqlalchemy</h2>
+<pre>
+ROLE_USER = 0
+ROLE_ADMIN = 1
+ 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    nickname = db.Column(db.String(64), unique = True)
+    email = db.Column(db.String(120), unique = True)
+    role = db.Column(db.SmallInteger, default = ROLE_USER)
+    posts = db.relationship('Post', backref = 'author', lazy = 'dynamic')
+ 
+    def __repr__(self):
+        return '&lt;User %r&gt;' % (self.nickname)
+ 
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    body = db.Column(db.String(140)) 
+    timestamp = db.Column(db.DateTime)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id')) 
+ 
+    def __repr__(self):  
+        return '&lt;Post %r&gt;' % (self.body) 
+
+</pre>
+<p>
+这样理解:建立了User的表,有四项(id,nickname,email,role)内容.但是
+</p>
+
+<pre>
+</pre>
  
         <div>
    <div>

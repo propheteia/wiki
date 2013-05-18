@@ -17,6 +17,8 @@
     DESCRIBE pet;
 == 查看表的数据 ==
     SELECT * FROM pet;
+== 删除表 ==
+    DROP TABLE pet;
 == 创建和删除用户 ==
     http://minfirefox.iteye.com/blog/267329
 

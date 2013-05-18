@@ -89,12 +89,16 @@ DESCRIBE pet;
 <blockquote>
 SELECT * FROM pet;
 </blockquote>
-<h2 id="toc_1.8"> 创建和删除用户</h2>
+<h2 id="toc_1.8"> 删除表</h2>
+<blockquote>
+DROP TABLE pet;
+</blockquote>
+<h2 id="toc_1.9"> 创建和删除用户</h2>
 <blockquote>
 <a href="http://minfirefox.iteye.com/blog/267329">http://minfirefox.iteye.com/blog/267329</a>
 </blockquote>
 
-<h2 id="toc_1.9"> ERROR 1044 (42000)</h2>
+<h2 id="toc_1.10"> ERROR 1044 (42000)</h2>
 <pre>
 Access denied for user ''@'localhost' to database 'mysql'  
 方法二：
@@ -109,7 +113,7 @@ Access denied for user ''@'localhost' to database 'mysql'
    mysql&gt; FLUSH PRIVILEGES;//记得要这句话，否则如果关闭先前的终端，又会出现原来的错误
    mysql&gt; \q
 </pre>
-<h2 id="toc_1.10"> 增加字段</h2>
+<h2 id="toc_1.11"> 增加字段</h2>
 <blockquote>
 ALTER TABLE table_name ADD file_name varchar(10);
 ALTER TABLE table_name DROP field_name

@@ -58,9 +58,9 @@ class Post(db.Model):
 所以建立如下关系:
     posts = db.relationship('Post', backref = 'author', lazy = 'dynamic')
 
-这个句话告诉Post对象,我已经为了开了大门,你只要建立ForeignKey就可以连接到我.第一个参数为Post,所以别的类是连不上我的.只有你能连接我,而且你必须连接我,否则我的后门不是白开了? 你进来的时候只要说"author"就可以了.
+这个句话告诉Post对象,我已经为了开了大门,你在建立时可以把我联系起来.第一个参数为Post,所以别的类是连不上我的.只有你能连接我. 你进来的时候只要说"author"就可以了.
 
-你把我和你的关系作为表的一部分.这里选择了user.id(必须是User的primary_key)
+你也可以通过ForeignKey把我的primary_key并且作为表的一部分(须以_id结尾).这里选择了user.id(必须是User的primary_key)
 
 那么能否通过Post找到User呢?由于Post有了user_id,所以可以确定能够找到User.这也是上面一条的原因.
 

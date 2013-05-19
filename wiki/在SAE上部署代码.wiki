@@ -1,4 +1,4 @@
-
+= svn基本操作 =
 = 如何使用virtualenv管理依赖关系 =
 http://python.sinaapp.com/doc/faq.html#id5
 pip 和 easy_install 分别用作什么？区别？

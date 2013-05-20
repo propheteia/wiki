@@ -1,9 +1,8 @@
 =Linux=
-* [[./shell|bash命令]]
+* [[./shell|bash基本命令]]
 * [[./tools|Linux工具]]
 * [[./bash|Bash脚本编写]]
-* [[./awesome|Awesome平铺式面板]]
 * [[./tar|tar解压]]
-* [[./linux_operation|linux操作系统]]
-* [[视频解码的问题]]
+* [[./linux_operation|linux系统]]
 * [[./deamon|Linux服务]]
+* [[./video_code|视频解码的问题]]

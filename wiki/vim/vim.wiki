@@ -1,4 +1,0 @@
-%title vim
-* [[./someskills|Vim常用技巧]]
-* [[./vimwiki|vimwiki]]
-

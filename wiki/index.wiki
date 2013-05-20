@@ -1,7 +1,7 @@
 %title 维基 
-| [[./cpp/cpp|C++]]           | [[./c/c|C]]                      | [[./python/python|Python]]     | [[./linux/linux| Linux]]    |          |
-| [[./flask/flask|Flask框架]] | [[./web_design/desith|HTML&CSS]] | [[./server/server|服务器架设]] | [[./database/db|数据库]]    |          |
-| [[./tools/vim|Vim]]         | [[./tools/latex|Latex]]          | [[./tools/git|Git]]            | [[./tools/awesome|Awesome]] |          |
-| 数据结构                    | 算法                             | 仿真系统设计                   | 仿人机器人                  | 我的书单 |
+| [[./cpp/cpp|C++]]           | [[./c/c|C]]                      | [[./python/python|Python]]     | [[./linux/linux| Linux]]    |
+| [[./flask/flask|Flask框架]] | [[./web_design/desith|HTML&CSS]] | [[./server/server|服务器架设]] | [[./database/db|数据库]]    |
+| [[./tools/vim|Vim]]         | [[./tools/latex|Latex]]          | [[./tools/git|Git]]            | [[./tools/awesome|Awesome]] |
+| ./datastructure数据结构     | 算法                             | 仿真系统设计                   | 仿人机器人                  |
 
 

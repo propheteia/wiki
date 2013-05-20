@@ -1,0 +1,221 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> 一次Flask的简单运用 | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>一次Flask的简单运用</h1>
+    </hgroup>
+
+    <nav>
+        <ul>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
+            <li><a href="../about.html">关于</a><li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h1 id="toc_1"> 文件目录</h1>
+<pre>
+  Flask_s
+    |--index.wsgi
+    |--config.yaml
+    |--/static
+    |--/app
+        |--__init__.py
+        |--database.py 
+        |--db_wrapper.py
+        |--views.py
+        |--admin.py
+        |--/templates
+    |--/virtualenv.bundle
+    |--config.py
+    |--run.py
+</pre>
+<p>
+查看代码
+</p>
+<h1 id="toc_2"> 环境建立</h1>
+<h2 id="toc_2.1"> 本地环境</h2>
+<p>
+使用virtualenv建立隔离环境.用pip install 基本上可以安装所有需求的模块.注意MySQLd包和相应的库
+</p>
+<h2 id="toc_2.2"> 在线环境</h2>
+<p>
+记录个网址:<a href="http://python.sinaapp.com/doc/">http://python.sinaapp.com/doc/</a>
+</p>
+
+<p>
+从<a href="http://sae.sina.com.cn/?m=devcenter&amp;catId=290">开发文档</a>中可以看到,部分模块已经预装:
+</p>
+<ul>
+<li>
+flask
+
+<li>
+flask-sqlalchemy
+
+<li>
+werkzeug
+
+<li>
+jinja2
+
+<li>
+sqlalchemy
+
+<li>
+MySQLdb
+
+</ul>
+
+<p>
+需要自己安装的模块:
+</p>
+<ul>
+<li>
+Flask==0.9
+
+<li>
+Flask-Admin==1.0.5
+
+<li>
+Flask-Login==0.1.3
+
+<li>
+Flask-SQLAlchemy==0.16
+
+<li>
+Flask-WTF==0.8.3
+
+<li>
+SQLAlchemy==0.8.1
+
+<li>
+WTForms==1.0.4
+
+</ul>
+<p>
+因为考虑到预装模块的Flask的版本太低,不能使用扩展模块,所以将Flask模块部署上去
+</p>
+
+<p>
+制作<a href="http://python.sinaapp.com/doc/faq.html\#virtualenv">virtualenv.bundle</a>的方法:
+</p>
+<pre>
+    (ENV)$ pip install Flask Flask-Cache Flask-SQLAlchemy
+    (ENV)$ pip freeze &gt; requirements.txt
+    (ENV)$ bundle_local.py -r requirements.txt
+    (ENV)$ cd virtualenv.bundle/
+    (ENV)$ zip -r ../virtualenv.bundle.zip .
+
+    import os
+    import sys
+    app_root = os.path.dirname(__file__)
+    # 两者取其一
+    # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle'))
+    # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle.zip'))
+</pre>
+<h1 id="toc_3"> 批量数据导入数据库</h1>
+<p>
+安装的Admin模块可以在后台进行数据库录入.但是对于数量较大的结构性的数据,就显的低效
+</p>
+
+<p>
+一种方式是从本地数据库移到web数据库.也可以在web数据库批量录入
+</p>
+
+<p>
+下面是对比赛报名信息的导入,信息包括学号,姓名,邮件,电话,性别,学院,角色,这些信息以空格符分开记录在"table"中,每行记录一个人的信息.(当然,我让他们发过来就是按照这样的格式,可是没有告诉他们用纯文本,所以有Word,有Excel,还是费了不少时间将这些复制到"table"上)
+</p>
+<pre>
+#db_operator.py
+from app.database import db, User
+#coding=utf8
+
+renew = False
+if renew == True:
+    db.drop_all()
+    db.create_all()
+
+def import_player():
+    file = open("table", "r")
+    a=file.readline()
+    while a:
+        b=a.split()
+        print b[0],b[1],b[3],b[4],b[5]
+        if len(b) == 7:
+            u = User(b[0],b[1],b[3],b[4],b[5],'contestant',b[6])
+        else:
+            u = User(b[0],b[1],b[3],b[4],b[5],'contestant')
+        db.session.add(u)
+        db.session.commit()
+        a=file.readline()
+</pre>
+
+<p>
+在index.wsgi中加入
+</p>
+<blockquote>
+from db_operator import import_player
+import_player()
+</blockquote>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>

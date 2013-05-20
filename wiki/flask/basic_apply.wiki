@@ -1,0 +1,94 @@
+%title 一次Flask的简单运用
+= 文件目录 =
+{{{
+  Flask_s
+    |--index.wsgi
+    |--config.yaml
+    |--/static
+    |--/app
+        |--__init__.py
+        |--database.py 
+        |--db_wrapper.py
+        |--views.py
+        |--admin.py
+        |--/templates
+    |--/virtualenv.bundle
+    |--config.py
+    |--run.py
+}}}
+查看代码
+= 环境建立 =
+== 本地环境 ==
+使用virtualenv建立隔离环境.用pip install 基本上可以安装所有需求的模块.注意MySQLd包和相应的库
+== 在线环境 ==
+记录个网址:http://python.sinaapp.com/doc/
+
+从[[http://sae.sina.com.cn/?m=devcenter&catId=290|开发文档]]中可以看到,部分模块已经预装:
+* flask
+* flask-sqlalchemy
+* werkzeug
+* jinja2
+* sqlalchemy
+* MySQLdb
+
+需要自己安装的模块:
+* Flask==0.9
+* Flask-Admin==1.0.5
+* Flask-Login==0.1.3
+* Flask-SQLAlchemy==0.16
+* Flask-WTF==0.8.3
+* SQLAlchemy==0.8.1
+* WTForms==1.0.4
+因为考虑到预装模块的Flask的版本太低,不能使用扩展模块,所以将Flask模块部署上去
+
+制作[[http://python.sinaapp.com/doc/faq.html#virtualenv|virtualenv.bundle]]的方法:
+{{{
+    (ENV)$ pip install Flask Flask-Cache Flask-SQLAlchemy
+    (ENV)$ pip freeze > requirements.txt
+    (ENV)$ bundle_local.py -r requirements.txt
+    (ENV)$ cd virtualenv.bundle/
+    (ENV)$ zip -r ../virtualenv.bundle.zip .
+
+    import os
+    import sys
+    app_root = os.path.dirname(__file__)
+    # 两者取其一
+    # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle'))
+    # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle.zip'))
+}}}
+= 批量数据导入数据库 =
+安装的Admin模块可以在后台进行数据库录入.但是对于数量较大的结构性的数据,就显的低效
+
+一种方式是从本地数据库移到web数据库.也可以在web数据库批量录入
+
+下面是对比赛报名信息的导入,信息包括学号,姓名,邮件,电话,性别,学院,角色,这些信息以空格符分开记录在"table"中,每行记录一个人的信息.(当然,我让他们发过来就是按照这样的格式,可是没有告诉他们用纯文本,所以有Word,有Excel,还是费了不少时间将这些复制到"table"上)
+{{{
+#db_operator.py
+from app.database import db, User
+#coding=utf8
+
+renew = False
+if renew == True:
+    db.drop_all()
+    db.create_all()
+
+def import_player():
+    file = open("table", "r")
+    a=file.readline()
+    while a:
+        b=a.split()
+        print b[0],b[1],b[3],b[4],b[5]
+        if len(b) == 7:
+            u = User(b[0],b[1],b[3],b[4],b[5],'contestant',b[6])
+        else:
+            u = User(b[0],b[1],b[3],b[4],b[5],'contestant')
+        db.session.add(u)
+        db.session.commit()
+        a=file.readline()
+}}}
+
+在index.wsgi中加入
+    from db_operator import import_player
+    import_player()
+
+

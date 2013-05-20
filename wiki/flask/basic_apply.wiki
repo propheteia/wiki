@@ -56,6 +56,13 @@
     # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle'))
     # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle.zip'))
 }}}
+== 怎样区分本地环境还是SAE? ==
+{{{
+if 'SERVER_SOFTWARE' in os.environ:
+    # SAE
+else:
+    # Local
+}}}
 = 批量数据导入数据库 =
 安装的Admin模块可以在后台进行数据库录入.但是对于数量较大的结构性的数据,就显的低效
 
@@ -91,4 +98,7 @@ def import_player():
     from db_operator import import_player
     import_player()
 
+= 遇到奇怪的问题,怎么办? =
+不要想把出错模块都弄明白,超过半小时不能解决的话,直接按正确的步骤再来一遍!多次经历告诉我有时候错在微不足道却永远想不到的地方.
 
+svn还不太会的时候,上传代码出了问题,少传了几个文件,浪费了一天,泪的教训!

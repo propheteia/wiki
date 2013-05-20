@@ -1,0 +1,213 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> Awesome 平铺式面板 | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>Awesome 平铺式面板</h1>
+    </hgroup>
+
+    <nav>
+        <ul>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
+            <li><a href="../about.html">关于</a><li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h2 id="toc_0.1"> 安装</h2>
+<h3 id="toc_0.1.1"> rpm包安装</h3>
+<p>
+<a href="http://awesome.naquadah.org/wiki/Awesome-3-fedora">安装包</a>
+</p>
+<blockquote>
+u -c 'wget -nd -P /etc/yum.repos.d <a href="http://repos.fedorapeople.org/repos/thm/awesome/fedora-awesome.repo'">http://repos.fedorapeople.org/repos/thm/awesome/fedora-awesome.repo'</a>  <br>
+su -c 'yum install awesome'
+</blockquote>
+<h3 id="toc_0.1.2"> 在gnome-session中用awesome的命令（我的GNOME是3.2版本）</h3>
+<p>
+ <a href="http://awesome.naquadah.org/wiki/Quickly_Setting_up_Awesome_with_Gnome">Quickly Setting up Awesome with Gnome</a>
+</p>
+
+<p>
+注意这条命令：gsettings set org.gnome.desktop.session session-name awesome
+</p>
+
+<p>
+（Doing this means that selecting "Gnome" in your display manager now runs awesome.）
+</p>
+
+<p>
+如果选择登录Gnome，同样会登录awesome.可通过将指令中的“awesome"改为”gnome"恢复Gnome登录。
+</p>
+<h2 id="toc_0.2"> 配置</h2>
+<p>
+<strong>参考：</strong> <a href="http://josephpan.net/blog/?p=992">Joseph Pan's Blog </a>
+</p>
+
+<p>
+打开~/.config/awesome/rc.lua
+</p>
+
+<p>
+<strong>我的必要配置</strong> 
+</p>
+
+<h4 id="toc_0.2.0.1">1 终端:</h4>
+<blockquote>
+terminal="gnome-terminal"
+</blockquote>
+
+<p>
+ 　　并且在gnome-terminal首选项中将菜单栏和滚条去掉，美观一点。
+</p>
+
+<h4 id="toc_0.2.0.2">2 加入widget一些注意的地方:</h4>
+<p>
+<strong>参考：</strong> <a href="http://awesome.naquadah.org/wiki/Wicked/zh-hans#Source_Mage_GNU.2FLinux">http://awesome.naquadah.org/wiki/Wicked/zh-hans#Source_Mage_GNU.2FLinux</a>
+</p>
+
+<p>
+cpuwidget =awful.widget.graph() 这句话必须在声明“awful”包(require("awful"))之后
+</p>
+
+<p>
+增加底栏的wibox：
+</p>
+<blockquote>
+mywibox2=awful.wibox({position="bottom",screen=1})<br>
+mywibox2.widgets={memwidget,cpuwidget,layout = awful.widget.layout.horizontal.rightleft}
+</blockquote>
+<p>
+可以添加在默认的mywibox[s]执行完毕（end）之后
+</p>
+
+<h4 id="toc_0.2.0.3">3 开机自启动:</h4>
+<pre class="brush:python">
+-- Autorun programs
+autorun = true
+autorunApps = 
+{ 
+    "firefox",
+    "thunderbird",
+     “ibus-daemon",
+}
+
+if autorun then
+    for app = 1, #autorunApps do
+        awful.util.spawn_with_shell(autorunApps[app])
+    end
+end
+</pre>
+<h4 id="toc_0.2.0.4">4 某个tag下固定的工作环境创建:</h4>
+<p>
+增加快捷键，自动在某个工作界面下(tag)打开需要的应用。代码如下:
+</p>
+<pre class="brush:python">
+stv_code = "/home/user/project"
+awful.key({ modkey, "Shift" }, "n",
+    function()
+    awful.tag.setmwfact(0.15, tags[1][5])
+    awful.tag.viewonly(tags[1][5])
+    awful.util.spawn_with_shell(terminal .. " --working-directory=" ..stv_code )
+    awful.util.spawn_with_shell(terminal .. " --working-directory=" ..stv_code )
+    awful.util.spawn_with_shell(terminal .. " --working-directory=" ..stv_code )
+    end),
+</pre>
+<p>
+这里注意lua语言字符串相加是用' .. ',由于spawn_with_shell是用shell脚本打开的，所以要注意命令要有空格
+参考: <img src="http://stackoverflow.com/questions/5120399/setting-windows-layout-for-a-specific-application-in-awesome-wm" alt="stackoverflow" />
+</p>
+<h4 id="toc_0.2.0.5">5 自定义快捷键:</h4>
+<p>
+增加xlock锁屏和firefox的快捷键
+</p>
+<pre class="brush:python">
+    awful.key({  }, "F12", function () awful.util.spawn("xlock") end),
+    awful.key({  }, "F11", function () awful.util.spawn("firefox") end),
+</pre>
+<h2 id="toc_0.3"> 使用感想:</h2>
+<p>
+用了两个月了，Awesome给我工作和学习带来了极大的方便。难以想像没有它，我需要在不同的窗口中切来切去。同时查看code,debug,log，节省了大量时间。
+</p>
+
+<p>
+除此之外，它还具有众多 <a href="http://awesome.naquadah.org/wiki/Main_Page">插件</a> ，一切都替你做好了，你可以变得更“懒”-.-
+</p>
+
+<h2 id="toc_0.4"> 配置脚本</h2>
+<h4 id="toc_0.4.0.1">1 有关lua语言</h4>
+<p>
+网址:<a href="http://www.cnblogs.com/ly4cn/archive/2006/08/04/467550.html">http://www.cnblogs.com/ly4cn/archive/2006/08/04/467550.html</a>
+</p>
+
+<p>
+Table是怎样定义的?<br>
+</p>
+<h4 id="toc_0.4.0.2">2 添加vicious.widget.hddtemp</h4>
+<p>
+首先要安装hddtemp
+</p>
+
+<p>
+然后启动服务 --&gt; hddtemp -d
+</p>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>

@@ -1,4 +1,4 @@
-=Awesome 平铺式面板=
+%title Awesome 平铺式面板
 ==安装==
 === rpm包安装 ===
 [[http://awesome.naquadah.org/wiki/Awesome-3-fedora|安装包]]

@@ -5,13 +5,11 @@
  
 * [[./regular_exp|python正则表达式]]
  
-* [[./excel|python操作Excel--xlrd]]
- 
 * [[./virtualenv|python环境隔离virtualenv]]
  
-* [[日志管理模块]]
+* [[./logging|日志管理模块]]
  
-* [[./setup|distutils生成模块]]
+* [[./distutils|distutils生成模块]]
  
 * [[./pep8|PEP8标准阅读]]
  

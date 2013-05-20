@@ -1,5 +1,5 @@
 %title distutils 模块 
-== 包和模块的文件模型 ==
+= 包和模块的文件模型 =
 如果你发现自己正在用 Python 编写一个大型的子系统 (或者，很有可能，当你意识到你的小型子系统已经成长为一个大型子系统时)，你应该花费些时间设计一个好的包架构。它是 Python 所擅长的事情之一，所以应该好好利用它。 
 
 {{{
@@ -52,7 +52,7 @@ setup(
     Platform: UNKNOWN
 }}}
 
-== python寻找模块的顺序 ==
+= python寻找模块的顺序 =
 {{{
 1. 首先判断这个module是不是built-in即内建模块，
 　 如果是则引入内建模块，如果不是则在一个称为sys.path的list中寻找
@@ -67,12 +67,12 @@ setup(
 2. 生成egg-info的文件,包含包的信息
 }}}
 
-== 上传包,pip安装 ==
+= 上传包,pip安装 =
 * http://www.ibm.com/developerworks/opensource/library/os-pythonpackaging/index.html ,
 * http://docs.python.org/2/distutils/packageindex.html#package-index
 * https://pypi.python.org/pypi/mypypi
 
-== 特殊的__init__.py ==
+= 特殊的__init__.py =
 {{{
 run.py
 |--app

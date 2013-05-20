@@ -1,6 +1,6 @@
 %title Virtualenv 
-== 基本使用方法 ==
-==== 以安装Flask环境为例: ====
+= 基本使用方法 =
+== 以安装Flask环境为例: ==
 {{{
 cd project  
 virtualenv env
@@ -8,12 +8,12 @@ virtualenv env
 easy_install Flask (用easy_install -m Flask卸载)
 }}}
     退出环境：deactivate
-==== 简单分析 ====
+= 简单分析 =
 来自:http://www.cnblogs.com/babykick/archive/2011/12/05/2276825.html
     在创建虚拟环境时，我们可以添加 "--no-site-packages" 参数指示虚拟环境不要访问 global site-packages。
     $ virtualenv --no-site-packages test2
     搜索路径中除了 Python 基本库路径外，已经没有了 global site-packages。这样即便我们在安装了大量开发包的的系统里，也可以隔离出一个干净的测试环境。
-== setup.py的安装和卸载 ==
+= setup.py的安装和卸载 =
 {{{
 cd project
 virtualenv env
@@ -44,7 +44,7 @@ env/lib/python2.7/site-packages/ReText-4.0.0-py2.7.egg-info
     cat log ｜ xagrs rm －rf
 
 当然setup模块应该有直接删除的命令。
-== 隔离环境能否访问全局的site-packages目录？ ==
+= 隔离环境能否访问全局的site-packages目录？ =
 在隔离环境下安装Retext时发现没有pyqt.core模块，但在全局环境下就没有这个问题。
 经过比较,发现默认情况下使用--no-site-packages,于是不能访问系统全局的site-packages目录。
 
@@ -70,7 +70,7 @@ $ virtualenv [OPTIONS] DEST_DIR
 参考：[[https://virtualenv-chinese-docs.readthedocs.org/en/latest/#id16|virtualenv_doc]]
 
 [[http://stackoverflow.com/questions/3371136/revert-the-no-site-packages-option-with-virtualenv|Revert the --no-site-packages option with virtualenv]]
-== 关于site-packages目录 ==
+= 隔离环境,但要访问部分全局模块 =
 [[http://stackoverflow.com/questions/249283/virtualenv-on-ubuntu-with-no-site-packages|site-package]]
 
 

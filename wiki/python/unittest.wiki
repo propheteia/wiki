@@ -1,5 +1,5 @@
 %title Python的单元测试
-== TestCase: ==
+= TestCase: =
 | Method                    | Checks that          |
 |---------------------------|----------------------|
 | assertEqual(a, b)         | a == b               |

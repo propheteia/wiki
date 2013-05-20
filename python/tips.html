@@ -55,7 +55,7 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<h2 id="toc_0.1"> with:</h2>
+<h1 id="toc_1"> with:</h1>
 <pre class="brush:python">
 import sys
 class test:
@@ -78,7 +78,7 @@ t is 1, yes, it is
 exit
 end
 </blockquote>
-<h2 id="toc_0.2"> 当模块与其包含的包重名</h2>
+<h1 id="toc_2"> 当模块与其包含的包重名</h1>
 <p>
 创建文件：
 </p>
@@ -109,7 +109,7 @@ AttributeError: 'module' object has no attribute 'warning'
 新建的文件名要避免"普通“
 </p>
 
-<h2 id="toc_0.3"> hasattr()和 getattr()</h2>
+<h1 id="toc_3"> hasattr()和 getattr()</h1>
 <p>
 hasattr()和 getattr()分别判断对象是否有某个属性及获得某个属性值。
 In [35]: hasattr(a, 'split')
@@ -118,7 +118,7 @@ In [36]: getattr(a, 'split')
 Out[36]: &lt;built-in method split of str object at 0x831abe0&gt;
 </p>
 
-<h2 id="toc_0.4"> 函式编程</h2>
+<h1 id="toc_4"> 函式编程</h1>
 <p>
 在函式编程中,最著名的特色就是高序(High Order)。简单地说,就是定制一个算法,按规则来指定容器中的每一个元素。最常用的 High Order 为:
 </p>
@@ -136,7 +136,7 @@ Out[36]: &lt;built-in method split of str object at 0x831abe0&gt;
 的参数之一,与下一个元素再计算,直至最终获得一个总的结果。
 
 </ul>
-<h3 id="toc_0.4.1"> map</h3>
+<h2 id="toc_4.1"> map</h2>
 <pre def foo(x):>
 
         return x*x
@@ -150,13 +150,51 @@ map 允许接收三个或三个以上的参数
 <p>
 用途:函数要执行多次,且参数有一定的规律
 </p>
-<h2 id="toc_0.5"> filter</h2>
+<h1 id="toc_5"> filter</h1>
 <p>
 用途:对结果过滤
 </p>
-<h2 id="toc_0.6"> reduce</h2>
+<h1 id="toc_6"> reduce</h1>
 <p>
 用途:方便地实现了计算结果的重用,节省了大量的 CPU 周期。在实际应用中,reduce 可以用来实现统计计算或时序依赖的遍历行为。
+</p>
+
+<h1 id="toc_7"> xlrd</h1>
+<p>
+Open the workbook
+</p>
+<pre class="brush:python">
+import xlrd
+wb = xlrd.open_workbook('myworkbook.xls')
+Check the sheet names
+wb.sheet_names()
+Get the first sheet either by index or by name
+sh = wb.sheet_by_index(0)
+sh = wb.sheet_by_name(u'Sheet1')
+</pre>
+<p>
+Iterate through rows, returning each as a list that you can index:
+</p>
+<pre class="brush:python">
+for rownum in range(sh.nrows):
+    print sh.row_values(rownum)
+</pre>
+<p>
+If you just want the first column:
+</p>
+<pre class="brush:python">
+first_column = sh.col_values(0)
+</pre>
+<p>
+Index individual cells:
+</p>
+<pre class="brush:python">
+cell_A1 = sh.cell(0,0).value
+cell_C4 = sh.cell(rowx=3,colx=2).value
+</pre>
+<p>
+附文：python 解析xml
+~                    
 </p>
  
         <div>

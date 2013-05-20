@@ -1,5 +1,5 @@
 %title Python
-== with: ==
+= with: =
 {{{class="brush:python"
 import sys
 class test:
@@ -18,7 +18,7 @@ print "end"
     t is 1, yes, it is 
     exit
     end
-== 当模块与其包含的包重名 ==
+= 当模块与其包含的包重名 =
 创建文件：
     vim logging.py
 编辑脚本：
@@ -39,20 +39,20 @@ AttributeError: 'module' object has no attribute 'warning'
 错误信息中看出，import搜索的路径当前文件夹处于优先位置。因此
 新建的文件名要避免"普通“
 
-== hasattr()和 getattr() ==
+= hasattr()和 getattr() =
 hasattr()和 getattr()分别判断对象是否有某个属性及获得某个属性值。
 In [35]: hasattr(a, 'split')
 Out[35]: True
 In [36]: getattr(a, 'split')
 Out[36]: <built-in method split of str object at 0x831abe0>
 
-== 函式编程 ==
+= 函式编程 =
 在函式编程中,最著名的特色就是高序(High Order)。简单地说,就是定制一个算法,按规则来指定容器中的每一个元素。最常用的 High Order 为:
 * 映射,也就是将算法施于每个元素,将返回值合并为一个新的容器。
 * 过滤,将算法施于每个元素,将返回值为真的元素合并为一个新的容器。
 * 合并,将算法(可能携带一个初值)依次施于每个元素,将返回值作为下一步计算
 * 的参数之一,与下一个元素再计算,直至最终获得一个总的结果。
-=== map ===
+== map ==
  {{{def foo(x):
 
         return x*x
@@ -62,9 +62,36 @@ Out[36]: <built-in method split of str object at 0x831abe0>
 map 允许接收三个或三个以上的参数
 
 用途:函数要执行多次,且参数有一定的规律
-== filter ==
+= filter =
 用途:对结果过滤
-== reduce ==
+= reduce =
 用途:方便地实现了计算结果的重用,节省了大量的 CPU 周期。在实际应用中,reduce 可以用来实现统计计算或时序依赖的遍历行为。
 
+= xlrd =
+Open the workbook
+{{{class="brush:python"
+import xlrd
+wb = xlrd.open_workbook('myworkbook.xls')
+Check the sheet names
+wb.sheet_names()
+Get the first sheet either by index or by name
+sh = wb.sheet_by_index(0)
+sh = wb.sheet_by_name(u'Sheet1')
+}}}
+Iterate through rows, returning each as a list that you can index:
+{{{class="brush:python"
+for rownum in range(sh.nrows):
+    print sh.row_values(rownum)
+}}} 
+If you just want the first column:
+{{{class="brush:python"
+first_column = sh.col_values(0)
+}}}
+Index individual cells:
+{{{class="brush:python"
+cell_A1 = sh.cell(0,0).value
+cell_C4 = sh.cell(rowx=3,colx=2).value
+}}}
+附文：python 解析xml
+~                    
 

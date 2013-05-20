@@ -86,3 +86,4 @@ class Post(db.Model):
     addresses = db.relationship('Address',
         backref=db.backref('person', lazy='joined'), lazy='dynamic')
     }}}
+

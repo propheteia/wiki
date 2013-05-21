@@ -1,0 +1,146 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> Programing Pearls | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>Programing Pearls</h1>
+    </hgroup>
+
+    <nav>
+        <ul>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
+            <li><a href="../about.html">关于</a><li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h1 id="toc_1"> 七段代码显示的问题</h1>
+<pre>
+#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+void print_str(const string &amp;n);
+char number[] = {0x7D, 0x28, 0x37, 0x57, 0x5A, 0x4F, 0x6F, 0x54, 0x7F, 0x5E};
+int main()
+{
+    string str;
+    cin&gt;&gt;str;
+    print_str(str);
+    return 0;
+}
+
+bool get_bit(char number,char bit)
+{
+    return static_cast&lt;bool&gt;(number &amp; bit);
+}
+void print_str(const string &amp;n)
+{
+   vector&lt;int&gt; v;
+   for(size_t i=0; i&lt;n.length();i++) 
+        v.push_back(n[i]-'0');
+    for(size_t i=0; i&lt;v.size();i++)
+    {
+        cout&lt;&lt;" ";
+        if(get_bit(number[v[i]],4))
+            cout&lt;&lt;"_";
+        else
+            cout&lt;&lt;" ";
+        cout&lt;&lt;" ";
+    }
+    cout&lt;&lt;endl;
+
+    for(size_t i=0; i&lt;v.size();i++)
+    {
+        if(get_bit(number[v[i]],8))
+            cout&lt;&lt;"|";
+        else 
+            cout&lt;&lt;" ";
+        if(get_bit(number[v[i]],2))
+            cout&lt;&lt;"_";
+        else
+            cout&lt;&lt;" ";
+        if(get_bit(number[v[i]],16))
+            cout&lt;&lt;"|";
+        else
+            cout&lt;&lt;" ";
+    }
+        cout&lt;&lt;endl;
+
+    for(size_t i=0; i&lt;v.size();i++)
+    {
+        if(get_bit(number[v[i]],32))
+            cout&lt;&lt;"|";
+        else
+            cout&lt;&lt;" ";
+        if(get_bit(number[v[i]],1))
+            cout&lt;&lt;"_";
+        else
+            cout&lt;&lt;" ";
+        if(get_bit(number[v[i]],64))
+            cout&lt;&lt;"|";
+        else
+            cout&lt;&lt;" ";
+    }
+    cout&lt;&lt;endl;
+[[}]]
+</pre>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>

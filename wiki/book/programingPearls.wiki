@@ -1,0 +1,71 @@
+%title Programing Pearls
+= 七段代码显示的问题 =
+{{{
+#include<iostream>
+#include<vector>
+using namespace std;
+void print_str(const string &n);
+char number[] = {0x7D, 0x28, 0x37, 0x57, 0x5A, 0x4F, 0x6F, 0x54, 0x7F, 0x5E};
+int main()
+{
+    string str;
+    cin>>str;
+    print_str(str);
+    return 0;
+}
+
+bool get_bit(char number,char bit)
+{
+    return static_cast<bool>(number & bit);
+}
+void print_str(const string &n)
+{
+   vector<int> v;
+   for(size_t i=0; i<n.length();i++) 
+        v.push_back(n[i]-'0');
+    for(size_t i=0; i<v.size();i++)
+    {
+        cout<<" ";
+        if(get_bit(number[v[i]],4))
+            cout<<"_";
+        else
+            cout<<" ";
+        cout<<" ";
+    }
+    cout<<endl;
+
+    for(size_t i=0; i<v.size();i++)
+    {
+        if(get_bit(number[v[i]],8))
+            cout<<"|";
+        else 
+            cout<<" ";
+        if(get_bit(number[v[i]],2))
+            cout<<"_";
+        else
+            cout<<" ";
+        if(get_bit(number[v[i]],16))
+            cout<<"|";
+        else
+            cout<<" ";
+    }
+        cout<<endl;
+
+    for(size_t i=0; i<v.size();i++)
+    {
+        if(get_bit(number[v[i]],32))
+            cout<<"|";
+        else
+            cout<<" ";
+        if(get_bit(number[v[i]],1))
+            cout<<"_";
+        else
+            cout<<" ";
+        if(get_bit(number[v[i]],64))
+            cout<<"|";
+        else
+            cout<<" ";
+    }
+    cout<<endl;
+[[}]]
+}}}

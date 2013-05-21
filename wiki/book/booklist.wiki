@@ -1,2 +1,3 @@
 %title 书单
 * [[./programingPearls|编程珠玑]]
+* [[./beauty/beauty|编程之美]]

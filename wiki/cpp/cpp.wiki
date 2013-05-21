@@ -1,2 +1,3 @@
 = C++ =
-* [[Linux socket编程]]
+* [[./socket|Linux socket编程]]
+* [[./const|const限定符]]

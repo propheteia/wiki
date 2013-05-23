@@ -40,3 +40,39 @@ Access denied for user ''@'localhost' to database 'mysql'
 == 增加字段 ==
     ALTER TABLE table_name ADD file_name varchar(10);
     ALTER TABLE table_name DROP field_name
+== 中文字符显示问号??? ==
+中文编码的问题.查看数据库
+    show create database DATABASE_NAME;
+
+显示latin1
+
+所以只要将字符的默认编码设为'utf8'即可
+    alter database DATABASE_NAME default character set 'utf8'; 
+
+之后将数据重新导入到数据库即可
+另附上mysql字符集操作的其他的一些命令
+{{{
+1.列出MYSQL支持的所有字符集：
+SHOW CHARACTER SET;
+
+2.当前MYSQL服务器字符集设置
+SHOW VARIABLES LIKE 'character_set_%';
+
+3.当前MYSQL服务器字符集校验设置
+SHOW VARIABLES LIKE 'collation_%';
+
+4.显示某数据库字符集设置
+show create database 数据库名;
+
+5.显示某数据表字符集设置
+show create table 表名;
+
+6.修改数据库字符集
+alter database 数据库名 default character set 'utf8';
+
+7.修改数据表字符集
+alter table 表名 default character set 'utf8';
+
+8.建库时指定字符集
+create database 数据库名 character set gbk collate gbk_chinese_ci;
+}}}

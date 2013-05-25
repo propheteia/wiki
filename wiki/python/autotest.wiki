@@ -1,9 +1,10 @@
 %title 总结用python做自动测试平台: 
 刚来了罗克韦尔和项目组的领导谈话,他告诉我需要做一个测试平台,实现对参品的自动测试,生成报表.实现的细节可以讨论.非常开放.
 
-我整个流程做了一次简单分析,大致如下:
+整个流程大致是这样的:
 
-{{local:../../image/test_framework.bmp|Framework|style="width:750px;height:520px"}}
+
+
 
 
 

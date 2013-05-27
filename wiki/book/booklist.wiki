@@ -1,4 +1,4 @@
 %title 书单
-* [[./programingPearls|编程珠玑]]
+* [[./programingPearls/programingPearls|编程珠玑]]
 * [[./beauty/beauty|编程之美]]
 * [[./computer_system/computer_system|深入理解计算机系统]]

@@ -1,3 +1,4 @@
 = C++ =
 * [[./socket|Linux socket编程]]
 * [[./const|const限定符]]
+* c和c++中的char

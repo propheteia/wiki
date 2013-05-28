@@ -1,0 +1,13 @@
+%title 程序的机器级表示 
+= 程序编码 =
+    unix->gcc -S code.c
+    生成code.s汇编代码
+
+    unix->gcc -c code.c
+    生成code.o,对一系列指令进行编码后的字节序列,让机器执行.
+    生成的二进制码可以用GDB查看
+    
+    unix->objdump -d code.o
+    生成汇编代码和字节序列
+    
+

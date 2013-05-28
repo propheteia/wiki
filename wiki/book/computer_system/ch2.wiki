@@ -9,5 +9,8 @@
     
     unix->objdump -d code.o
     生成汇编代码和字节序列
+= 数据格式 =
+== 关于char的c和c++表示 ==
+
     
 

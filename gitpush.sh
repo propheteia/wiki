@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/wenbin/winoi.com/wiki
+cd /home/wenbin/web/winoi.com/wiki
 git add .
 git commit -a -m "auto"
 git remote add origin git@github.com:propheteia/wiki.git

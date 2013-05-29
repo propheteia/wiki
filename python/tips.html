@@ -196,6 +196,69 @@ cell_C4 = sh.cell(rowx=3,colx=2).value
 附文：python 解析xml
 ~                    
 </p>
+<h1 id="toc_8"> *args **kwargs</h1>
+<p>
+*args表示任何多个无名参数，它是一个tuple； **kwargs表示关键字参数，它是一个dict。并且同时使用*args和**kwargs时，必须*args参数列要在**kwargs前.
+</p>
+<pre>
+def foo(*args, **kwargs):
+    print 'args = ', args
+    print 'kwargs = ', kwargs
+    print '---------------------------------------'
+
+if __name__ == '__main__':
+    foo(1,2,3,4)
+    foo(a=1,b=2,c=3)
+    foo(1,2,3,4, a=1,b=2,c=3)
+    foo('a', 1, None, a=1, b='2', c=3)
+</pre>
+<p>
+看到xlrd模块的安装包是这样得到安装信息的dict的
+</p>
+<pre>
+def mkargs(**kwargs):    
+    return kwargs
+
+args = mkargs(
+    name = 'xlrd',
+    version = __VERSION__,    
+    author = 'John Machin',   
+    author_email = 'sjmachin@lexicon.net', 
+    url = the_url,       
+    packages = ['xlrd'], 
+    scripts = [
+        'scripts/runxlrd.py',     
+        ],
+    description = 'Library for developers to extract data from Microsoft Excel (tm) spreadsheet files',
+    long_description = \
+        "Extract data from Excel spreadsheets (XLS only, versions 2.0 to 2003) on any platform. " \
+        "Pure Python (2.6 to 2.7). Strong support for Excel dates. Unicode-aware.",
+    platforms = ["Any platform -- don't need Windows"],
+    license = 'BSD',
+    keywords = ['xls', 'excel', 'spreadsheet', 'workbook'],
+    )
+
+args23 = mkargs(
+    download_url = the_url,   
+    classifiers = [
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python',
+        'Operating System :: OS Independent',
+        'Topic :: Database',      
+        'Topic :: Office/Business',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        ],           
+    )                
+
+args.update(args23)
+
+这里,update将dict args23合并到args
+</pre>
+<p>
+这样返回的就是个dict
+</p>
  
         <div>
    <div>

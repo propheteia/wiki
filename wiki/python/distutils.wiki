@@ -71,6 +71,8 @@ setup(
 * http://www.ibm.com/developerworks/opensource/library/os-pythonpackaging/index.html ,
 * http://docs.python.org/2/distutils/packageindex.html#package-index
 * https://pypi.python.org/pypi/mypypi
+ 
+
 
 = 特殊的__init__.py =
 {{{
@@ -128,3 +130,14 @@ run.py
 他们都是从模块中导入的app
 
 这里可见__init__.py不易被察觉的特殊性
+
+= 脚本的安装 =
+{{{
+setup(
+    scripts=['test.py'],
+)
+
+test.py的第一行需要加上:
+#!/usr/bin/env python
+}}}
+这样会在env/bin/下生成一个可执行指令:test.py

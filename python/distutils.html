@@ -137,6 +137,8 @@ setup(
 <a href="https://pypi.python.org/pypi/mypypi">https://pypi.python.org/pypi/mypypi</a>
 
 </ul>
+ 
+
 
 <h1 id="toc_4"> 特殊的_<em>init</em>_.py</h1>
 <pre>
@@ -217,6 +219,19 @@ run.py
 
 <p>
 这里可见_<em>init</em>_.py不易被察觉的特殊性
+</p>
+
+<h1 id="toc_5"> 脚本的安装</h1>
+<pre>
+setup(
+    scripts=['test.py'],
+)
+
+test.py的第一行需要加上:
+#!/usr/bin/env python
+</pre>
+<p>
+这样会在env/bin/下生成一个可执行指令:test.py
 </p>
  
         <div>

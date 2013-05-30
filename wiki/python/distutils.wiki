@@ -141,3 +141,4 @@ test.py的第一行需要加上:
 #!/usr/bin/env python
 }}}
 这样会在env/bin/下生成一个可执行指令:test.py
+

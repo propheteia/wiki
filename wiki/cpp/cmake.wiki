@@ -1,0 +1,4 @@
+%title cmake
+= CMAKE_INSTALL_PREFIX =
+该变量是安装位置,通过以下方式修改:
+    cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..

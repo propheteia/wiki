@@ -7,7 +7,7 @@
     
     <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
     
-    <title> linux | winoi</title>
+    <title> Linux管道命令 | winoi</title>
     
     <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
     <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
@@ -34,7 +34,7 @@
     <!--header -->
 <div id="header-wrap"><header>
     <hgroup>
-        <h1>linux</h1>
+        <h1>Linux管道命令</h1>
     </hgroup>
 
     <nav>
@@ -55,33 +55,38 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<h1 id="toc_1"> Linux</h1>
-<ul>
-<li>
-<a href="./shell.html">bash基本命令</a>
+<h1 id="toc_1"> 命名管道fifo</h1>
+<p>
+可以把管道想象为两个实体之间的单向连接器。管道是半双工的，如果需要全双工通讯，应该转而考虑套接字。 匿名管道又称管道，提供了一个进程与它的兄弟进程通讯的方法，只存在于父进程中；命名管道，可以存在于文件系统中，任意进程都可找到它，使得不同先祖的进程也可以通讯。 
+</p>
 
-<li>
-<a href="./tools.html">Linux工具</a>
+<pre>
+A FIFO special file (a named pipe) is similar to a pipe, except that
+       it is accessed as part of the file system.  It can be opened by
+       multiple processes for reading or writing.  When processes are
+       exchanging data via the FIFO, the kernel passes all data internally
+       without writing it to the file system.  Thus, the FIFO special file
+       has no contents on the file system; the file system entry merely
+       serves as a reference point so that processes can access the pipe
+       using a name in the file system.
 
-<li>
-<a href="./bash.html">Bash脚本编写</a>
+       The kernel maintains exactly one pipe object for each FIFO special
+       file that is opened by at least one process.  The FIFO must be opened
+       on both ends (reading and writing) before data can be passed.
+       Normally, opening the FIFO blocks until the other end is opened also.
 
-<li>
-<a href="./tar.html">tar解压</a>
+       A process can open a FIFO in nonblocking mode.  In this case, opening
+       for read-only will succeed even if no-one has opened on the write
+       side yet, opening for write-only will fail with ENXIO (no such device
+       or address) unless the other end has already been opened.
 
-<li>
-<a href="./linux_operation.html">linux系统</a>
-
-<li>
-<a href="./deamon.html">Linux服务</a>
-
-<li>
-<a href="./video_code.html">视频解码的问题</a>
-
-<li>
-<a href="./pipe.html">管道命令</a>
-
-</ul>
+       Under Linux, opening a FIFO for read and write will succeed both in
+       blocking and nonblocking mode.  POSIX leaves this behavior undefined.
+       This can be used to open a FIFO for writing while there are no
+       readers available.  A process that uses both ends of the connection
+       in order to communicate with itself should be very careful to avoid
+       deadlocks.
+</pre>
  
         <div>
    <div>

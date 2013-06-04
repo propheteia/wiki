@@ -55,6 +55,43 @@
         <div id="content" class="clearfix">
     &nbsp;
            
+<h1 id="toc_1"> 数组</h1>
+<p>
+数组的长度是固定的!
+定义方法:
+</p>
+<blockquote>
+int a[] = {1,2,3};//显示初始化时,可以省略维数(编译器确定数组长度) 
+int a[4] = {1,2}; //只初始化a[0],a[1]. a[2],a[3]不会初始化(函数体内)或者初始化为0(函数体外)
+如果是类类型,自动调用默认构造函数初始化
+</blockquote>
+<p>
+访问:
+</p>
+<blockquote>
+a[0] 等同 *(a)
+a[1] 等同 *(a+1)
+</blockquote>
+
+<h1 id="toc_2"> 字符数组,有点特殊</h1>
+<p>
+字符数组还可以用字符串字面值初始化,即:
+</p>
+<blockquote>
+char a[] = "C++";
+</blockquote>
+<p>
+这个数组的维数是4而不是3,因为有个'\0'(null)
+</p>
+
+<h1 id="toc_3"> 一个区别</h1>
+<blockquote>
+string s = "abc";
+string *sp = &amp;s; //把string对象s的地址附给sp
+cout&lt;&lt;*sp&lt;&lt;endl; //得到"abc"
+*sp = "A new word";//把sp指向的内容用字符串字面值替代
+cout&lt;&lt;*sp&lt;&lt;endl; //得到"A new word"
+</blockquote>
  
         <div>
    <div>

@@ -3,4 +3,4 @@
 * [[./const|const限定符]]
 * [[./cmake|cmake]]
 * [[./socket|套接字]]
-* c和c++中的char
+* [[./array_and_pointer|数组和指针]]

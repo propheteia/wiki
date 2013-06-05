@@ -15,27 +15,75 @@
     char a[] = "C++";
 这个数组的维数是4而不是3,因为自动在结尾添加'\0'(null)
 
+还可以这样表示:(C风格字符串)
+    char *a = "C++";
+
+当数组的类型是char时,a不代表指针,而是字符串.而数组的类型是其他(如int a[]),a代表第一个元素的指针.
 = 一个区别 =
     string s = "abc";
     string *sp = &s; //把string对象s的地址附给sp
     cout<<*sp<<endl; //得到"abc"
     *sp = "A new word";//把sp指向的内容用字符串字面值替代
     cout<<*sp<<endl; //得到"A new word"
-
-    int a[]={1,2,3}
-    cout<<a<<endl;//显示数组的第一个元素的地址
-    char a[]={'a','b','c'};
-    cout<<a<<endl;//显示abc
 = C风格字符串 = 
 在c++中用c风格字符串常常带来错误,因此不提倡.
 
-C风格字符串是以空字符null结尾的字符数组.
+C风格字符串是以空字符null结尾的字符数组.通过(const)char*类型的指针操纵C风格字符串
 
+纠正一个认识:(const)char*是一种类型,它代表字符串,类似string.C风格字符串通过指针操纵字符串,但不是每个元素都有一个指针.字符串只有一个指针,通过增1操作遍历字符串.
+{{{
+#include<iostream>
+using namespace std;
+int main()
+{
+    char *a="abc";
+    char b[]="abc";
+    int c[]={1,2,3};
+    for(int i=0;i<3;i++)
+    {
+        cout<<*(a+i)<<endl;
+        cout<<*(b+i)<<endl;
+        cout<<*(c+i)<<endl;
+    }
+        cout<<"###"<<endl;
+    for(int i=0;i<3;i++)
+    {
+        cout<<a<<endl;
+        cout<<b<<endl;
+        cout<<c<<endl;
+    }
+}
+}}}
+输出:
+{{{
+a
+a
+1
+b
+b
+2
+c
+c
+3
+###
+abc
+abc
+0x7fff71f6fb80
+abc
+abc
+0x7fff71f6fb80
+abc
+abc
+0x7fff71f6fb80
+}}}
 = 不要忘记字符串结束符null =
 标准库函数(#include<cstring>)是string.h头文件的c++版本
     char a[]={'c','+','+'};
     cout<<strlen(a)<<endl;//disaster:a is not null-terminated
-    
+    标准库函数总是假定其参数字符串以null结尾 
 
+= 新旧代码的兼容 =
+C风格字符串与字符串字面值有相同的数据结构,而且都以null结束,因此可以互相代替.
 
-
+    const char *a="abc";
+    string b(a);

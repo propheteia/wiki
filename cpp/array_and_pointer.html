@@ -75,25 +75,49 @@ a[1] 等同 *(a+1)
 </blockquote>
 
 <h1 id="toc_2"> 字符数组,有点特殊</h1>
+<h2 id="toc_2.1"> 1</h2>
 <p>
 字符数组还可以用字符串字面值初始化,即:
 </p>
 <blockquote>
-char a[] = "C++";
+char a1[] = "C++";
 </blockquote>
 <p>
 这个数组的维数是4而不是3,因为自动在结尾添加'\0'(null)
 </p>
-
+<h2 id="toc_2.2"> 2</h2>
 <p>
 还可以这样表示:(C风格字符串)
 </p>
 <blockquote>
-char *a = "C++";
+char *a2 = "C++";
+</blockquote>
+<h2 id="toc_2.3"> 3</h2>
+<p>
+a1和a2的类型是一样的.
+</p>
+
+<p>
+a1代表即代表第一个元素的指针,也表示字符串对象.而数组的类型是其他(如int a[]),a代表第一个元素的指针.
+</p>
+
+<p>
+但是于此同时,字符串可以同其他数组一样通过指针遍历元素.
+</p>
+<blockquote>
+char *a="abc";
+int *b={1,2,3};
+for(int i=0;i&lt;3;i++)
+{
+cout&lt;&lt;*(a+i)&lt;&lt;endl;//依次输出a,b,c
+cout&lt;&lt;*(b+i)&lt;&lt;endl;//依次输出1,2,3
+cout&lt;&lt;&amp;*(a+i)&lt;&lt;endl;//依次输出元素地址
+cout&lt;&lt;&amp;*(b+i)&lt;&lt;endl;//输出从该地址开始的字符串abc,bc,c
+}
 </blockquote>
 
 <p>
-当数组的类型是char时,a不代表指针,而是字符串.而数组的类型是其他(如int a[]),a代表第一个元素的指针.
+可以作出这样的判断:a是指针,
 </p>
 <h1 id="toc_3"> 一个区别</h1>
 <blockquote>
@@ -103,66 +127,8 @@ cout&lt;&lt;*sp&lt;&lt;endl; //得到"abc"
 *sp = "A new word";//把sp指向的内容用字符串字面值替代
 cout&lt;&lt;*sp&lt;&lt;endl; //得到"A new word"
 </blockquote>
-<h1 id="toc_4"> C风格字符串</h1>
-<p>
-在c++中用c风格字符串常常带来错误,因此不提倡.
-</p>
 
-<p>
-C风格字符串是以空字符null结尾的字符数组.通过(const)char*类型的指针操纵C风格字符串
-</p>
-
-<p>
-纠正一个认识:(const)char*是一种类型,它代表字符串,类似string.C风格字符串通过指针操纵字符串,但不是每个元素都有一个指针.字符串只有一个指针,通过增1操作遍历字符串.
-</p>
-<pre>
-#include&lt;iostream&gt;
-using namespace std;
-int main()
-{
-    char *a="abc";
-    char b[]="abc";
-    int c[]={1,2,3};
-    for(int i=0;i&lt;3;i++)
-    {
-        cout&lt;&lt;*(a+i)&lt;&lt;endl;
-        cout&lt;&lt;*(b+i)&lt;&lt;endl;
-        cout&lt;&lt;*(c+i)&lt;&lt;endl;
-    }
-        cout&lt;&lt;"###"&lt;&lt;endl;
-    for(int i=0;i&lt;3;i++)
-    {
-        cout&lt;&lt;a&lt;&lt;endl;
-        cout&lt;&lt;b&lt;&lt;endl;
-        cout&lt;&lt;c&lt;&lt;endl;
-    }
-}
-</pre>
-<p>
-输出:
-</p>
-<pre>
-a
-a
-1
-b
-b
-2
-c
-c
-3
-###
-abc
-abc
-0x7fff71f6fb80
-abc
-abc
-0x7fff71f6fb80
-abc
-abc
-0x7fff71f6fb80
-</pre>
-<h1 id="toc_5"> 不要忘记字符串结束符null</h1>
+<h1 id="toc_4"> 不要忘记字符串结束符null</h1>
 <p>
 标准库函数(#include&lt;cstring&gt;)是string.h头文件的c++版本
 </p>
@@ -172,7 +138,7 @@ cout&lt;&lt;strlen(a)&lt;&lt;endl;//disaster:a is not null-terminated
 标准库函数总是假定其参数字符串以null结尾 
 </blockquote>
 
-<h1 id="toc_6"> 新旧代码的兼容</h1>
+<h1 id="toc_5"> 新旧代码的兼容</h1>
 <p>
 C风格字符串与字符串字面值有相同的数据结构,而且都以null结束,因此可以互相代替.
 </p>

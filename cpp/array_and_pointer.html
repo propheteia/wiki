@@ -93,6 +93,12 @@ cout&lt;&lt;*sp&lt;&lt;endl; //得到"abc"
 *sp = "A new word";//把sp指向的内容用字符串字面值替代
 cout&lt;&lt;*sp&lt;&lt;endl; //得到"A new word"
 </blockquote>
+<blockquote>
+int a[]={1,2,3}
+cout&lt;&lt;a&lt;&lt;endl;//显示数组的第一个元素的地址
+char a[]={'a','b','c'};
+cout&lt;&lt;a&lt;&lt;endl;//显示abc
+</blockquote>
 <h1 id="toc_4"> C风格字符串</h1>
 <p>
 在c++中用c风格字符串常常带来错误,因此不提倡.
@@ -102,9 +108,14 @@ cout&lt;&lt;*sp&lt;&lt;endl; //得到"A new word"
 C风格字符串是以空字符null结尾的字符数组.
 </p>
 
+<h1 id="toc_5"> 不要忘记字符串结束符null</h1>
 <p>
-int a[]={1,2,3}
+标准库函数(#include&lt;cstring&gt;)是string.h头文件的c++版本
 </p>
+<blockquote>
+char a[]={'c','+','+'};
+cout&lt;&lt;strlen(a)&lt;&lt;endl;//disaster:a is not null-terminated
+</blockquote>
  
         <div>
    <div>

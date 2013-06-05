@@ -21,10 +21,21 @@
     cout<<*sp<<endl; //得到"abc"
     *sp = "A new word";//把sp指向的内容用字符串字面值替代
     cout<<*sp<<endl; //得到"A new word"
+
+    int a[]={1,2,3}
+    cout<<a<<endl;//显示数组的第一个元素的地址
+    char a[]={'a','b','c'};
+    cout<<a<<endl;//显示abc
 = C风格字符串 = 
 在c++中用c风格字符串常常带来错误,因此不提倡.
 
 C风格字符串是以空字符null结尾的字符数组.
 
-int a[]={1,2,3}
+= 不要忘记字符串结束符null =
+标准库函数(#include<cstring>)是string.h头文件的c++版本
+    char a[]={'c','+','+'};
+    cout<<strlen(a)<<endl;//disaster:a is not null-terminated
+    
+
+
 

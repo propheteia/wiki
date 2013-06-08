@@ -1,6 +1,6 @@
 %title 工具推荐
 = [[./vim|文本编辑器Vim]] =
-= [[./latex|论文编辑神器Latex]] =
+= [[./latex|论文编辑器:Latex]] =
 = [[./git|Git分布式托管平台]] =
 = [[./awesome|Awesome平铺式桌面系统]] =
 = [[./vimwiki|用Vim写维基]] =

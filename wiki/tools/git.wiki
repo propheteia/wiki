@@ -1,6 +1,5 @@
 %title GitHub
-= Git和Github =
-==  GitHub ssh免密码登录==
+=  GitHub ssh免密码登录=
 ===   SSh密钥  ===
 参照 [[https://help.github.com/articles/generating-ssh-keys|gitHub:help]]
     Enter passphrase (empty for no passphrase): [Type a passphrase]<br>
@@ -24,13 +23,13 @@
     url = git@github.com:username/name.git
 [[http://josephj.com/article/understand-ssh-key/|更多ssh免密码登录]] 
 
-==  不错的网站　==
+=  不错的网站　=
 * [[http://rogerdudler.github.com/git-guide/index.zh.html|简易指南]]
 * [[http://www.yangzhiping.com/tech/github.html|如何高效使用GitHub]]
 * [[http://blog.jobbole.com/34503/|常用命令]]
 * [[http://marklodato.github.com/visual-git-guide/index-en.html|visual-git-guide]]
 * [[http://gitbook.liuhui998.com/3_3.html|git_book]]
-== 一些常用命令 ==
+ 一些常用命令 ==
 === Git强制推送 ===
 创建了一个新的仓库，要替代原先的内容。
     git push -f origin master
@@ -63,7 +62,7 @@
     git branch -D develop 删除分支
     git show HEAD 当前分支最新更新
     
-=== 一次实验 ===
+= 一次实验 =
     {{{
         git init 
         git add .

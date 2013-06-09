@@ -1,0 +1,38 @@
+%title  语法最佳实践
+= 列表推导 =
+涉及元素少,意味引入的缺陷少.
+{{{
+    list_ = [ival for ival in range(10) if ival%2==0]
+    print type(list_)
+    print list_
+    
+    输出:
+    <type 'list'>
+    [0, 2, 4, 6, 8]
+ 
+    
+}}}
+= 生成器 =
+与生成列表相比,不用预先占用内存
+
+如果函数中有yield,那么dir(func)会发现多出send,next函数.
+
+== 协同程序 ==
+?
+== 生成器表达式 ==
+将列表推导的[]用()替换,就成了生成器
+{{{
+    iter = (ival for ival in range(10) if ival%2==0)
+    print type(list_)
+    print list_
+
+    输出:
+    <type 'generator'>
+    <generator object <genexpr> at 0x7f82c550aaf0>
+    
+    for el in iter:
+        print el
+}}}
+
+= 装饰器 =
+

@@ -7,7 +7,7 @@
     
     <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
     
-    <title> cpp | winoi</title>
+    <title> google命名规范 | winoi</title>
     
     <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
     <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
@@ -34,7 +34,7 @@
     <!--header -->
 <div id="header-wrap"><header>
     <hgroup>
-        <h1>cpp</h1>
+        <h1>google命名规范</h1>
     </hgroup>
 
     <nav>
@@ -55,33 +55,78 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<h1 id="toc_1"> C++</h1>
-<ul>
-<li>
-<a href="./socket.html">Linux socket编程</a>
+<h1 id="toc_1"> 命名约定</h1>
+<h2 id="toc_1.1"> 通用命名</h2>
+<p>
+尽可能给出描述性名称
+</p>
 
-<li>
-<a href="./const.html">const限定符</a>
+<p>
+除非放到项目外也非常明了，否则不要使用缩写
+</p>
 
-<li>
-<a href="./cmake.html">cmake</a>
+<p>
+不要用省略字母的缩写
+</p>
 
-<li>
-<a href="./socket.html">套接字</a>
+<h2 id="toc_1.2"> 文件命名</h2>
+<p>
+文件名要全部小写，可以包含下划线（_）或短线（-），按项目约定来。
+</p>
 
-<li>
-<a href="./array_and_pointer.html">数组和指针</a>
+<p>
+通常，尽量让文件名更加明确，http_server_logs.h就比logs.h要好，定义类时文件名一般成对出现，如foo_bar.h和foo_bar.cc，对应类FooBar。
+</p>
 
-<li>
-<a href="./naming-rules.html">google命名规范</a>
+<h2 id="toc_1.3"> 类型命名</h2>
+<p>
+类型命名每个单词以大写字母开头，不包含下划线：MyExcitingClass、MyExcitingEnum。
+</p>
 
-<li>
-异常处理?
+<p>
+所有类型命名——类、结构体、类型定义（typedef）、枚举——使用相同约定
+</p>
 
-<li>
-函数参数中用对象和引用的区别?
 
-</ul>
+<h2 id="toc_1.4"> 变量命名</h2>
+
+<p>
+变量名一律小写，单词间以下划线相连，类的成员变量以下划线结尾，如my_exciting_local_variable、my_exciting_member_variable_。
+</p>
+
+<h2 id="toc_1.5"> 函数命名</h2>
+
+<p>
+普通函数（regular functions，译者注，这里与访问函数等特殊函数相对）大小写混合，存取函数（accessors and mutators）则要求与变量名匹配：MyExcitingFunction()、MyExcitingMethod()、my_exciting_member_variable()、set_my_exciting_member_variable()。
+</p>
+
+<p>
+普通函数：
+</p>
+
+<p>
+函数名以大写字母开头，每个单词首字母大写，没有下划线：
+</p>
+<blockquote>
+AddTableEntry()
+DeleteUrl()
+</blockquote>
+
+<p>
+存取函数：存取函数要与存取的变量名匹配，这儿摘录一个拥有实例变量num_entries_的类：
+</p>
+
+<pre>
+class MyClass {
+ public:
+  ...
+  int num_entries() const { return num_entries_; }
+  void set_num_entries(int num_entries) { num_entries_ = num_entries; }
+
+ private:
+  int num_entries_;
+};
+</pre>
  
         <div>
    <div>

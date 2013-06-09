@@ -259,6 +259,77 @@ args.update(args23)
 <p>
 这样返回的就是个dict
 </p>
+<h1 id="toc_9"> 函数式编程</h1>
+<pre>
+    def good():
+        t=good.t
+        print type(t)
+    
+    good.t=0 #在函数外将函数内的变量赋值
+    if __name__=="__main__":
+        good()
+</pre>
+<h1 id="toc_10"> yield</h1>
+<p>
+带有 yield 的函数在 Python 中被称之为 generator（生成器）
+版本一:
+</p>
+<pre>
+                
+ def fab(max): 
+    n, a, b = 0, 0, 1 
+    L = [] 
+    while n &lt; max: 
+        L.append(b) 
+        a, b = b, a + b 
+        n = n + 1 
+    return L 
+</pre>
+<p>
+版本二:
+</p>
+<pre>
+ class Fab(object): 
+
+    def __init__(self, max): 
+        self.max = max 
+        self.n, self.a, self.b = 0, 0, 1 
+
+    def __iter__(self): 
+        return self 
+
+    def next(self): 
+        if self.n &lt; self.max: 
+            r = self.b 
+            self.a, self.b = self.b, self.a + self.b 
+            self.n = self.n + 1 
+            return r 
+        raise StopIteration() 
+</pre>
+<p>
+yield版本三:
+</p>
+<pre>
+ def fab(max): 
+    n, a, b = 0, 0, 1 
+    while n &lt; max: 
+        yield b 
+        #print b 
+        a, b = b, a + b 
+        n = n + 1 
+
+ for i in fab(5):
+    print i
+</pre>
+
+<p>
+简单地讲，yield 的作用就是把一个函数变成一个 generator，带有 yield 的函数不再是一个普通函数，Python 解释器会将其视为一个 generator，调用 fab(5) 不会执行 fab 函数，而是返回一个 iterable 对象！在 for 循环执行时，每次循环都会执行 fab 函数内部的代码，执行到 yield b 时，fab 函数就返回一个迭代值，下次迭代时，代码从 yield b 的下一条语句继续执行，而函数的本地变量看起来和上次中断执行前是完全一样的，于是函数继续执行，直到再次遇到 yield。
+</p>
+
+<p>
+我的理解,以上三个版本的本质区别在于,第一个版本按照某种方式产生数据,并将其存放(在List),需要时直接从list中调用.而版本三只在需要时以某种方式产生数据,因此不需要空间来存放.
+转:<a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/">developerworks</a>
+</p>
  
         <div>
    <div>

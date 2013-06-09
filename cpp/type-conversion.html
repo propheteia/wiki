@@ -7,7 +7,7 @@
     
     <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
     
-    <title> cpp | winoi</title>
+    <title> 数据类型转换 | winoi</title>
     
     <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
     <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
@@ -34,7 +34,7 @@
     <!--header -->
 <div id="header-wrap"><header>
     <hgroup>
-        <h1>cpp</h1>
+        <h1>数据类型转换</h1>
     </hgroup>
 
     <nav>
@@ -55,39 +55,46 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<h1 id="toc_1"> C++</h1>
-<ul>
-<li>
-<a href="./socket.html">Linux socket编程</a>
+<h1 id="toc_1"> int转换为char*</h1>
+<p>
+使用sprintf
+</p>
+<pre>
+头文件 #include&lt;stdio.h&gt;
 
-<li>
-<a href="./const.html">const限定符</a>
+语法: int sprintf(string format, mixed [args]...);
 
-<li>
-<a href="./cmake.html">cmake</a>
+返回值：字符串长度（strlen）
 
-<li>
-<a href="./socket.html">套接字</a>
+转换字符
 
-<li>
-<a href="./array_and_pointer.html">数组和指针</a>
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-<li>
-<a href="./naming-rules.html">google命名规范</a>
+% 印出百分比符号，不转换。
 
-<li>
-<a href="./type-conversion.html">类型转换</a>
+b 整数转成二进位。
 
-<li>
+c 整数转成对应的 ASCII 字元。
 
+d 整数转成十进位。
 
-<li>
-异常处理?
+f 倍精确度数字转成浮点数。
 
-<li>
-函数参数中用对象和引用的区别?
+o 整数转成八进位。
 
-</ul>
+s 整数转成字串。
+
+x 整数转成小写十六进位。
+
+X 整数转成大写十六进位。
+
+例子:
+    int n = 30;  
+
+    char c[20];  
+
+    sprintf(c, "%d", n);      
+</pre>
  
         <div>
    <div>

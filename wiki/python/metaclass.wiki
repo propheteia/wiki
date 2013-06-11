@@ -1,0 +1,2 @@
+%title 深刻理解元类(metaclass)
+= type创建类 =

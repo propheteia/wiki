@@ -8,3 +8,4 @@
 * [[./video_code|视频解码的问题]]
 * [[./pipe|管道命令]]
 * [[./shell-io|Linux系统的Shell I/O重定向详解]]
+* [[./top|高效使用top]]

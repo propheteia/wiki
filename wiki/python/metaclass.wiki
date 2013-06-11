@@ -1,18 +1,20 @@
 %title 深刻理解元类(metaclass)
 = type创建类 =
 {{{
->>def foo(self):  #self
->>    print "pass"
->>#参数第一个是将要建的类的名字,第二个是继承的类,第三个dict 在类中对象名名:对象
->>clr=type('classname',(),{'funcname':foo}) 
->>instance = clr()
->>print hasattr(clr,'funcname')
->>print type(instance)
+def foo(self):  #self
+    print "pass"
+#参数第一个是将要建的类的名字,第二个是继承的类,第三个dict 在类中对象名名:对象
+clr=type('classname',(),{'funcname':foo}) 
+instance = clr()
+print hasattr(clr,'funcname')
+print type(instance)
 True
 <class '__main__.classname'>  
 }}}
-将他写成函数的形式:
+= 第一个示例:输出每个类的类名 =
 {{{
-class 
+def echo_func_name(future_class_name, future_):
+    
+    
 }}}
 

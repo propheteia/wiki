@@ -67,11 +67,119 @@ print type(instance)
 True
 &lt;class '__main__.classname'&gt;  
 </pre>
-<h1 id="toc_2"> 第一个示例:输出每个类的类名</h1>
+<h1 id="toc_2"> 设计一个元模板</h1>
+<p>
+要求类的元素名大写,类的函数成员要输出自己的名字
+</p>
 <pre>
-def echo_func_name(future_class_name, future_):
-    
-    
+def func_to_echo(value):
+    if hasattr(value,'__call__'): #判断是函数
+        def wrapper(self):        #在类中定义,有self参数
+            value(self)
+            print value.func_name
+        return wrapper
+    else:
+        pass
+
+def upper_attr(future_class_name, future_class_parents, future_class_attr):
+    attrs = ((name, value) for name, value in future_class_attr.items() if not name.startswith('__')) #generator
+    uppercase_attr = dict((name.upper(), func_to_echo(value)) for name, value in attrs) #dict(generator)
+    return type(future_class_name, future_class_parents, uppercase_attr)
+
+__metaclass__ = upper_attr # this will affect all classes in the module
+
+class Foo(): 
+    bar = 'bip'
+    def good(self):
+         pass
+
+&gt;&gt;print hasattr(Foo, 'bar')
+False
+&gt;&gt;print hasattr(Foo, 'BAR')
+True
+&gt;&gt;print hasattr(Foo, 'GOOD')
+True
+&gt;&gt;foo=Foo()
+&gt;&gt;foo.GOOD()
+good
+</pre>
+<p>
+这里在给函数添加功能的时候,由于函数是类中,有参数'self',因此看上去有点丑陋.不只有没有更好的方法.
+</p>
+<h1 id="toc_3"> 用class做元类</h1>
+<pre>
+class Upper_attr(type):
+    def __new__(clr,future_class_name, future_class_parents, future_class_attr):
+        attrs = ((name, value) for name, value in future_class_attr.items() if not name.startswith('__'))
+        uppercase_attr = dict((name.upper(), func_to_echo(value)) for name, value in attrs)
+        return type(future_class_name, future_class_parents, uppercase_attr)
+
+__metaclass__ = Upper_attr
+
+</pre>
+<h2 id="toc_3.1"> 为什么要用metaclass类而不是函数?</h2>
+<p>
+由于_<em>metaclass</em>_可以接受任何可调用的对象，那为何还要使用类呢，因为很显然使用类会更加复杂啊？这里有好几个原因：
+</p>
+
+<ul>
+<li>
+意图会更加清晰。当你读到UpperAttrMetaclass(type)时，你知道接下来要发生什么。
+
+<li>
+你可以使用OOP编程。元类可以从元类中继承而来，改写父类的方法。元类甚至还可以使用元类。
+
+<li>
+你可以把代码组织的更好。当你使用元类的时候肯定不会是像上面举的这种简单场景，通常都是针对比较复杂的问题。将多个方法归总到一个类中会很有帮助，也会使得代码更容易阅读。
+<pre>
+  你可以使用__new__, __init__以及__call__这样的特殊方法。它们能帮你处理不同的任务。就算通常你可以把所有的东西都在__new__里处理掉，有些人还是觉得用__init__更舒服些。
+</pre>
+
+<li>
+哇哦，这东西的名字是metaclass，肯定非善类，我要小心！
+
+</ul>
+<h2 id="toc_3.2"> _<em>new</em>_?</h2>
+<pre>
+__new__ 是在__init__之前被调用的特殊方法
+__new__是用来创建对象并返回之的方法
+而__init__只是用来将传入的参数初始化给对象
+你很少用到__new__，除非你希望能够控制对象的创建
+这里，创建的对象是类，我们希望能够自定义它，所以我们这里改写__new__
+</pre>
+<h2 id="toc_3.3"> 用OPP方法</h2>
+<p>
+我们没有改写父类的_<em>new</em>_方法。现在我们这样去处理:
+</p>
+<pre>
+    return type.__new__(future_class_name, future_class_parents, uppercase_attr)
+</pre>
+<p>
+这就是基本的OOP编程
+</p>
+<h2 id="toc_3.4"> 用super方法</h2>
+<p>
+super是内置类型,用于访问父类中的attribute
+</p>
+<pre>
+class Mama(object):
+    def say(self):
+        print "do your homework"
+class Sister(object):
+    def say(self):
+        super(Sister,self).says() #等同与Mama.say(self)
+        print "and clean your bedroom"
+
+&gt;&gt;lily=Sister()
+&gt;&gt;lily.say()
+do your homework
+and clean you bedroom
+</pre>
+<p>
+使用super为了表达更清晰
+</p>
+<pre>
+    return super(Upper_attr,clr).__new__(future_class_name, future_class_parents, uppercase_attr)
 </pre>
  
         <div>

@@ -1,0 +1,6 @@
+%title 数据分析方法
+= Cosma Shalizi =
+CMU统计系教授Cosma Shalizi精心编纂的《从基础角度进行高级数据分析》课程讲义
+
+网址:[[http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/|讲义]]
+

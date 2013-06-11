@@ -1,3 +1,4 @@
 %title Robocup仿真系统
 * [[./localize-with-kalman|用卡尔曼滤波改善定位]]
+* [[./data-analysis-methods|数据分析方法]]
 

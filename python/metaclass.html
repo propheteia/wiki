@@ -56,6 +56,23 @@
     &nbsp;
            
 <h1 id="toc_1"> type创建类</h1>
+<pre>
+&gt;&gt;def foo(self):  #self
+&gt;&gt;    print "pass"
+&gt;&gt;#参数第一个是将要建的类的名字,第二个是继承的类,第三个dict 在类中对象名名:对象
+&gt;&gt;clr=type('classname',(),{'funcname':foo}) 
+&gt;&gt;instance = clr()
+&gt;&gt;print hasattr(clr,'funcname')
+&gt;&gt;print type(instance)
+True
+&lt;class '__main__.classname'&gt;  
+</pre>
+<p>
+将他写成函数的形式:
+</p>
+<pre>
+class 
+</pre>
  
         <div>
    <div>

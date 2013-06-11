@@ -102,3 +102,5 @@ and clean you bedroom
     return super(Upper_attr,clr).__new__(future_class_name, future_class_parents, uppercase_attr)
 }}}
 
+
+参考:[[http://blog.jobbole.com/21351/|伯乐在线]]

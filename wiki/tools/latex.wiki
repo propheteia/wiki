@@ -15,3 +15,6 @@ LaTeX 默认每节的第一段的段首不缩进，这不符合中文排版习�
 调试和查看：<leader>ll  ; <leader>lv
 == Latex和Word ==
 Word写简历和海报等操作密集的，用Latex写论文。各取所长！
+== 指令 ==
+    \quad tab
+    \\ 换行

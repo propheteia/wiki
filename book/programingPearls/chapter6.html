@@ -7,7 +7,7 @@
     
     <link rel="shortcut icon" href="../../template/coolblue/images/chine.ico"/>
     
-    <title> 编程珠玑 | winoi</title>
+    <title> 第六章 | winoi</title>
     
     <link type="text/css" rel="stylesheet" href="../../template/coolblue/css/bootstrap.min.css"><link>
     <link rel="stylesheet" type="text/css" media="screen" href="../../template/coolblue/css/coolblue.css" />
@@ -34,7 +34,7 @@
     <!--header -->
 <div id="header-wrap"><header>
     <hgroup>
-        <h1>编程珠玑</h1>
+        <h1>第六章</h1>
     </hgroup>
 
     <nav>
@@ -55,14 +55,45 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<ul>
-<li>
-<a href="./chapter1.html">第一章</a>
+<h3 id="toc_0.0.1"> 问题三</h3>
+<pre>
+#include &lt;time.h&gt;
+#include &lt;stdio.h&gt;
+#define MAXN 1000000000
+int main()
+{
+    clock_t begin1,begin2;
+    clock_t end1,end2;
+    int i;
+    float a=0,b=0;
+    double c=0,d=0;
+    begin1 = clock();
+    for(i=0;i&lt;MAXN;i++)
+    {
+        a+=0.02299;
+        b+=a;
+    }
+    end1=clock()-begin1;
+     begin2 = clock();
+    for(i=0;i&lt;MAXN;i++)
+    {
+        c+=0.02299;
+        d+=c;
+    }
+    end2=clock()-begin1;
+    printf("float:%f\n",(float)end1/(CLOCKS_PER_SEC));
+    printf("double:%f\n",(float)end2/(CLOCKS_PER_SEC));
+    return 0;
+}
 
-<li>
-<a href="./chapter6.html">第六章</a>
-
-</ul>
+</pre>
+<p>
+运行结果:
+</p>
+<blockquote>
+float:4.680000
+double:7.290000
+</blockquote>
  
         <div>
    <div>

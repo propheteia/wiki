@@ -1,0 +1,38 @@
+%title 第六章
+=== 问题三 ===
+{{{
+#include <time.h>
+#include <stdio.h>
+#define MAXN 1000000000
+int main()
+{
+    clock_t begin1,begin2;
+    clock_t end1,end2;
+    int i;
+    float a=0,b=0;
+    double c=0,d=0;
+    begin1 = clock();
+    for(i=0;i<MAXN;i++)
+    {
+        a+=0.02299;
+        b+=a;
+    }
+    end1=clock()-begin1;
+     begin2 = clock();
+    for(i=0;i<MAXN;i++)
+    {
+        c+=0.02299;
+        d+=c;
+    }
+    end2=clock()-begin1;
+    printf("float:%f\n",(float)end1/(CLOCKS_PER_SEC));
+    printf("double:%f\n",(float)end2/(CLOCKS_PER_SEC));
+    return 0;
+}
+
+}}}
+运行结果:
+    float:4.680000
+    double:7.290000
+
+

@@ -1,4 +1,5 @@
 %title Python
+%toc
 = with: =
 {{{class="brush:python"
 import sys

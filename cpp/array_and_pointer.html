@@ -104,30 +104,29 @@ a1代表即代表第一个元素的指针,也表示字符串对象.而数组的�
 <p>
 但是于此同时,字符串可以同其他数组一样通过指针遍历元素.
 </p>
-<blockquote>
-char *a="abc";
-int *b={1,2,3};
-for(int i=0;i&lt;3;i++)
-{
-cout&lt;&lt;*(a+i)&lt;&lt;endl;//依次输出a,b,c
-cout&lt;&lt;*(b+i)&lt;&lt;endl;//依次输出1,2,3
-cout&lt;&lt;&amp;*(a+i)&lt;&lt;endl;//依次输出元素地址
-cout&lt;&lt;&amp;*(b+i)&lt;&lt;endl;//输出从该地址开始的字符串abc,bc,c
-}
-</blockquote>
+<pre>
+    char *a="abc";
+    int *b={1,2,3};
+    for(int i=0;i&lt;3;i++)
+    {
+        cout&lt;&lt;*(a+i)&lt;&lt;endl;//依次输出a,b,c
+        cout&lt;&lt;*(b+i)&lt;&lt;endl;//依次输出1,2,3
+        cout&lt;&lt;&amp;*(a+i)&lt;&lt;endl;//依次输出元素地址
+        cout&lt;&lt;&amp;*(b+i)&lt;&lt;endl;//输出从该地址开始的字符串abc,bc,c
+    }
+</pre>
 
 <p>
 可以作出这样的判断:a是指针,
 </p>
 <h1 id="toc_3"> 一个区别</h1>
-<blockquote>
-string s = "abc";
-string *sp = &amp;s; //把string对象s的地址附给sp
-cout&lt;&lt;*sp&lt;&lt;endl; //得到"abc"
-*sp = "A new word";//把sp指向的内容用字符串字面值替代
-cout&lt;&lt;*sp&lt;&lt;endl; //得到"A new word"
-</blockquote>
-
+<pre>
+    string s = "abc";
+    string *sp = &amp;s; //把string对象s的地址附给sp
+    cout&lt;&lt;*sp&lt;&lt;endl; //得到"abc"
+    *sp = "A new word";//把sp指向的内容用字符串字面值替代
+    cout&lt;&lt;*sp&lt;&lt;endl; //得到"A new word"
+</pre>
 <h1 id="toc_4"> 不要忘记字符串结束符null</h1>
 <p>
 标准库函数(#include&lt;cstring&gt;)是string.h头文件的c++版本

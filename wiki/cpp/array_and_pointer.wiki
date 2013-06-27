@@ -56,3 +56,4 @@ C风格字符串与字符串字面值有相同的数据结构,而且都以null�
 
     const char *a="abc";
     string b(a);
+

@@ -1,0 +1,17 @@
+%title 字符串和浮点数的转换
+== 浮点数转换成字符串 ==
+{{{
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main()
+{
+    double db=12.5;
+    char *buffer;
+    buffer=gcvt(db,5,buffer);
+    cout<<buffer<<endl;
+    float a=atof(buffer);
+    cout<<a+1<<endl;
+    return 0;
+}
+}}}

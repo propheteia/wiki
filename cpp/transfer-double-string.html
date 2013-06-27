@@ -7,7 +7,7 @@
     
     <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
     
-    <title> cpp | winoi</title>
+    <title> 字符串和浮点数的转换 | winoi</title>
     
     <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
     <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
@@ -34,7 +34,7 @@
     <!--header -->
 <div id="header-wrap"><header>
     <hgroup>
-        <h1>cpp</h1>
+        <h1>字符串和浮点数的转换</h1>
     </hgroup>
 
     <nav>
@@ -55,39 +55,22 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<h1 id="toc_1"> C++</h1>
-<ul>
-<li>
-<a href="./socket.html">Linux socket编程</a>
-
-<li>
-<a href="./const.html">const限定符</a>
-
-<li>
-<a href="./cmake.html">cmake</a>
-
-<li>
-<a href="./socket.html">套接字</a>
-
-<li>
-<a href="./array_and_pointer.html">数组和指针</a>
-
-<li>
-<a href="./naming-rules.html">google命名规范</a>
-
-<li>
-<a href="./type-conversion.html">类型转换</a>
-
-<li>
-<a href="./transfer-double-string.html">字符串和浮点数的转换</a>
-
-<li>
-异常处理?
-
-<li>
-函数参数中用对象和引用的区别?
-
-</ul>
+<h2 id="toc_0.1"> 浮点数转换成字符串</h2>
+<pre>
+#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+using namespace std;
+int main()
+{
+    double db=12.5;
+    char *buffer;
+    buffer=gcvt(db,5,buffer);
+    cout&lt;&lt;buffer&lt;&lt;endl;
+    float a=atof(buffer);
+    cout&lt;&lt;a+1&lt;&lt;endl;
+    return 0;
+}
+</pre>
  
         <div>
    <div>

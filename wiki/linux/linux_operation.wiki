@@ -6,6 +6,8 @@
 == Fedora的服务管理 ==
 在安装完mysql包后，启动mysql-server服务应该是这样的:
     systemctl start mysqld.service
+如果每次启动自动启动
+    systemctl enable mysqld.service
 Fedora使用了systemd，所以配置daemon应该用systemctl。而以往系统是通过执行/ect/init.d/mysql start 启动的。
 === 查看系统消息 ===
 sudo vim /var/log/message

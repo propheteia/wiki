@@ -80,6 +80,12 @@
 systemctl start mysqld.service
 </blockquote>
 <p>
+如果每次启动自动启动
+</p>
+<blockquote>
+systemctl enable mysqld.service
+</blockquote>
+<p>
 Fedora使用了systemd，所以配置daemon应该用systemctl。而以往系统是通过执行/ect/init.d/mysql start 启动的。
 </p>
 <h3 id="toc_0.2.1"> 查看系统消息</h3>

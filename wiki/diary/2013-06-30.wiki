@@ -1,6 +1,2 @@
-= Vimwik =
-Today review vimwiki and have everything coordinated
-= Web =
-Change the web page
-= Others =
-web:[[www.sina.com|sina]]
+= Flask =
+== Where to put the templates and static directory? ==

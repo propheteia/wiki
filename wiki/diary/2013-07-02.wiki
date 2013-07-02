@@ -1,2 +1,16 @@
 = Mysql =
 == Relationship ==
+
+= Flask =
+== Flask-Babel == 
+[[http://translations.readthedocs.org/en/latest/flask-babel.html|中文参考]]
+更改模板或代码后,这样合并翻译文件:
+{{{
+    pybabel extract -F babel.cfg -o messages.pot .
+    (哪里又添加了要翻译的内容?)
+    pybabel update -i messages.pot -d translations
+    (在翻译文件夹中对其进行更新)
+    在messages.po中对更新的部分进行翻译
+    pybabel compile -d translations
+    (编译出 message.mo 文件)
+}}}

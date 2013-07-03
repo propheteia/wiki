@@ -1,2 +1,11 @@
 = Flask =
 == 上传图片 ==
+
+= Mysql =
+== ForeignKey ==
+[[http://www.cppblog.com/wolf/archive/2013/06/30/69089.html|例子]]
+
+把其他table的id作为自己的一项内容
+
+== RelationShip ==
+[[http://pythonhosted.org/Flask-SQLAlchemy/models.html#simple-example|simple example]]

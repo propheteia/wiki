@@ -49,7 +49,10 @@ Access denied for user ''@'localhost' to database 'mysql'
 所以只要将字符的默认编码设为'utf8'即可
     alter database DATABASE_NAME default character set 'utf8'; 
 
+如果不行,要重新初始化数据库.
+
 之后将数据重新导入到数据库即可
+
 另附上mysql字符集操作的其他的一些命令
 {{{
 1.列出MYSQL支持的所有字符集：

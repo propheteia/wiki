@@ -7,5 +7,8 @@
 
 把其他table的id作为自己的一项内容
 
+== 更改字段默认值 ==
+alter table t1 modify f1 varchar(100) default "default";
+
 == RelationShip ==
 [[http://pythonhosted.org/Flask-SQLAlchemy/models.html#simple-example|simple example]]

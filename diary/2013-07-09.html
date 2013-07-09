@@ -56,9 +56,22 @@
     &nbsp;
            
 <h1 id="toc_1"> Linux</h1>
-<h2 id="toc_1.1"> 删除文件夹</h2>
+<h2 id="toc_1.1"> 命令</h2>
 <p>
 find . -type d -name ".svn"|xargs rm -rf
+</p>
+
+<p>
+mysqldump -h localhost -u root -p 库名表名 &gt; /tmp/tmp.sql
+</p>
+
+<h2 id="toc_1.2"> 删除含有某个单词的行</h2>
+<p>
+vim :g/pattern/d
+</p>
+
+<p>
+sed -i "/pattern/d" inputfile 
 </p>
  
         <div>

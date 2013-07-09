@@ -1,0 +1,3 @@
+= Linux =
+== 删除文件夹 ==
+find . -type d -name ".svn"|xargs rm -rf

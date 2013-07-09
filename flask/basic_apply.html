@@ -221,6 +221,33 @@ svn还不太会的时候,上传代码出了问题,少传了几个文件,浪费�
 <p>
 form.html, edit.html需要放进templates文件夹
 </p>
+<h1 id="toc_6"> 一次低级的错误</h1>
+<pre>
+if 'SERVER_SOFTWARE' in os.environ:
+    import sae.const
+    MYSQL_HOST = sae.const.MYSQL_HOST
+    MYSQL_PORT =sae.const.MYSQL_PORT
+    MYSQL_USER =sae.const.MYSQL_USER
+    MYSQL_PASS =sae.const.MYSQL_PASS
+    MYSQL_DB =sae.const.MYSQL_DB
+    MYSQL_HOST_S = sae.const.MYSQL_HOST_S
+    SECRET_KEY = "12345"
+
+else:
+    MYSQL_HOST = 'localhost'
+    MYSQL_PORT = '3306'
+    MYSQL_USER = 'wenbin'
+    MYSQL_PASS = ''
+    if Debug:
+        MYSQL_DB = 'newblog'
+    else:
+        MYSQL_DB = 'newblog'
+    SECRET_KEY = "12345"
+
+&lt;-- SQLALCHEMY_DATABASE_URI = 'mysql://%s:%s@%s:%s/%s?charset=utf8' % (MYSQL_USER, MYSQL_PASS, MYSQL_HOST, MYSQL_PORT, MYSQL_DB)
+#这里误让其缩进了,导致出现难以追踪的错误.
+
+</pre>
  
         <div>
    <div>

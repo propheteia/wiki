@@ -1,3 +1,4 @@
 %title FLASK
 * [[./svn|用svn部署代码]]
 * [[./basic_apply|在sae上部署基本web应用]]
+* [[./flask_practice|Flask]]

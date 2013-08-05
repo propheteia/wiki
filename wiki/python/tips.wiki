@@ -226,3 +226,18 @@ yield版本三:
     tuple和list可以相互转换. a=[]  b=tuple(a) type(b) --> tuple
 
 
+= wtform的一个getattr =
+{{{
+def validate(self):                                                        
+    """                                                                    
+    Validates the form by calling `validate` on each field, passing any    
+    extra `Form.validate_<fieldname>` validators to the field validator.   
+    """                                                                    
+    extra = {}                                                             
+    for name in self._fields:                                              
+        inline = getattr(self.__class__, 'validate_%s' % name, None)       
+        if inline is not None:                                                                                                                 
+            extra[name] = [inline]                                         
+                                                                           
+    return super(Form, self).validate(extra)    
+}}}

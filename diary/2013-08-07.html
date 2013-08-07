@@ -55,12 +55,46 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<h1 id="toc_1"> 完善Wiki</h1>
+<h1 id="toc_1"> 完善Wiki系统</h1>
 <ul>
 <li>
 参考网址:<a href="http://coolshell.cn/articles/27.html">http://coolshell.cn/articles/27.html</a>
 
 </ul>
+<h1 id="toc_2"> ssh免密码登录</h1>
+<ul>
+<li>
+/etc/ssh/sshd_config
+
+</ul>
+
+<p>
+PasswordAuthentication no
+</p>
+
+<ul>
+<li>
+chmod 700 authorized_keys 
+
+<li>
+chmod 700 ~/.ssh
+
+<li>
+chmod 700 ~
+
+</ul>
+
+<p>
+在查看问题的时候,查看/var/log/secure文件(linux),因为ssh连接关键在于安全,所以home目录的权限应该是700,authorized_keys和.ssh的权限都应该是700,因为ssh连接关键在于安全,所以home目录的权限应该是700,authorized_keys和.ssh的权限都应该是700
+</p>
+
+<p>
+连接测试ssh时,可以加 -v(-vv,-vvv)查看debug信息,
+</p>
+<blockquote>
+ssh me@ME -v
+</blockquote>
+<h1 id="toc_3"> 如何设计数据库</h1>
  
         <div>
    <div>

@@ -1,2 +1,17 @@
-= 完善Wiki =
+= 完善Wiki系统 =
 * 参考网址:http://coolshell.cn/articles/27.html
+= ssh免密码登录 =
+* /etc/ssh/sshd_config
+
+PasswordAuthentication no
+
+* chmod 700 authorized_keys 
+* chmod 700 ~/.ssh
+* chmod 700 ~
+
+在查看问题的时候,查看/var/log/secure文件(linux),因为ssh连接关键在于安全,所以home目录的权限应该是700,authorized_keys和.ssh的权限都应该是700,因为ssh连接关键在于安全,所以home目录的权限应该是700,authorized_keys和.ssh的权限都应该是700
+
+连接测试ssh时,可以加 -v(-vv,-vvv)查看debug信息,
+    ssh me@ME -v
+= 如何设计数据库 =
+

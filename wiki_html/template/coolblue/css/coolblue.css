@@ -382,7 +382,7 @@ header {
     width: 100%;
 }
 #content {
-    width: 1078px;
+    width: 800px;
     margin: 0 auto;
     padding: 0 0 24px 0;
     background: url(../images/content.png) repeat-y left top;
@@ -427,11 +427,11 @@ header {
 }
 footer {
 	clear: both;
-    width: 978px;
+    width: 800px;
 	margin: 0 auto;
     padding-top: 12px;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-Serif;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+/*    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);*/
     font-size: 11px;
 	color: black;
     overflow: hidden;
@@ -445,14 +445,15 @@ footer {
 /* Logo */
 header hgroup {
     position: absolute;
-    background: url(../images/logo.png) no-repeat;
+    backgroun url(../images/logo.png) no-repeat;
     height: 62px;
     width: 215px;
     display: block;
     top: 100px;
-    left: 10px;
+    left: 0px;
 }
 header hgroup h1 {
+    font-size: 2.2em;
     margin: 10px;
     padding: 0;
 }
@@ -476,7 +477,7 @@ header nav {
 header nav ul {
 	list-style: none;
 	margin: 0;
-    padding: 0;
+    padding: 0 0 0 35px;
 	height: 60px;
 }
 header nav ul li {
@@ -782,7 +783,7 @@ footer a:visited {
     color: black;
 }
 footer a:hover {
-    color: #99CCFF;
+    color: black;
 }
 footer a.back-to-top {
     background: url(../images/back-to-top.png) no-repeat right 2px;

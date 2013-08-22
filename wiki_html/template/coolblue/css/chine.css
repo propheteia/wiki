@@ -1,5 +1,4 @@
-input,button,select,textarea{outline:none} 
-blockquote {
+input,button,select,textarea{outline:none} blockquote {
   	margin: 12px 0;
   	padding: 40px 30px 20px 70px;
   	border: 1px solid #E4E6E9;
@@ -25,7 +24,16 @@ header hgroup {
     position: absolute;
     display: block;
     top: 94px;
-    left: 80px;
+    left: 60px;
+	background-image: none;
+	width: auto;
+	height: auto;
+}
+header hgroup2 {
+    position: absolute;
+    display: block;
+    top: 124px;
+    left: 360px;
 	background-image: none;
 	width: auto;
 	height: auto;
@@ -64,7 +72,7 @@ header nav ul a:link, header nav ul a:visited {
     font-weight: bold;
     display: block;
 	margin: 0;
-    padding: 0 14px;
+    padding: 0 1px;
     height: 60px;
 	color: #BEBEBE;
     text-shadow: 0 -1px 0 rgba(10, 10, 10, 1);

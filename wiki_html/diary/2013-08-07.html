@@ -1,0 +1,116 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> 2013-08-07 | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>2013-08-07</h1>
+    </hgroup>
+
+    <nav>
+        <ul>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
+            <li><a href="../about.html">关于</a><li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h1 id="toc_1">完善Wiki系统</h1>
+<ul>
+<li>
+参考网址:<a href="http://coolshell.cn/articles/27.html">http://coolshell.cn/articles/27.html</a>
+
+</ul>
+<h1 id="toc_2">ssh免密码登录</h1>
+<ul>
+<li>
+/etc/ssh/sshd_config
+
+</ul>
+
+<p>
+PasswordAuthentication no
+</p>
+
+<ul>
+<li>
+chmod 700 authorized_keys 
+
+<li>
+chmod 700 ~/.ssh
+
+<li>
+chmod 700 ~
+
+</ul>
+
+<p>
+在查看问题的时候,查看/var/log/secure文件(linux),因为ssh连接关键在于安全,所以home目录的权限应该是700,authorized_keys和.ssh的权限都应该是700,因为ssh连接关键在于安全,所以home目录的权限应该是700,authorized_keys和.ssh的权限都应该是700
+</p>
+
+<p>
+连接测试ssh时,可以加 -v(-vv,-vvv)查看debug信息,
+</p>
+<blockquote>
+ssh me@ME -v
+</blockquote>
+<h1 id="toc_3">如何设计数据库</h1>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>

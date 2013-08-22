@@ -1,0 +1,162 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> Linux管道命令 | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>Linux管道命令</h1>
+    </hgroup>
+
+    <nav>
+        <ul>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
+            <li><a href="../about.html">关于</a><li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h1 id="toc_1">命名管道fifo</h1>
+<p>
+可以把管道想象为两个实体之间的单向连接器。管道是半双工的，如果需要全双工通讯，应该转而考虑套接字。 
+</p>
+
+<p>
+匿名管道又称管道(PIPE)，提供了一个进程与它的兄弟进程通讯的方法，只存在于父进程中.
+</p>
+
+<p>
+命名管道，可以存在于文件系统中，任意进程都可找到它，使得不同先祖的进程也可以通讯。 
+</p>
+
+<pre>
+A FIFO special file (a named pipe) is similar to a pipe, except that
+       it is accessed as part of the file system.  It can be opened by
+       multiple processes for reading or writing.  When processes are
+       exchanging data via the FIFO, the kernel passes all data internally
+       without writing it to the file system.  Thus, the FIFO special file
+       has no contents on the file system; the file system entry merely
+       serves as a reference point so that processes can access the pipe
+       using a name in the file system.
+
+       The kernel maintains exactly one pipe object for each FIFO special
+       file that is opened by at least one process.  The FIFO must be opened
+       on both ends (reading and writing) before data can be passed.
+       Normally, opening the FIFO blocks until the other end is opened also.
+
+       A process can open a FIFO in nonblocking mode.  In this case, opening
+       for read-only will succeed even if no-one has opened on the write
+       side yet, opening for write-only will fail with ENXIO (no such device
+       or address) unless the other end has already been opened.
+
+       Under Linux, opening a FIFO for read and write will succeed both in
+       blocking and nonblocking mode.  POSIX leaves this behavior undefined.
+       This can be used to open a FIFO for writing while there are no
+       readers available.  A process that uses both ends of the connection
+       in order to communicate with itself should be very careful to avoid
+       deadlocks.
+</pre>
+
+<h1 id="toc_2">FIFI和PIPE</h1>
+<h2 id="toc_2.1">共同点</h2>
+<p>
+他们的核心数据结构是一样的，pipe_inode_info，并且，FIFO的读写函数和pipe的读写函数也一致。
+</p>
+
+<h2 id="toc_2.2">区别</h2>
+<p>
+第一，fifo出现在系统目录树中，是个特殊的文件,因为它不具备内容.而pipe则在特殊文件系统pipefs中。
+</p>
+
+<p>
+第二，fifo是双向通信管道，而pipe是单向的。
+</p>
+
+<h1 id="toc_3">Pipe和FIFO有对应的disk image吗？有对应的indoe吗？他们属于同一个文件系统吗？</h1>
+<p>
+pipe和fifo都没有对应的disk image。
+</p>
+
+<p>
+他们都是文件，所以肯定有inode。同时，当创建一个pipe或者fifo时，实际上是创建了一个inode和两个file object.
+</p>
+
+<p>
+pipe属于pipefs文件系统，fifo不是。所以他们不属于同一个文件系统。
+</p>
+
+<h1 id="toc_4">Pipe和FIFO使用的多吗？</h1>
+
+<p>
+Pipe就不用说了，shell中经常用到，实际编程中如果遇到重定向或者父子进程通信，pipe也是一个不错的选择。就我目前看到过的代码而言，shell中pipe使用较多，c中pipe也有用到，但明显没有semaphore，socket等普遍。
+</p>
+
+<p>
+FIFO的话，说实话，基本没见过。我认为原因是他能做的，socket也一定能做，并且能做的更好。所以FIFO就有点累赘了。另外，从本文开头的两篇链接中，我们可以看到，FIFO的编程有点麻烦，要对读写进行比较精确的控制，防止死锁或者竞争。
+</p>
+<h1 id="toc_5">使用注意</h1>
+<pre>
+       When a process tries to write to a FIFO that is not opened for read
+       on the other side, the process is sent a SIGPIPE signal.
+</pre>
+<p>
+因此,当管道一端执行写操作,必须等到另外一端打开读操作,终止信号才会解除
+</p>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>

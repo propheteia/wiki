@@ -1,0 +1,134 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> 2013-07-10 | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>2013-07-10</h1>
+    </hgroup>
+
+    <nav>
+        <ul>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
+            <li><a href="../about.html">关于</a><li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h1 id="toc_1">Linux</h1>
+<h2 id="toc_1.1">命令</h2>
+<p>
+查找、更新、查找下一个、重复
+</p>
+
+<p>
+在vi 编辑器中，最有用的搜索/替换特性之一是查找与某个模式匹配的字符串，更新它，然后继续搜索下一个匹配的字符串，然后选择是否以相同方式更新它。这与 Microsoft® Word 中的查找下一个/替换功能很相似。您可能已经知道可以在vi 中搜索字符串模式，方法是进入命令模式，输入/search_pattern（其中的 search_pattern 是字符串或正则表达式），然后按回车。这样做就会找到与指定的模式匹配的第一个字符串。在此之后，可以在找到的文本上执行任何操作。例如，按 Escape，再按 C 和 W 键，再输入更多文本，就会把找到的字符串替换为另一个单词。
+</p>
+
+<p>
+要想快速地找到与模式匹配的下一个地方，应该按 Escape，然后按 N 键。在找到下一个匹配时，可以使用点号键（.）在这个位置重复最近的文本操作，比如前一个示例中使用的修改单词（cw）操作。然后，可以使用这些键继续寻 找其他匹配（n）并选择重复文本操作（.），操作方式与使用 Word 中的查找下一个/替换功能很相似。
+</p>
+
+
+<p>
+切换大小写
+</p>
+
+<p>
+在vi 中，可以切换游标下的字母字符的大小写，方法是按 Escape，然后按波浪号键（~）。这会在小写和大写之间来回切换。按着这个键，移动游标经过行中的每个字符，就会切换遇到的每个字母字符的大小写。可 以在波浪号前面输入一个数字，表示希望改变多少个字母字符的大小写。
+</p>
+
+
+<p>
+筛选
+</p>
+
+<p>
+您可能知道，在vi 中按 Escape，输入 :!command（其中的 command 是要执行的 UNIX 命令），然后按回车，就可以在 shell 中执行命令。例如，:!pwd 显示编辑会话当前的工作目录。
+</p>
+
+<p>
+但是，还可以把文件的一部分作为标准输入发送给 UNIX 命令，并用产生的输出替换编辑缓冲区中的相同部分。例如，如果希望在vi 会话内对清单 9 所示的整个文件进行排序，可以按 Escape，输入 :1,\(!sort 并按回车，这让vi 把从第一行到文件末尾（\)）的所有内容传递给 sort 命令，用输出替换指定的部分。
+</p>
+
+<p>
+另外，还可以在 shell 命令前面加上从当前游标位置开始希望操作的行数。方法是按 Escape，然后输入指定行数的数字，然后输入两个惊叹号（!!），最后输入 UNIX 命令。
+</p>
+
+<p>
+可以使用管道分隔符（|）把 UNIX 命令连接在一起，从而在vi 会话中执行复杂强大的筛选。例如，假设要把当前vi 会话的编辑缓冲区中的文件内容替换为每行的第一个空格分隔的字段，按升序排序并转换为大写，那么在按 Escape 之后输入：
+</p>
+<blockquote>
+:1,\(!awk ‘{print \)1}’ | sort | tr [:lower:] [:upper:]
+</blockquote>
+
+<p>
+保存部分内容
+</p>
+
+<p>
+可以保存当前编辑的文件的部分内容，方法是按 Escape，然后输入 :start,endw file，其中的 start 是当前文件中要保存的第一行，end 是要保存的最后一行，w表示希望写到另一个文件中（或者覆盖现有的文件），file 是指定的部分要保存到的文件。对于最后一行，可以使用$表示文件的末尾。可以在w后面使用两个大于号（&gt;&gt;）表示希望把内容附加到文件中而不 是覆盖文件。清单 12 中的示例把第 6 到第 9 行（含）附加到文件/tmp/newfile 中。
+</p>
+
+<p>
+:6,9w &gt;&gt; /tmp/newfile
+</p>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>

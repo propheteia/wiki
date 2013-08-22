@@ -1,0 +1,198 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> 日志管理模块-logging  | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>日志管理模块-logging </h1>
+    </hgroup>
+
+    <nav>
+        <ul>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
+            <li><a href="../about.html">关于</a><li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h1 id="toc_1">简介</h1>
+<p>
+在较大型的程序调试过程中，希望让它输出一些信息。我们可以通过信息判断程序运行的情况。通过python中的logging模块，将想要的信息分类保存到若干个文件中。
+代码：
+</p>
+<pre class="brush:python">
+import logging
+class Logger:
+    def __init__(self,logName,filename):
+        self.logger = logging.getLogger(logName)
+        self.logger.setLevel(logging.INFO)
+        handler = logging.FileHandler(filename,mode='w') #If mode is not specified, 'a' is used.
+        handler.setLevel(logging.NOTSET)
+        formatter = logging.Formatter('%(asctime)s-%(name)s-%(levelname)s:%(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+        handler.setFormatter(formatter)
+        self.logger.addHandler(handler)
+   
+    def log_(self,msg):
+        if self.logger is not None:
+            self.logger.info(msg)
+if __name__ == "__main__":
+    log1=Logger("behavior","test1.log")
+    log1.log_("hello")
+    log2=Logger("action","test2.log")
+    log2.log_("world")
+</pre>
+
+
+<p>
+这里注意的是，创建Logger对象。日志记录的工作主要由Logger对象来完成。在调用getLogger时要提供Logger的名称（注：多次使用相同名称来调用getLogger，返回的是同一个对象的引用。），Logger实例之间有层次关系，这些关系通过Logger名称来体现.如果省略了name参数, getLogger将返回日志对象层次关系中的根Logger。
+</p>
+  
+<p>
+简言之，Logger对象负责收集log，Handler负责log的格式化和输出。如果一个模块创建两个或者以上的log，唯一通过logname来区分。
+</p>
+
+<p>
+至于logger已经setLevel了，那么handler为什么要setLevel?官方文档上找到了这样一个解释:
+</p>
+<blockquote>
+The Handler.setLevel() method, just as in logger objects, specifies the lowest severity that will be dispatched to the appropriate destination. Why are there two setLevel() methods? The level set in the logger determines which severity of messages it will pass to its handlers. The level set in each handler determines which messages that handler will send on.
+</blockquote>
+
+<p>
+<img src="file:///Users/prophet/Wiki/wiki/python/../../python/logging_flow.png" alt="cool stuff" style="width:650px; height: 620px;" />
+</p>
+<h1 id="toc_2">logger等级</h1>
+<p>
+对于Logger的等级，下面可以清楚反应其分级：
+</p>
+<pre class="brush:python">
+import logging
+import sys
+
+LEVELS={'debug':logging.DEBUG,
+        'info':logging.INFO,
+        'warning':logging.WARNING,
+        'error':logging.ERROR,
+        'critical':logging.CRITICAL}
+
+if len(sys.argv)&gt;1:
+    level_name=sys.argv[1]
+    level=LEVELS.get(level_name,logging.NOTSET)
+    logging.basicConfig(level=level)
+ 
+
+logging.debug("This is a debug message")
+
+logging.info("This is an info message")
+
+logging.warning("This is a warning message")
+
+logging.error("This is an error message")
+
+logging.critical("This is a critical error message")
+</pre>
+
+<p>
+还有一个问题就是在将log写进文件的时候怎样改变文件的属性(filemode),让其每次都覆盖上一次的值:
+</p>
+<blockquote>
+已经解决：
+handler = logging.FileHandler(filename,mode='w') #If mode is not specified, 'a' is used.
+</blockquote>
+
+
+<p>
+filemode:
+</p>
+<pre>
+    filemode=’r',只读，清除原有内容（默认方式）
+    filemode=’r+’,读写，清除原有内容
+    filemode=’w',只写，创建一个新的文件覆盖旧的
+    filemode=’w+’,读写，创建一个新的文件覆盖旧的
+    filemode=’a',只写，追加
+    filemode=’a+’,读写，追加
+    filemode=’b',二进制模式
+</pre>
+
+<p>
+还有一种方法是创建config文件，将配置信息写入config，再通过fileConfig函数来读取该文件。
+<strong>来源:</strong> <a href="http://docs.python.org/2/howto/logging.html">HowTo</a>
+</p>
+
+<h1 id="toc_3">多个log在同一日志文件输出</h1>
+<p>
+有时候需要在同一个日志文件下分别输出系统级日志（它的级别设定为INFO），同时也要输出测试结果(设定级别为INFO）。如果测试结果出错，出错输出级别设定为(WARNING).这时候可以使用两个日志名共用一个handler.
+</p>
+<pre class="brush:python">
+sys = logging.getLogger("sys")
+sys.setLevel(logging.INFO)
+test = logging.getLogger("geb")
+test.setLevel(logging.WARNING)
+
+handler = logging.FileHandler("good",mode='w')
+handler.setLevel(logging.NOTSET)
+formatter = logging.Formatter('%(asctime)s-%(name)s-%(levelname)s:%(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+handler.setFormatter(formatter)
+
+sys.addHandler(handler)
+test.addHandler(handler)
+</pre>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>

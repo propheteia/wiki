@@ -1,0 +1,311 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> Vim | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>Vim</h1>
+    </hgroup>
+
+    <nav>
+        <ul>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
+            <li><a href="../about.html">关于</a><li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<div class="toc">
+<ul>
+<li><a href="#toc_0.1">中文输入的解决</a>
+<li><a href="#toc_0.2">将若干行注释</a>
+<li><a href="#toc_0.3">Ctags</a>
+<li><a href="#toc_0.4">Taglist</a>
+<li><a href="#toc_0.5">Cscope</a>
+<li><a href="#toc_0.6">Substitute</a>
+<li><a href="#toc_0.7">VIM Color Scheme Test</a>
+<li><a href="#toc_0.8">python在vim中的代码缩进</a>
+<li><a href="#toc_0.9">对于某一文档做特殊的处理，可以在编辑器中设置"：set ..."</a>
+<li><a href="#toc_0.10">来自简明VIM练级攻略</a>
+<li><a href="#toc_0.11">快捷键退出保存</a>
+</ul>
+</ul>
+</div>
+<h2 id="toc_0.1">中文输入的解决</h2>
+<ul>
+<li>
+安装fcitx插件。<a href="http://www.vim.org/scripts/script.php?script_id=3764 ">fcitx插件</a>
+
+<li>
+在.vimrc中插入: set:ttimeoutlen=100 减少退出插入时的延时
+
+</ul>
+<h2 id="toc_0.2">将若干行注释</h2>
+<ul>
+<li>
+将1到10行注释 --&gt; :1,10s/^/#/g 
+
+</ul>
+
+<h2 id="toc_0.3">Ctags</h2>
+<ul>
+<li>
+To split the current window and jump to the tag under the cursor use this
+
+</ul>
+<p>
+command: 
+</p>
+<blockquote>
+CTRL-W ]
+</blockquote>
+<h2 id="toc_0.4">Taglist</h2>
+<ul>
+<li>
+提供函数列表
+
+<li>
+let Tlist_Show_One_File=1
+
+<li>
+let Tlist_Exit_OnlyWindow=1
+
+</ul>
+
+<h2 id="toc_0.5">Cscope</h2>
+<pre>
+0 or s: Find this C symbol
+1 or g: Find this definition
+2 or d: Find functions called by this function
+3 or c: Find functions calling this function
+4 or t: Find this text string
+6 or e: Find this egrep pattern
+7 or f: Find this file
+8 or i: Find files #including this file
+</pre>
+<h2 id="toc_0.6">Substitute</h2>
+<blockquote>
+:%s/a/b/gc</br>
+g:行中所有</br>
+%:全文    </br>
+c:Confirm </br>
+</blockquote>
+<h2 id="toc_0.7">VIM Color Scheme Test</h2>
+<p>
+<strong>原文:</strong> <a href="http://vimcolorschemetest.googlecode.com/svn/html/index-c.html">http://vimcolorschemetest.googlecode.com/svn/html/index-c.html</a>
+</p>
+
+<h2 id="toc_0.8">python在vim中的代码缩进</h2>
+<table>
+<tr>
+<th>
+变量名
+</th>
+<th>
+缩写
+</th>
+<th>
+含义
+</th>
+</tr>
+<tr>
+<td>
+tabstop=X
+</td>
+<td>
+ts
+</td>
+<td>
+编辑时一个TAB字符占多少个空格的位置。
+</td>
+</tr>
+<tr>
+<td>
+shiftwidth=X
+</td>
+<td>
+sw
+</td>
+<td>
+使用每层缩进的空格数。
+</td>
+</tr>
+<tr>
+<td>
+(no)expandtab
+</td>
+<td>
+(no)et
+</td>
+<td>
+是否将输入的TAB自动展开成空格。开启后要输入TAB，需要Ctrl-V&lt;TAB&gt;
+</td>
+</tr>
+<tr>
+<td>
+softtabstop=X
+</td>
+<td>
+sts
+</td>
+<td>
+方便在开启了et后使用退格（backspace）键，每次退格将删除X个空格
+</td>
+</tr>
+<tr>
+<td>
+(no)smarttab
+</td>
+<td>
+(no)sta
+</td>
+<td>
+开启时，在行首按TAB将加入sw个空格，否则加入ts个空格。
+</td>
+</tr>
+</table>
+<p>
+我的设置：
+</p>
+<blockquote>
+set noexpandtab<br>
+set tabstop=4<br>
+set softtabstop=0<br>
+set shiftwidth=4<br>
+</blockquote>
+
+<p>
+python是靠缩进来决定语句的层次关系的，所以你的缩进风格一定要统一，并且不能把空格和tab混起来用
+</p>
+
+<h2 id="toc_0.9">对于某一文档做特殊的处理，可以在编辑器中设置"：set ..."</h2>
+<p>
+<strong>参考：</strong><a href="http://tedlogan.com/techblog3.html">Secret of Tabs in Vim</a>
+</p>
+
+<h2 id="toc_0.10">来自简明VIM练级攻略</h2>
+<p>
+ 转载:<a href="http://coolshell.cn/articles/5426.html">VIM练级攻略</a> 
+</p>
+<ul>
+<li>
+% : 匹配括号移动，包括 (, {, [. )
+
+<li>
+0 - 到行头 
+
+<li>
+^ - 到本行第一个非空字符
+
+<li>
+g_ - 到本行最后一个非空字符
+
+<li>
+&lt;action&gt;a&lt;object&gt; 和 &lt;action&gt;i&lt;object&gt;
+
+</ul>
+ 
+<pre>
+     action可以是任何的命令，如 d (删除), y (拷贝), v (可以视模式选择)。
+     object 可能是： w 一个单词， W 一个以空格为分隔的单词， s 一个句字，
+      p 一个段落。也可以是一个特别的字符："、 '、 )、 }、 ]。
+</pre>
+<ul>
+<li>
+块操作: &lt;C-v&gt;
+     块操作，典型的操作： 0 &lt;C-v&gt; &lt;C-d&gt; I-- [ESC]
+
+<li>
+在所有被选择的行后加上点东西：
+
+</ul>
+ 
+<pre>
+    &lt;C-v&gt;        
+    选中相关的行 (可使用 j 或 &lt;C-d&gt; 或是 /pattern 或是 % 等……)
+    $ 到行最后
+    A, 输入字符串，按 ESC。
+</pre>
+<ul>
+<li>
+J → 把所有的行连接起来（变成一行）
+
+</ul>
+ 
+<pre>
+     &lt; 或 &gt; → 左右缩进
+     = → 自动给缩进 （陈皓注：这个功能相当强大，我太喜欢了）
+</pre>
+<ul>
+<li>
+运行vimtutor
+
+</ul>
+<p>
+<a href="*.html">*</a> ZZ 保存并且退出
+</p>
+<h2 id="toc_0.11">快捷键退出保存</h2>
+<pre>
+nmap &lt;leader&gt;s :w!&lt;cr&gt;
+nmap &lt;leader&gt;w :wq!&lt;cr&gt;
+nmap &lt;leader&gt;q :q!&lt;cr&gt;
+</pre>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>

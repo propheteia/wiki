@@ -1,0 +1,166 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> css | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>css</h1>
+    </hgroup>
+
+    <nav>
+        <ul>
+            <li><a href="http://www.winoi.com">首页</a><span></span></li>
+            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
+            <li><a href="../about.html">关于</a><li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h1 id="toc_1">CSS:</h1>
+<h2 id="toc_1.1">做个下拉菜单？</h2>
+<p>
+editing ...
+</p>
+<h2 id="toc_1.2">简单的访问权限设置</h2>
+<h3 id="toc_1.2.1">目的:</h3>
+<p>
+做一个链接，用于个人任务及进度管理。访客需要权限。输入正确的密码可以进入。
+</p>
+<h3 id="toc_1.2.2">实现方法: Javascript</h3>
+<pre class="brush:python">
+function password() {
+var times = 1;
+while (times &lt; 3) {
+var pwd = prompt('请您输入作者给您的密码:','');
+if (pwd==null)
+history.go(-1);
+if (pwd == "12345") {
+break;
+}
+else
+times+=1;
+}
+if (times ==3)
+history.go(-1);
+return "";
+}
+document.write(password());
+</pre>
+<p>
+在任务首页的head中插入以上脚本。
+</p>
+<h3 id="toc_1.2.3">不足：</h3>
+<p>
+但是这样只能限定任务目录入口，但是依然可以进入具体任务页面。如果把每一个页面都给限定，会大大降低效率。
+</p>
+<h1 id="toc_2">记录</h1>
+<h3 id="toc_2.0.1">让段落字体处于两边对齐的位置</h3>
+<p>
+p{
+text-align:justify; 
+text-justify:inter-ideograph;
+}
+</p>
+
+<h3 id="toc_2.0.2">图标网站</h3>
+<p>
+图标: <a href="http://www.iconarchive.com/">http://www.iconarchive.com/</a>
+css: <a href="http://www.styleshout.com/">http://www.styleshout.com/</a>
+</p>
+<h2 id="toc_2.1">CSS复合器</h2>
+<h3 id="toc_2.1.1">交集</h3>
+<p>
+p.no    --&gt;     &lt;p class="no"&gt; 
+</p>
+<blockquote>
+对于交集里有的属性,使用并集里的属性
+对于p 和 no 都具有的属性,使用no(类)的属性
+只有p或者no中具有的属性,就使用该属性
+</blockquote>
+
+<p>
+所以从优先级上 -- &gt;     交集 &gt; class &gt; 标签
+</p>
+
+<h3 id="toc_2.1.2">并集</h3>
+<p>
+都具有这项属性
+</p>
+
+<h3 id="toc_2.1.3">后代选择器</h3>
+<blockquote>
+ui li {}
+p span {} 
+</blockquote>
+
+<h3 id="toc_2.1.4">继承</h3>
+<blockquote>
+body -&gt; h1 -&gt; em
+下级继承上级
+</blockquote>
+
+<h3 id="toc_2.1.5">层叠特性</h3>
+<blockquote>
+class &gt; 标签    
+id &gt; class
+内嵌 &gt; id
+多个class左边优先
+</blockquote>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>

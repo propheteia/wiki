@@ -14,5 +14,4 @@
 | assertNotIn(a, b)         | a not in b           |
 | assertIsInstance(a, b)    | isinstance(a, b)     |
 | assertNotIsInstance(a, b) | not isinstance(a, b) |
-
 来自：{{http://docs.python.org/2/library/unittest.html|unittest}}

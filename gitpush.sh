@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /Users/prophet/Wiki
+cd ~/Wiki
 git add .
 git commit -a -m "auto"
 #git remote add origin git@github.com:propheteia/wiki.git

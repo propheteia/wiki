@@ -5,4 +5,6 @@ git commit -a -m "auto"
 #git remote add origin git@github.com:propheteia/wiki.git
 git pull origin gh-pages
 git push origin gh-pages
-notify-send   -t 2000 -i gtk-dialog-info "<span color=\"green\">git@gibhub has been synchronized</span>"
+echo "################"
+Succeed!
+#notify-send   -t 2000 -i gtk-dialog-info "<span color=\"green\">git@gibhub has been synchronized</span>"

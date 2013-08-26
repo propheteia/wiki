@@ -9,3 +9,5 @@
 * [[./project|python构建完整项目]]
 * [[./autotest|用python做自动测试平台]] 
 * [[./metaclass|深刻理解元类(metaclass)]]
+* [[./basic_data|基本数据结构]]
+* [[./topic|生成简单的包含文字的图片]]

@@ -8,7 +8,7 @@
     
     <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
     
-    <title> FLASK | winoi</title>
+    <title> 生成简单的包含文字的图片 | winoi</title>
     
     <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
     <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
@@ -35,7 +35,7 @@
     <!--header -->
 <div id="header-wrap"><header>
     <hgroup>
-        <h1>FLASK</h1>
+        <h1>生成简单的包含文字的图片</h1>
     </hgroup>
 
     <hgroup2>
@@ -58,20 +58,30 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<ul>
-<li>
-<a href="./svn.html">用svn部署代码</a>
+<h1 id="toc_1">安装PIL(Python Imaging Library) 模块</h1>
+<p>
+可能会报错
+</p>
+<blockquote>
+raise ImportError("The _imagingft C module is not installed")
+</blockquote>
+<p>
+那是因为缺少freetype库
+</p>
+<blockquote>
+"Your installed PIL was compiled without libfreetype"
+</blockquote>
+<p>
+在os上的解决办法:
+</p>
+<blockquote>
+brew install freetype
+pip install pil
+</blockquote>
 
-<li>
-<a href="./basic_apply.html">在sae上部署基本web应用</a>
-
-<li>
-<a href="./flask_practice.html">Flask</a>
-
-<li>
-<a href="./active_account.html">怎样设计激活邮箱的激活码？</a>
-
-</ul>
+<p>
+<a href="http://mozillazg.wordpress.com/2011/08/27/python-identifying-code/">参考</a>
+</p>
  
         <div>
    <div>

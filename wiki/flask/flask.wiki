@@ -2,3 +2,4 @@
 * [[./svn|用svn部署代码]]
 * [[./basic_apply|在sae上部署基本web应用]]
 * [[./flask_practice|Flask]]
+* [[./active_account|怎样设计激活邮箱的激活码？]]

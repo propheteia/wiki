@@ -1,5 +1,5 @@
 %title Python
-* [[./tips|python]]
+* [[./tips|技巧]]
 * [[./unittest|测试单元]]
 * [[./regular_exp|python正则表达式]]
 * [[./virtualenv|python环境隔离virtualenv]]
@@ -7,5 +7,7 @@
 * [[./distutils|distutils生成模块]]
 * [[./pep8|PEP8标准阅读]]
 * [[./project|python构建完整项目]]
-* [[./autotest|用python做自动测试平台]] 
 * [[./metaclass|深刻理解元类(metaclass)]]
+* [[./and_or|and 和 or]]
+* [[./lambda| 一个实现自省的例子]]
+* [[./autotest|用python做自动测试平台]] 

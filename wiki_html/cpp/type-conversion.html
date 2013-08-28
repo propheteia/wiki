@@ -1,3 +1,4 @@
+<html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
@@ -37,11 +38,13 @@
         <h1>数据类型转换</h1>
     </hgroup>
 
+    <hgroup2>
+        <h3>我们在燃烧的忍耐中武装，随着佛晓进入光辉的城镇</h3>
+    </hgroup2>
+
     <nav>
         <ul>
-            <li><a href="http://www.winoi.com">首页</a><span></span></li>
-            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
-            <li><a href="../about.html">关于</a><li>
+            <li id="current"><a href="../index.html">Winoi的维基</a></li>
         </ul>
     </nav>
 
@@ -55,7 +58,7 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<h1 id="toc_1">int转换为char*</h1>
+<h1 id="toc_1"> int转换为char*</h1>
 <p>
 使用sprintf
 </p>
@@ -95,6 +98,81 @@ X 整数转成大写十六进位。
 
     sprintf(c, "%d", n);      
 </pre>
+<h1 id="toc_2"> 隐式转换</h1>
+<p>
+几个典型的隐式转换:
+</p>
+<blockquote>
+int *ip;
+ip = 0; //the int 0 converted to null pointer of type int *
+</blockquote>
+<blockquote>
+int ival;
+if (ival) // ival converted to bool
+while(cin) // cin converted to bool
+</blockquote>
+
+<p>
+还有个由标准库类型定义的转换
+</p>
+<blockquote>
+string s;
+while(cin&gt;&gt;s) // iostream converted to bool ,检验流的状态,是否结束
+</blockquote>
+    
+<h1 id="toc_3"> 显式转换</h1>
+<h2 id="toc_3.1"> 以前的显示转换</h2>
+<blockquote>
+float a=1.0f;
+cout &lt;&lt; (int&amp;)a &lt;&lt; endl;
+</blockquote>
+<p>
+这里(int&amp;)a相当于*(int*)&amp;a, 从float型a的地址开始读,认为它是int.
+</p>
+
+<p>
+int&amp;是引用类型，(int &amp;)a的意思是将a存储单元开始的内容解释为一个int引用。
+</p>
+
+<p>
+相关代码:
+</p>
+<pre>
+//5-4-1.cpp 
+#include&lt;iostream&gt;                                                      
+#include&lt;stdio.h&gt;                                                       
+#include&lt;string.h&gt;                                                      
+using namespace std;                                                    
+int main()                                                              
+{                                                                       
+    float a = 1.0f;                                                     
+    cout&lt;&lt;(int)a&lt;&lt;endl;                                                 
+    cout&lt;&lt;&amp;a&lt;&lt;endl;                                                     
+    cout&lt;&lt;(int&amp;)a&lt;&lt;endl;                                                
+    cout&lt;&lt;*(int*)&amp;a&lt;&lt;endl;                                              
+    cout&lt;&lt;boolalpha&lt;&lt;((int)a==(int&amp;)a)&lt;&lt;endl;                           
+ }   
+</pre>
+
+<p>
+类似:
+</p>
+<pre>
+#include&lt;stdio.h&gt;    
+int main()
+{
+    unsigned int a = 0xfffffff7;
+    unsigned char i = (unsigned char)a;
+    char *b = (char*)&amp;a; // 等同与 unsigned int *p = a; char *b = (char*)p
+}
+</pre>
+
+
+
+<h2 id="toc_3.2"> 命名的强制类型转换</h2>
+<p>
+#TODO
+</p>
  
         <div>
    <div>
@@ -114,3 +192,4 @@ X 整数转成大写十六进位。
 </footer>
 
 </body>
+</html>

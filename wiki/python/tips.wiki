@@ -241,3 +241,9 @@ def validate(self):
                                                                            
     return super(Form, self).validate(extra)    
 }}}
+
+= 查看api =
+    import sys
+    help(sys)
+    
+help 来自pydoc模块

@@ -1,2 +1,2 @@
 %title 数据结构
-
+[[./single-list|单链表]]

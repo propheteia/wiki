@@ -1,3 +1,4 @@
+<html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
@@ -37,11 +38,13 @@
         <h1>Vim</h1>
     </hgroup>
 
+    <hgroup2>
+        <h3>我们在燃烧的忍耐中武装，随着佛晓进入光辉的城镇</h3>
+    </hgroup2>
+
     <nav>
         <ul>
-            <li><a href="http://www.winoi.com">首页</a><span></span></li>
-            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
-            <li><a href="../about.html">关于</a><li>
+            <li id="current"><a href="../index.html">Winoi的维基</a></li>
         </ul>
     </nav>
 
@@ -57,21 +60,22 @@
            
 <div class="toc">
 <ul>
-<li><a href="#toc_0.1">中文输入的解决</a>
-<li><a href="#toc_0.2">将若干行注释</a>
-<li><a href="#toc_0.3">Ctags</a>
-<li><a href="#toc_0.4">Taglist</a>
-<li><a href="#toc_0.5">Cscope</a>
-<li><a href="#toc_0.6">Substitute</a>
-<li><a href="#toc_0.7">VIM Color Scheme Test</a>
-<li><a href="#toc_0.8">python在vim中的代码缩进</a>
-<li><a href="#toc_0.9">对于某一文档做特殊的处理，可以在编辑器中设置"：set ..."</a>
-<li><a href="#toc_0.10">来自简明VIM练级攻略</a>
-<li><a href="#toc_0.11">快捷键退出保存</a>
+<li><a href="#toc_0.1"> 中文输入的解决</a>
+<li><a href="#toc_0.2"> 将若干行注释</a>
+<li><a href="#toc_0.3"> Ctags</a>
+<li><a href="#toc_0.4"> Taglist</a>
+<li><a href="#toc_0.5"> Cscope</a>
+<li><a href="#toc_0.6"> Substitute</a>
+<li><a href="#toc_0.7"> VIM Color Scheme Test</a>
+<li><a href="#toc_0.8"> python在vim中的代码缩进</a>
+<li><a href="#toc_0.9"> 对于某一文档做特殊的处理，可以在编辑器中设置"：set ..."</a>
+<li><a href="#toc_0.10"> 来自简明VIM练级攻略</a>
+<li><a href="#toc_0.11"> 快捷键退出保存</a>
+<li><a href="#toc_0.12"> Python的Vim方案</a>
 </ul>
 </ul>
 </div>
-<h2 id="toc_0.1">中文输入的解决</h2>
+<h2 id="toc_0.1"> 中文输入的解决</h2>
 <ul>
 <li>
 安装fcitx插件。<a href="http://www.vim.org/scripts/script.php?script_id=3764 ">fcitx插件</a>
@@ -80,14 +84,14 @@
 在.vimrc中插入: set:ttimeoutlen=100 减少退出插入时的延时
 
 </ul>
-<h2 id="toc_0.2">将若干行注释</h2>
+<h2 id="toc_0.2"> 将若干行注释</h2>
 <ul>
 <li>
 将1到10行注释 --&gt; :1,10s/^/#/g 
 
 </ul>
 
-<h2 id="toc_0.3">Ctags</h2>
+<h2 id="toc_0.3"> Ctags</h2>
 <ul>
 <li>
 To split the current window and jump to the tag under the cursor use this
@@ -99,7 +103,7 @@ command:
 <blockquote>
 CTRL-W ]
 </blockquote>
-<h2 id="toc_0.4">Taglist</h2>
+<h2 id="toc_0.4"> Taglist</h2>
 <ul>
 <li>
 提供函数列表
@@ -112,7 +116,7 @@ let Tlist_Exit_OnlyWindow=1
 
 </ul>
 
-<h2 id="toc_0.5">Cscope</h2>
+<h2 id="toc_0.5"> Cscope</h2>
 <pre>
 0 or s: Find this C symbol
 1 or g: Find this definition
@@ -123,19 +127,19 @@ let Tlist_Exit_OnlyWindow=1
 7 or f: Find this file
 8 or i: Find files #including this file
 </pre>
-<h2 id="toc_0.6">Substitute</h2>
+<h2 id="toc_0.6"> Substitute</h2>
 <blockquote>
 :%s/a/b/gc</br>
 g:行中所有</br>
 %:全文    </br>
 c:Confirm </br>
 </blockquote>
-<h2 id="toc_0.7">VIM Color Scheme Test</h2>
+<h2 id="toc_0.7"> VIM Color Scheme Test</h2>
 <p>
 <strong>原文:</strong> <a href="http://vimcolorschemetest.googlecode.com/svn/html/index-c.html">http://vimcolorschemetest.googlecode.com/svn/html/index-c.html</a>
 </p>
 
-<h2 id="toc_0.8">python在vim中的代码缩进</h2>
+<h2 id="toc_0.8"> python在vim中的代码缩进</h2>
 <table>
 <tr>
 <th>
@@ -218,12 +222,12 @@ set shiftwidth=4<br>
 python是靠缩进来决定语句的层次关系的，所以你的缩进风格一定要统一，并且不能把空格和tab混起来用
 </p>
 
-<h2 id="toc_0.9">对于某一文档做特殊的处理，可以在编辑器中设置"：set ..."</h2>
+<h2 id="toc_0.9"> 对于某一文档做特殊的处理，可以在编辑器中设置"：set ..."</h2>
 <p>
 <strong>参考：</strong><a href="http://tedlogan.com/techblog3.html">Secret of Tabs in Vim</a>
 </p>
 
-<h2 id="toc_0.10">来自简明VIM练级攻略</h2>
+<h2 id="toc_0.10"> 来自简明VIM练级攻略</h2>
 <p>
  转载:<a href="http://coolshell.cn/articles/5426.html">VIM练级攻略</a> 
 </p>
@@ -284,12 +288,13 @@ J → 把所有的行连接起来（变成一行）
 <p>
 <a href="*.html">*</a> ZZ 保存并且退出
 </p>
-<h2 id="toc_0.11">快捷键退出保存</h2>
+<h2 id="toc_0.11"> 快捷键退出保存</h2>
 <pre>
 nmap &lt;leader&gt;s :w!&lt;cr&gt;
 nmap &lt;leader&gt;w :wq!&lt;cr&gt;
 nmap &lt;leader&gt;q :q!&lt;cr&gt;
 </pre>
+<h2 id="toc_0.12"> Python的Vim方案</h2>
  
         <div>
    <div>
@@ -309,3 +314,4 @@ nmap &lt;leader&gt;q :q!&lt;cr&gt;
 </footer>
 
 </body>
+</html>

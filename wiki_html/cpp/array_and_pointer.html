@@ -1,3 +1,4 @@
+<html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
@@ -37,11 +38,13 @@
         <h1>数组和指针</h1>
     </hgroup>
 
+    <hgroup2>
+        <h3>我们在燃烧的忍耐中武装，随着佛晓进入光辉的城镇</h3>
+    </hgroup2>
+
     <nav>
         <ul>
-            <li><a href="http://www.winoi.com">首页</a><span></span></li>
-            <li id="current"><a href="../index.html">笔记目录</a><span></span></li>
-            <li><a href="../about.html">关于</a><li>
+            <li id="current"><a href="../index.html">Winoi的维基</a></li>
         </ul>
     </nav>
 
@@ -55,71 +58,69 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<h1 id="toc_1">数组</h1>
+<h1 id="toc_1"> 数组</h1>
+<h2 id="toc_1.1"> 通常的数组</h2>
 <p>
 数组的长度是固定的!
-定义方法:
 </p>
+<h3 id="toc_1.1.1"> 定义方法:</h3>
 <blockquote>
 int a[] = {1,2,3};//显示初始化时,可以省略维数(编译器确定数组长度) 
+</blockquote>
+<blockquote>
 int a[4] = {1,2}; //只初始化a[0],a[1]. a[2],a[3]不会初始化(函数体内)或者初始化为0(函数体外)
+</blockquote>
+    
+<p>
 如果是类类型,自动调用默认构造函数初始化
-</blockquote>
-<p>
-存放a[5]的地址和a[4]的地址是连续的,不管a[5]的位置上存放的是什么,都以int的形式的读出.
-访问:
 </p>
-<blockquote>
-a[0] 等同 *(a)
-a[1] 等同 *(a+1)
-</blockquote>
 
-<h1 id="toc_2">字符数组,有点特殊</h1>
-<h2 id="toc_2.1">1</h2>
+<h3 id="toc_1.1.2"> 数组一种类型, 它具备哪些特性</h3>
 <p>
-字符数组还可以用字符串字面值初始化,即:
+int a[] = {1,2,3};
 </p>
-<blockquote>
-char a1[] = "C++";
-</blockquote>
+
 <p>
-这个数组的维数是4而不是3,因为自动在结尾添加'\0'(null)
+a是一个数组
 </p>
-<h2 id="toc_2.2">2</h2>
+
+<pre>
+    cout&lt;&lt;a&lt;&lt;endl; // 数组的地址    
+    cout&lt;&lt;*(a+1)&lt;&lt;endl; // 2  可通过指针迭代获取元素
+    cout&lt;&lt;size(a)&lt;&lt;endl; // 12(数组的大小)
+</pre>
+    
+<h2 id="toc_1.2"> 特殊的数组--字符数组</h2>
+<h3 id="toc_1.2.1"> 字符数组还可以用字符串字面值初始化</h3>
 <p>
-还可以这样表示:(C风格字符串)
+  char a1[] = "C++";(同char a1[] = {'C','+','+','\0'})
+</p>
+<ul>
+<li>
+数组的维数是4而不是3,因为自动在结尾添加'\0'(null)
+
+<li>
+a1是字符数组, 大小又填充值决定,这里是4字节
+<pre>
+    cout&lt;&lt;a1&lt;&lt;endl;   // 字符串 --&gt; 这里显示出和其他类型数组的区别                                                          
+    cout&lt;&lt;*a1&lt;&lt;endl;  // C                                                          
+    cout&lt;&lt;sizeof(a1)&lt;&lt;endl;  // 4(数组的大小)
+</pre>
+
+</ul>
+    
+<h3 id="toc_1.2.2"> 用char*类型的指针操纵C风格字符串</h3>
+<p>
+以null结尾的字符数组,就是C风格字符串.上面以null结尾的字符数组是C风格字符串
 </p>
 <blockquote>
 char *a2 = "C++";
 </blockquote>
-<h2 id="toc_2.3">3</h2>
 <p>
-a1和a2的类型是一样的.
+同a1唯一不同在于,a1是数组,sizeof(a1)是数组的大小.a2是字符指针,sizeof(a2)是指针的大小.在操纵字符串上的方法一致
 </p>
 
-<p>
-a1代表即代表第一个元素的指针,也表示字符串对象.而数组的类型是其他(如int a[]),a代表第一个元素的指针.
-</p>
-
-<p>
-但是于此同时,字符串可以同其他数组一样通过指针遍历元素.
-</p>
-<pre>
-    char *a="abc";
-    int *b={1,2,3};
-    for(int i=0;i&lt;3;i++)
-    {
-        cout&lt;&lt;*(a+i)&lt;&lt;endl;//依次输出a,b,c
-        cout&lt;&lt;*(b+i)&lt;&lt;endl;//依次输出1,2,3
-        cout&lt;&lt;&amp;*(a+i)&lt;&lt;endl;//依次输出元素地址
-        cout&lt;&lt;&amp;*(b+i)&lt;&lt;endl;//输出从该地址开始的字符串abc,bc,c
-    }
-</pre>
-
-<p>
-可以作出这样的判断:a是指针,
-</p>
-<h1 id="toc_3">一个区别</h1>
+<h1 id="toc_2"> 一个区别</h1>
 <pre>
     string s = "abc";
     string *sp = &amp;s; //把string对象s的地址附给sp
@@ -127,7 +128,7 @@ a1代表即代表第一个元素的指针,也表示字符串对象.而数组的�
     *sp = "A new word";//把sp指向的内容用字符串字面值替代
     cout&lt;&lt;*sp&lt;&lt;endl; //得到"A new word"
 </pre>
-<h1 id="toc_4">不要忘记字符串结束符null</h1>
+<h1 id="toc_3"> 不要忘记字符串结束符null</h1>
 <p>
 标准库函数(#include&lt;cstring&gt;)是string.h头文件的c++版本
 </p>
@@ -137,7 +138,7 @@ cout&lt;&lt;strlen(a)&lt;&lt;endl;//disaster:a is not null-terminated
 标准库函数总是假定其参数字符串以null结尾 
 </blockquote>
 
-<h1 id="toc_5">新旧代码的兼容</h1>
+<h1 id="toc_4"> 新旧代码的兼容</h1>
 <p>
 C风格字符串与字符串字面值有相同的数据结构,而且都以null结束,因此可以互相代替.
 </p>
@@ -164,3 +165,4 @@ string b(a);
 </footer>
 
 </body>
+</html>

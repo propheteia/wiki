@@ -90,3 +90,6 @@ nmap <leader>s :w!<cr>
 nmap <leader>w :wq!<cr>
 nmap <leader>q :q!<cr>
 }}}
+== Python的Vim方案 ==
+
+

@@ -71,7 +71,13 @@
 <li><a href="#toc_0.9"> 对于某一文档做特殊的处理，可以在编辑器中设置"：set ..."</a>
 <li><a href="#toc_0.10"> 来自简明VIM练级攻略</a>
 <li><a href="#toc_0.11"> 快捷键退出保存</a>
-<li><a href="#toc_0.12"> Python的Vim方案</a>
+<li><a href="#toc_0.12"> Python 的vim 解决方案</a>
+<ul>
+<li><a href="#toc_0.12.1"> TODO</a>
+<li><a href="#toc_0.12.2"> 查看历史</a>
+<li><a href="#toc_0.12.3"> 查找定义</a>
+</ul>
+<li><a href="#toc_0.13"> 折叠</a>
 </ul>
 </ul>
 </div>
@@ -294,7 +300,33 @@ nmap &lt;leader&gt;s :w!&lt;cr&gt;
 nmap &lt;leader&gt;w :wq!&lt;cr&gt;
 nmap &lt;leader&gt;q :q!&lt;cr&gt;
 </pre>
-<h2 id="toc_0.12"> Python的Vim方案</h2>
+
+<h2 id="toc_0.12"> Python 的vim 解决方案</h2>
+<p>
+网站:<a href="http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide">http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide</a>
+</p>
+
+<h3 id="toc_0.12.1"> TODO</h3>
+<blockquote>
+&lt;leader&gt;td
+</blockquote>
+    
+<h3 id="toc_0.12.2"> 查看历史</h3>
+<blockquote>
+&lt;leader&gt;g
+</blockquote>
+
+<h3 id="toc_0.12.3"> 查找定义</h3>
+<blockquote>
+&lt;leader&gt;j
+</blockquote>
+
+<h2 id="toc_0.13"> 折叠</h2>
+<blockquote>
+set foldmethod=indent
+zM 全部折叠 //set foldlevel=0
+zR 全部展开
+</blockquote>
  
         <div>
    <div>

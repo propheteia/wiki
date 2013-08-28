@@ -90,6 +90,20 @@ nmap <leader>s :w!<cr>
 nmap <leader>w :wq!<cr>
 nmap <leader>q :q!<cr>
 }}}
-== Python的Vim方案 ==
 
+== Python 的vim 解决方案 ==
+网站:http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide
 
+=== TODO ===
+    <leader>td
+    
+=== 查看历史 === 
+    <leader>g
+
+=== 查找定义 ===
+    <leader>j
+
+== 折叠 ==
+    set foldmethod=indent
+    zM 全部折叠 //set foldlevel=0
+    zR 全部展开

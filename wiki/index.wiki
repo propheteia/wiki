@@ -15,3 +15,4 @@
 | [[./tools/tools|工具推荐]]                 | [[./tools/software|软件推荐]]    | [[./book/booklist|书单]]       | [[./experience/experience|经验]] |
 
 = 全部维基 =
+https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&sensor=true&key=AIzaSyBOlFc3DEDPIiK1DQXIEEtdgmWUbHLEizc

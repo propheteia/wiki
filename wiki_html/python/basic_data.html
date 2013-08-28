@@ -1,0 +1,189 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> basic_data | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>basic_data</h1>
+    </hgroup>
+
+    <hgroup2>
+        <h3>我们在燃烧的忍耐中武装，随着佛晓进入光辉的城镇</h3>
+    </hgroup2>
+
+    <nav>
+        <ul>
+            <li id="current"><a href="../index.html">Winoi的维基</a></li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h1 id="toc_1">基本数据结构</h1>
+<h2 id="toc_1.1">列表</h2>
+<p>
+一组有序项目的集合。可变的数据类型【可进行增删改查】
+</p>
+
+<p>
+列表是以方括号“[]”包围的数据集合，不同成员以“,”分隔。
+</p>
+
+<p>
+列表中可以包含任何数据类型(可以混合)，也可包含另一个列表
+</p>
+
+<p>
+列表可通过序号访问其中成员
+</p>
+
+<p>
+常用列表操作：
+</p>
+<blockquote>
+list.append()追加成员，成员数据
+list.pop()删除成员,删除第i个成员
+list.count(x)计算列表中参数x出现的次数
+list.remove()删除列表中的成员，直接删除成员i
+list.extend(L)向列表中追加另一个列表L
+list.reverse()将列表中成员的顺序颠倒
+list.index(x)获得参数x在列表中的位置
+list.sort()将列表中的成员排序
+list.insert()向列表中插入数据insert(a,b)向列表中插入数据
+help(list) 查看方法详情
+</blockquote>
+
+<h2 id="toc_1.2">元组（不可变序列）</h2>
+<p>
+元组是以圆括号“()”包围的数据（可以混合）集合，不同成员以“,”分隔
+</p>
+
+<p>
+与列表不同：元组中数据一旦确立就不能改变
+</p>
+
+<h3 id="toc_1.2.1">元组的好处</h3>
+<p>
+Tuple 比 list 操作速度快。如果您定义了一个值的常量集，并且唯一要用它做的是不断地遍历它，请使用 tuple 代替 list。
+</p>
+
+<p>
+如果对不需要修改的数据进行 “写保护”，可以使代码更安全。使用 tuple 而不是 list 如同拥有一个隐含的 assert 语句，说明这一数据是常量。如果必须要改变这些值，则需要执行 tuple 到 list 的转换 (需要使用一个特殊的函数)。
+</p>
+
+<p>
+tuple和list可以相互转换.
+</p>
+<blockquote>
+a=[] 
+b=tuple(a) 
+type(b) 
+--&gt; tuple
+</blockquote>
+
+<h2 id="toc_1.3">字典</h2>
+<p>
+字典是以大括号“{}”包围的数据集合
+</p>
+
+<p>
+键值对的集合(map)
+</p>
+
+<p>
+与列表区别：字典是无序的，在字典中通过键来访问成员。常用字典操作：
+</p>
+<blockquote>
+dic.clear()清空字典
+dic.keys()获得键的列表
+dic.values()获得值的列表
+dic.copy()复制字典
+dic.pop(k)删除键k
+dic.get(k)获得键k的值
+dic.update()更新成员，若成员不存在，相当于加入
+dic.items()获得由键和值的元组组成的列表[(1,'a'),(2,'b')]
+dic.popitem 
+</blockquote>
+
+<p>
+可以通过
+</p>
+<blockquote>
+&gt;&gt;&gt;help(dict) 查看详情
+</blockquote>
+
+<h2 id="toc_1.4">序列的索引和切片</h2>
+<p>
+列表,元组和字符串都是序列
+</p>
+
+<p>
+序列的两个主要特点是索引操作符和切片操作符。
+</p>
+
+<p>
+索引操作符让我们可以从序列中抓取一个特定项目。即下标操作，用方括号和数字抓取某个位置的项目,L[0]抓取第一个元素，L[-1]抓取最后一个元素
+</p>
+
+<p>
+切片操作符让我们能够获取序列的一个切片，即一部分序列。方括号加一对可选数字，切出某个子片L[1:3] 返回1-2的子片，L[2:]从2开始到最后
+</p>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>
+</html>

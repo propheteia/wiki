@@ -8,7 +8,7 @@
     
     <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
     
-    <title> Python | winoi</title>
+    <title> 生成简单的包含文字的图片 | winoi</title>
     
     <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
     <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
@@ -35,7 +35,7 @@
     <!--header -->
 <div id="header-wrap"><header>
     <hgroup>
-        <h1>Python</h1>
+        <h1>生成简单的包含文字的图片</h1>
     </hgroup>
 
     <hgroup2>
@@ -58,50 +58,30 @@
         <div id="content" class="clearfix">
     &nbsp;
            
-<ul>
-<li>
-<a href="./tips.html">技巧</a>
+<h1 id="toc_1">安装PIL(Python Imaging Library) 模块</h1>
+<p>
+可能会报错
+</p>
+<blockquote>
+raise ImportError("The _imagingft C module is not installed")
+</blockquote>
+<p>
+那是因为缺少freetype库
+</p>
+<blockquote>
+"Your installed PIL was compiled without libfreetype"
+</blockquote>
+<p>
+在os上的解决办法:
+</p>
+<blockquote>
+brew install freetype
+pip install pil
+</blockquote>
 
-<li>
-<a href="./unittest.html">测试单元</a>
-
-<li>
-<a href="./regular_exp.html">python正则表达式</a>
-
-<li>
-<a href="./virtualenv.html">python环境隔离virtualenv</a>
-
-<li>
-<a href="./logging.html">日志管理模块</a>
-
-<li>
-<a href="./distutils.html">distutils生成模块</a>
-
-<li>
-<a href="./pep8.html">PEP8标准阅读</a>
-
-<li>
-<a href="./project.html">python构建完整项目</a>
-
-<li>
-<a href="./metaclass.html">深刻理解元类(metaclass)</a>
-
-<li>
-<a href="./and_or.html">and 和 or</a>
-
-<li>
-<a href="./lambda.html">一个实现自省的例子</a>
-
-<li>
-<a href="./autotest.html">用python做自动测试平台</a> 
-
-<li>
-<a href="./basic_data.html">基本数据结构</a>
-
-<li>
-<a href="./topic.html">生成简单的包含文字的图片</a>
-
-</ul>
+<p>
+<a href="http://mozillazg.wordpress.com/2011/08/27/python-identifying-code/">参考</a>
+</p>
  
         <div>
    <div>

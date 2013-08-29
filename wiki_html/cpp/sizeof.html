@@ -1,0 +1,187 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta property="wb:webmaster" content="3caf5a5b94e6991e" />
+    
+    <link rel="shortcut icon" href="../template/coolblue/images/chine.ico"/>
+    
+    <title> sizeof | winoi</title>
+    
+    <link type="text/css" rel="stylesheet" href="../template/coolblue/css/bootstrap.min.css"><link>
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/coolblue.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../template/coolblue/css/chine.css" />
+    
+    <script src="../template/coolblue/js/jquery-1.7.2.min.js"></script>
+    <script src="../template/coolblue/js/scrollToTop.js"></script>
+    <script src="../template/coolblue/js/inputFocusOrBlur.js"></script>
+    <script src="../template/coolblue/js/jquery.form.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-transition.js"></script> 
+    <script src="../template/coolblue/js/bootstrap-tooltip.js"></script>
+    <script src="../template/coolblue/js/bootstrap-modal.js"></script> 
+    <script src="../template/coolblue/js/subscribe.js"></script> 
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+</head>
+<body id="top">
+    
+    <!--header -->
+<div id="header-wrap"><header>
+    <hgroup>
+        <h1>sizeof</h1>
+    </hgroup>
+
+    <hgroup2>
+        <h3>我们在燃烧的忍耐中武装，随着佛晓进入光辉的城镇</h3>
+    </hgroup2>
+
+    <nav>
+        <ul>
+            <li id="current"><a href="../index.html">Winoi的维基</a></li>
+        </ul>
+    </nav>
+
+<!--/header-->
+</header></div>
+
+    
+    <!-- content-wrap -->
+    <div id="content-wrap">
+        <!-- content -->
+        <div id="content" class="clearfix">
+    &nbsp;
+           
+<h1 id="toc_1"> 数据类型的大小</h1>
+<p>
+存储器没有任何结构和意义
+</p>
+
+<p>
+让存储器具有结构的基本方法是块（chunk）处理存储.大部分计算机使用特定位数的块来处理存储，有8，16，32，64位。
+</p>
+
+<p>
+这里使用的是64位的机器。
+</p>
+
+<p>
+虽然确切的大小因机器不同而不同，但通常都将8位的块作为一个字节。4个字节作为一个word.
+</p>
+
+<p>
+每个字节都有它的地址。比如722323.要让722323这个地址有意义， 必须知道存储在该地址的值的类型。一旦知道了该地址值的类型，就知道了表示该类型的值需要多少位以及如何解释这些位。
+</p>
+
+<p>
+例如，地址722323的位，若是无符号整数类型，则表示113；若是字符类型，则表示q.
+</p>
+
+<h1 id="toc_2"> 64位linux系统数据类型的大小</h1>
+<pre>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+        cout&lt;&lt;"int:"&lt;&lt;sizeof(int)&lt;&lt;endl;
+        cout&lt;&lt;"long int:"&lt;&lt;sizeof(long int)&lt;&lt;endl;
+        cout&lt;&lt;"float:"&lt;&lt;sizeof(float)&lt;&lt;endl;
+        cout&lt;&lt;"char:"&lt;&lt;sizeof(char)&lt;&lt;endl;
+        cout&lt;&lt;"double:"&lt;&lt;sizeof(double)&lt;&lt;endl;
+        cout&lt;&lt;"char*:"&lt;&lt;sizeof(char*)&lt;&lt;endl;
+        cout&lt;&lt;"int*:"&lt;&lt;sizeof(int*)&lt;&lt;endl;
+}
+</pre>
+<p>
+输出:
+</p>
+<pre>
+输出：int:4
+　　　long int:8  　　
+　　　float:4
+　　  char:1
+　  　double:8
+　　  char*:8
+　　  int*:8            //所有类型的指针长度都为8
+</pre>
+
+<h1 id="toc_3"> 内存字节对齐</h1>
+<p>
+参考:<a href="http://blog.csdn.net/hairetz/article/details/4084088">http://blog.csdn.net/hairetz/article/details/4084088</a>
+</p>
+<ul>
+<li>
+数据成员对齐规则：结构(struct)(或联合(union))的数据成员，第一个数据成员放在offset为0的地方，以后每个数据成员存储的起始位置要从该成员大小或者成员的子成员大小（只要该成员有子成员，比如说是数组，结构体等）的整数倍开始(比如int在３２位机为４字节,则要从４的整数倍地址开始存储。
+
+</ul>
+
+<ul>
+<li>
+结构体作为成员:如果一个结构里有某些结构体成员,则结构体成员要从其内部最大元素大小的整数倍地址开始存储.(struct a里存有struct b,b里有char,int ,double等元素,那b应该从8的整数倍开始存储.)
+
+</ul>
+
+<ul>
+<li>
+收尾工作:结构体的总大小,也就是sizeof的结果,.必须是其内部最大成员的整数倍.不足的要补齐.
+
+</ul>
+
+<p>
+实战:
+</p>
+<pre>
+typedef struct bb
+{
+ int id;             //[0]....[3]
+ double weight;      //[8].....[15]　　　　　　原则１
+ float height;      //[16]..[19],总长要为８的整数倍,补齐[20]...[23]　　　　　原则３
+}BB;
+
+typedef struct aa
+{
+ char name[2];     //[0],[1]
+ int  id;         //[4]...[7]　　　　　　　　　　原则１
+
+ double score;     //[8]....[15]　　　　
+ short grade;    //[16],[17]　　　　　　　　
+ BB b;             //[24]......[47]　　　　　　　　　　原则２
+}AA;
+
+int main()
+{
+  AA a;
+  cout&lt;&lt;sizeof(a)&lt;&lt;" "&lt;&lt;sizeof(BB)&lt;&lt;endl;
+  return 0;
+}
+</pre>
+
+<p>
+如果有静态变量, 是放在数据全局区, 而sizeof计算栈中分配的大小
+</p>
+ 
+        <div>
+   <div>
+
+<!-- footer -->
+<footer>
+    <p class="footer-left">
+        &copy; 2013 Copyright Info &nbsp; &nbsp; &nbsp;
+         powered by <a href="http://www.vim.org/scripts/script.php?script_id=2226", target="_blank">vimwiki</a>
+    </p>
+
+    <p class="footer-right">
+        <a href="../index.html">Home</a> |
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </p>
+<!-- /footer -->
+</footer>
+
+</body>
+</html>

@@ -207,7 +207,7 @@
   <div class="about">
     <h1>一次Flask的简单运用</h1></br></br>
     
-<h1 id="toc_1"> 文件目录</h1>
+<h2 id="toc_0.1"> 文件目录</h2>
 <pre>
   Flask_s
     |--index.wsgi
@@ -227,12 +227,12 @@
 <p>
 查看代码
 </p>
-<h1 id="toc_2"> 环境建立</h1>
-<h2 id="toc_2.1"> 本地环境</h2>
+<h2 id="toc_0.2"> 环境建立</h2>
+<h3 id="toc_0.2.1">1 本地环境</h3>
 <p>
 使用virtualenv建立隔离环境.用pip install 基本上可以安装所有需求的模块.注意MySQLd包和相应的库
 </p>
-<h2 id="toc_2.2"> 在线环境</h2>
+<h3 id="toc_0.2.2">2 在线环境</h3>
 <p>
 记录个网址:<a href="http://python.sinaapp.com/doc/">http://python.sinaapp.com/doc/</a>
 </p>
@@ -308,14 +308,14 @@ WTForms==1.0.4
     # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle'))
     # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle.zip'))
 </pre>
-<h2 id="toc_2.3"> 怎样区分本地环境还是SAE?</h2>
+<h3 id="toc_0.2.3">3 怎样区分本地环境还是SAE?</h3>
 <pre>
 if 'SERVER_SOFTWARE' in os.environ:
     # SAE
 else:
     # Local
 </pre>
-<h1 id="toc_3"> 批量数据导入数据库</h1>
+<h2 id="toc_0.3"> 批量数据导入数据库</h2>
 <p>
 安装的Admin模块可以在后台进行数据库录入.但是对于数量较大的结构性的数据,就显的低效
 </p>
@@ -360,7 +360,7 @@ from db_operator import import_player
 import_player()
 </blockquote>
 
-<h1 id="toc_4"> 遇到奇怪的问题,怎么办?</h1>
+<h2 id="toc_0.4"> 遇到奇怪的问题,怎么办?</h2>
 <p>
 不要想把出错模块都弄明白,超过半小时不能解决的话,直接按正确的步骤再来一遍!多次经历告诉我有时候错在微不足道却永远想不到的地方.
 </p>
@@ -369,11 +369,11 @@ import_player()
 svn还不太会的时候,上传代码出了问题,少传了几个文件,浪费了一天,泪的教训!
 </p>
 
-<h1 id="toc_5"> flask-admin</h1>
+<h2 id="toc_0.5"> flask-admin</h2>
 <p>
 form.html, edit.html需要放进templates文件夹
 </p>
-<h1 id="toc_6"> 一次低级的错误</h1>
+<h2 id="toc_0.6"> 一次低级的错误</h2>
 <pre>
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const

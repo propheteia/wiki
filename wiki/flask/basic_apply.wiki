@@ -1,5 +1,5 @@
 %title 一次Flask的简单运用
-= 文件目录 =
+== 文件目录 ==
 {{{
   Flask_s
     |--index.wsgi
@@ -17,10 +17,10 @@
     |--run.py
 }}}
 查看代码
-= 环境建立 =
-== 本地环境 ==
+== 环境建立 ==
+=== 本地环境 ===
 使用virtualenv建立隔离环境.用pip install 基本上可以安装所有需求的模块.注意MySQLd包和相应的库
-== 在线环境 ==
+=== 在线环境 ===
 记录个网址:http://python.sinaapp.com/doc/
 
 从[[http://sae.sina.com.cn/?m=devcenter&catId=290|开发文档]]中可以看到,部分模块已经预装:
@@ -56,14 +56,14 @@
     # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle'))
     # sys.path.insert(0, os.path.join(app_root, 'virtualenv.bundle.zip'))
 }}}
-== 怎样区分本地环境还是SAE? ==
+=== 怎样区分本地环境还是SAE? ===
 {{{
 if 'SERVER_SOFTWARE' in os.environ:
     # SAE
 else:
     # Local
 }}}
-= 批量数据导入数据库 =
+== 批量数据导入数据库 ==
 安装的Admin模块可以在后台进行数据库录入.但是对于数量较大的结构性的数据,就显的低效
 
 一种方式是从本地数据库移到web数据库.也可以在web数据库批量录入
@@ -98,14 +98,14 @@ def import_player():
     from db_operator import import_player
     import_player()
 
-= 遇到奇怪的问题,怎么办? =
+== 遇到奇怪的问题,怎么办? ==
 不要想把出错模块都弄明白,超过半小时不能解决的话,直接按正确的步骤再来一遍!多次经历告诉我有时候错在微不足道却永远想不到的地方.
 
 svn还不太会的时候,上传代码出了问题,少传了几个文件,浪费了一天,泪的教训!
 
-= flask-admin =
+== flask-admin ==
 form.html, edit.html需要放进templates文件夹
-= 一次低级的错误 =
+== 一次低级的错误 ==
 {{{
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const

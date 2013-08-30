@@ -4,3 +4,4 @@
 = gnome-terminal命令 =
 在bash中进入到某个目录下并且运行程序:
     gnome-terminal --working-directory=/home -e "vim index.html":
+    

@@ -1,5 +1,4 @@
-%title MySql
-= 基本操作 =
+%title MySql基本操作 
 == 创建数据库 ==
 使用管理员权限新建数据库,并给予账户权限
     CREATE DATABASE test;

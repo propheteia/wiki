@@ -8,11 +8,8 @@
 * [[./pep8|PEP8标准阅读]]
 * [[./project|python构建完整项目]]
 * [[./metaclass|深刻理解元类(metaclass)]]
-<<<<<<< HEAD
 * [[./and_or|and 和 or]]
 * [[./lambda| 一个实现自省的例子]]
 * [[./autotest|用python做自动测试平台]] 
-=======
 * [[./basic_data|基本数据结构]]
 * [[./topic|生成简单的包含文字的图片]]
->>>>>>> 88e03b1a5ea7ffb8e7d4ac7d965b49f973beb3a8

@@ -1,3 +1,4 @@
+%title Linux服务
 == 需要hddtemp的服务,如何实现? ==
     sudo yum install hddtemp
     hddtemp --help

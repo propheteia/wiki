@@ -212,7 +212,7 @@
 <p>
 <strong>(find .|xargs grep -ri "IBM" -l)</strong>
 </p>
-<h3 id="toc_1.1.1"> xargs:</h3>
+<h3 id="toc_1.1.1">1 xargs:</h3>
 <p>
 xargs产生grep命令的参数,即:
 </p>
@@ -222,12 +222,12 @@ grep -ri "IBM" (find .　产生的文件）
 <p>
 -l:只列出文件名
 </p>
-<h3 id="toc_1.1.2"> grep:</h3>
+<h3 id="toc_1.1.2">2 grep:</h3>
 <blockquote>
 -r:读文件
 -i:忽略大小写
 </blockquote>
-<h3 id="toc_1.1.3"> 如何自定义变量?</h3>
+<h3 id="toc_1.1.3">3 如何自定义变量?</h3>
 <ul>
 <li>
  /etc/profile 全局用户，应用于所有的Shell。
@@ -351,7 +351,7 @@ function marks {
 }
 </pre>
 
-<h1 id="toc_2"> delete .svn</h1>
+<h2 id="toc_1.7"> delete .svn</h2>
 <p>
 find . -type d -name ".svn"|xargs rm -rf
 </p>

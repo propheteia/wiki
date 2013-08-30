@@ -1,4 +1,4 @@
-= tar解压： =
+%title tar解压
 == 有多少种解压方式？ ==
 * gzip解压: *.gz    
 * bzip2解压: *.bz2    

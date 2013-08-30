@@ -207,8 +207,8 @@
   <div class="about">
     <h1>GitHub</h1></br></br>
     
-<h1 id="toc_1"> GitHub ssh免密码登录</h1>
-<h3 id="toc_1.0.1"> SSh密钥</h3>
+<h2 id="toc_0.1"> GitHub ssh免密码登录</h2>
+<h3 id="toc_0.1.1">1 SSh密钥</h3>
 <p>
 参照 <a href="https://help.github.com/articles/generating-ssh-keys">gitHub:help</a>
 </p>
@@ -220,14 +220,14 @@ Enter same passphrase again: [Type passphrase again]
 	此处直接回车，否则会导致无法自动登录.
 	鉴于这个 key 并不那么容易被泄露，不要 passphrase 还是可以接受的.
 </p>
-<h3 id="toc_1.0.2"> 写自动push的脚本</h3>
+<h3 id="toc_0.1.2">2 写自动push的脚本</h3>
 <pre class="brush:python">
 	git add .
 	git commit -a -m "auto"
 	git remote add origin git@github.com:username/name.git
 	git push orign gh-pages
 </pre>
-<h3 id="toc_1.0.3"> 可能出现的问题　</h3>
+<h3 id="toc_0.1.3">3 可能出现的问题　</h3>
 <p>
 运行脚本后，在Shell输入:
 </p>
@@ -251,7 +251,7 @@ url = git@github.com:username/name.git
 <a href="http://josephj.com/article/understand-ssh-key/">更多ssh免密码登录</a> 
 </p>
 
-<h1 id="toc_2"> 不错的网站　</h1>
+<h2 id="toc_0.2"> 不错的网站　</h2>
 <ul>
 <li>
 <a href="http://rogerdudler.github.com/git-guide/index.zh.html">简易指南</a>
@@ -270,14 +270,14 @@ url = git@github.com:username/name.git
  一些常用命令 ==
 
 </ul>
-<h3 id="toc_2.0.1"> Git强制推送</h3>
+<h2 id="toc_0.3"> Git强制推送</h2>
 <p>
 创建了一个新的仓库，要替代原先的内容。
 </p>
 <blockquote>
 git push -f origin master
 </blockquote>
-<h3 id="toc_2.0.2"> Git多人协作</h3>
+<h2 id="toc_0.4"> Git多人协作</h2>
 <pre class="brush:python">
     mkdir project.git
     cd project.git
@@ -305,20 +305,20 @@ filemode = true
 bare = false
 logallrefupdates = true
 </blockquote>
-<h3 id="toc_2.0.3"> Git版本恢复</h3>
+<h2 id="toc_0.5"> Git版本恢复</h2>
 <blockquote>
 git log --pretty=oneline 文件名 (查看某个文件变动)
 git show 版本号 (并查看改动细节)
 </blockquote>
 
-<h3 id="toc_2.0.4"> 常用</h3>
+<h2 id="toc_0.6"> 常用</h2>
 <blockquote>
 git reset --hard HEAD~ 退回到前一个commit
 git branch -D develop 删除分支
 git show HEAD 当前分支最新更新
 </blockquote>
     
-<h1 id="toc_3"> 一次实验</h1>
+<h2 id="toc_0.7"> 一次实验</h2>
 <pre>
         git init 
         git add .

@@ -1,1 +1,1 @@
-%title [[高效使用top]]
+%title 高效使用top

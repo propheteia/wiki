@@ -1,5 +1,5 @@
 %title 维基 
-= 介绍 =
+== 介绍 ==
 我希望尽量把能够不放在脑子里的东西放在笔记本里，于是有了这个维基。主要是用于个人知识积累，和方便查询。
 
 在使用了若干wiki，如dokuwiki等，最后还是选择vimwiki。这货比较符合我的书写习惯，但是缺点就是无法按时间归档，以及无法在线编辑，当然啦鱼和熊掌不可兼得。
@@ -7,11 +7,10 @@
 现在放到github上，欢迎和朋友们交流
 
 邮箱:Wenbin.rc AT gmail.com
-= 维基目录 =
+== 维基目录 ==
 | [[./datastructure/datastructure|数据结构]] | [[./algorithm/algorithm|算法]]   | [[./simulation/sim|仿真系统]]  | [[./robot/humanoid|仿人机器人]]  |
 | [[./flask/flask|Flask框架]]                | [[./web_design/design|HTML&CSS]] | [[./server/server|服务器架设]] | [[./database/db|数据库]]         |
 | [[./cpp/cpp|C++/C]]                        | [[./linux/linux| Linux]]         | [[./python/python|Python]]     |                                  |
 | [[./tools/tools|工具推荐]]                 | [[./tools/software|软件推荐]]    | [[./book/booklist|书单]]       | [[./experience/experience|经验]] |
 
-= 全部维基 =
-https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&sensor=true&key=AIzaSyBOlFc3DEDPIiK1DQXIEEtdgmWUbHLEizc
+== 全部维基 ==

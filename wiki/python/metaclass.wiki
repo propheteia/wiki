@@ -1,5 +1,5 @@
 %title 深刻理解元类(metaclass)
-= type创建类 =
+== type创建类 ==
 {{{
 def foo(self):  #self
     print "pass"
@@ -11,7 +11,7 @@ print type(instance)
 True
 <class '__main__.classname'>  
 }}}
-= 设计一个元模板 =
+== 设计一个元模板 ==
 要求类的元素名大写,类的函数成员要输出自己的名字
 {{{
 def func_to_echo(value):
@@ -46,7 +46,7 @@ True
 good
 }}}
 这里在给函数添加功能的时候,由于函数是类中,有参数'self',因此看上去有点丑陋.不只有没有更好的方法.
-= 用class做元类 =
+== 用class做元类 ==
 {{{
 class Upper_attr(type):
     def __new__(clr,future_class_name, future_class_parents, future_class_attr):
@@ -57,7 +57,7 @@ class Upper_attr(type):
 __metaclass__ = Upper_attr
 
 }}}
-== 为什么要用metaclass类而不是函数? ==
+=== 为什么要用metaclass类而不是函数? ===
 由于__metaclass__可以接受任何可调用的对象，那为何还要使用类呢，因为很显然使用类会更加复杂啊？这里有好几个原因：
 
 * 意图会更加清晰。当你读到UpperAttrMetaclass(type)时，你知道接下来要发生什么。
@@ -67,7 +67,7 @@ __metaclass__ = Upper_attr
   你可以使用__new__, __init__以及__call__这样的特殊方法。它们能帮你处理不同的任务。就算通常你可以把所有的东西都在__new__里处理掉，有些人还是觉得用__init__更舒服些。
 }}}
 * 哇哦，这东西的名字是metaclass，肯定非善类，我要小心！
-== __new__? ==
+=== __new__? ===
 {{{
 __new__ 是在__init__之前被调用的特殊方法
 __new__是用来创建对象并返回之的方法
@@ -75,13 +75,13 @@ __new__是用来创建对象并返回之的方法
 你很少用到__new__，除非你希望能够控制对象的创建
 这里，创建的对象是类，我们希望能够自定义它，所以我们这里改写__new__
 }}}
-== 用OPP方法 ==
+=== 用OPP方法 ===
 我们没有改写父类的__new__方法。现在我们这样去处理:
 {{{
     return type.__new__(future_class_name, future_class_parents, uppercase_attr)
 }}}
 这就是基本的OOP编程
-== 用super方法 ==
+=== 用super方法 ===
 super是内置类型,用于访问父类中的attribute
 {{{
 class Mama(object):

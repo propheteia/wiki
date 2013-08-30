@@ -1,11 +1,9 @@
 %title Vim
-%toc
 ==中文输入的解决==
   * 安装fcitx插件。[[http://www.vim.org/scripts/script.php?script_id=3764 | fcitx插件]]
   * 在.vimrc中插入: set:ttimeoutlen=100 减少退出插入时的延时
 ==将若干行注释==
  * 将1到10行注释 --> :1,10s/^/#/g 
-
 ==Ctags==
 * To split the current window and jump to the tag under the cursor use this
 command: 

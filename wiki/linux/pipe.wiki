@@ -1,5 +1,5 @@
 %title Linux管道命令
-= 命名管道fifo =
+== 命名管道fifo ==
 可以把管道想象为两个实体之间的单向连接器。管道是半双工的，如果需要全双工通讯，应该转而考虑套接字。 
 
 匿名管道又称管道(PIPE)，提供了一个进程与它的兄弟进程通讯的方法，只存在于父进程中.
@@ -34,11 +34,11 @@ A FIFO special file (a named pipe) is similar to a pipe, except that
        deadlocks.
 }}}
 
-= FIFI和PIPE =
-== 共同点 ==
+== FIFI和PIPE ==
+=== 共同点 ===
 他们的核心数据结构是一样的，pipe_inode_info，并且，FIFO的读写函数和pipe的读写函数也一致。
 
-== 区别 ==
+=== 区别 ===
 第一，fifo出现在系统目录树中，是个特殊的文件,因为它不具备内容.而pipe则在特殊文件系统pipefs中。
 
 第二，fifo是双向通信管道，而pipe是单向的。
@@ -55,7 +55,7 @@ pipe属于pipefs文件系统，fifo不是。所以他们不属于同一个文件
 Pipe就不用说了，shell中经常用到，实际编程中如果遇到重定向或者父子进程通信，pipe也是一个不错的选择。就我目前看到过的代码而言，shell中pipe使用较多，c中pipe也有用到，但明显没有semaphore，socket等普遍。
 
 FIFO的话，说实话，基本没见过。我认为原因是他能做的，socket也一定能做，并且能做的更好。所以FIFO就有点累赘了。另外，从本文开头的两篇链接中，我们可以看到，FIFO的编程有点麻烦，要对读写进行比较精确的控制，防止死锁或者竞争。
-= 使用注意 =
+== 使用注意 ==
 {{{
        When a process tries to write to a FIFO that is not opened for read
        on the other side, the process is sent a SIGPIPE signal.

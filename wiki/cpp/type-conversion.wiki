@@ -1,5 +1,5 @@
 %title 数据类型转换
-= int转换为char* =
+== int转换为char* ==
 使用sprintf
 {{{
 头文件 #include<stdio.h>
@@ -37,7 +37,7 @@ X 整数转成大写十六进位。
 
     sprintf(c, "%d", n);      
 }}}
-= 隐式转换 =
+== 隐式转换 ==
 几个典型的隐式转换:
     int *ip;
     ip = 0; //the int 0 converted to null pointer of type int *
@@ -50,8 +50,8 @@ X 整数转成大写十六进位。
     string s;
     while(cin>>s) // iostream converted to bool ,检验流的状态,是否结束
     
-= 显式转换 =
-== 以前的显示转换 ==
+== 显式转换 ==
+=== 以前的显示转换 ===
     float a=1.0f;
     cout << (int&)a << endl;
 这里(int&)a相当于*(int*)&a, 从float型a的地址开始读,认为它是int.

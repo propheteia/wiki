@@ -1,5 +1,5 @@
 %title matplotlib
-= 执行show命令为什么没有图像? =
+== 执行show命令为什么没有图像? ==
 更改下面文件的后端设置
     /usr/lib64/python2.7/site-packages/matplotlib/mpl-data/matplotrc
     backend: Qt4Agg

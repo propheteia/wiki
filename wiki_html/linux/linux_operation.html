@@ -207,16 +207,6 @@
   <div class="about">
     <h1>Linux操作系统</h1></br></br>
     
-<div class="toc">
-<ul>
-<li><a href="#toc_0.1"> 回收站路径：</a>
-<li><a href="#toc_0.2"> Fedora的服务管理</a>
-<ul>
-<li><a href="#toc_0.2.1"> 查看系统消息</a>
-</ul>
-</ul>
-</ul>
-</div>
 <h2 id="toc_0.1"> 回收站路径：</h2>
 <p>
 在这个文件夹下有两个文件：一个是files ,一个是info。 files保存的是被删除的文件，而info里面是文件的信息(路径，删除的时间）。
@@ -240,7 +230,7 @@ systemctl enable mysqld.service
 <p>
 Fedora使用了systemd，所以配置daemon应该用systemctl。而以往系统是通过执行/ect/init.d/mysql start 启动的。
 </p>
-<h3 id="toc_0.2.1"> 查看系统消息</h3>
+<h2 id="toc_0.3"> 查看系统消息</h2>
 <p>
 sudo vim /var/log/message
 </p>

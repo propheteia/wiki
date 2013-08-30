@@ -96,5 +96,5 @@ function marks {
 }
 }}}
 
-= delete .svn =
+== delete .svn ==
 find . -type d -name ".svn"|xargs rm -rf

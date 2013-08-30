@@ -1,5 +1,5 @@
 %title 生成简单的包含文字的图片
-= 安装PIL(Python Imaging Library) 模块 =
+== 安装PIL(Python Imaging Library) 模块 ==
 可能会报错
     raise ImportError("The _imagingft C module is not installed")
 那是因为缺少freetype库

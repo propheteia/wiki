@@ -1,11 +1,11 @@
 %socket编程
-= 网站 =
+== 网站 ==
 * http://www.cnblogs.com/skynet/archive/2010/12/12/1903949.html
 * http://www.linuxhowtos.org/C_C++/socket.htm
-= 片段 =
-== clientVsServer ==
+== 片段 ==
+=== clientVsServer ===
 Notice that the client needs to know of the existence of and the address of the server, but the server does not need to know the address of (or even the existence of) the client prior to the connection being established.
-== socketType ==
+=== socketType ===
 sock_stream   是有保障的（即能保证数据正确传送到对方）面向连接的SOCKET，多用于资料（如文件）传送。
 
 sock_dgram   是无保障的面向消息的socket　，　主要用于在网络上发广播信息。
@@ -14,7 +14,7 @@ SOCK_STREAM是基于TCP的，数据传输比较有保障。SOCK_DGRAM是基于UD
 
 SOCK_STREAM 是数据流,一般是tcp/ip协议的编程,SOCK_DGRAM分是数据抱,是udp协议网络编程
 
-== fork ==
+=== fork ===
 http://coolshell.cn/articles/7965.html
 可以理解为父进程就地(在fork的地方)分支出了一个子进程,根据父进程和子进程返回的PID不同,可以让他们做不同的工作.比如让子进程完成一个工作,然后结束,父进程循环.
 

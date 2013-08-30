@@ -1,4 +1,4 @@
-= 视频解码的问题 =
+%title  视频解码的问题 
 == 少了哪个解码器? ==
 下载了720P,格式是mp4的视频。用Totem和Kmplayer均无法播放。Totem显示:
     没有MPEG4-AAC插件

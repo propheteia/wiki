@@ -207,8 +207,8 @@
   <div class="about">
     <h1>Virtualenv </h1></br></br>
     
-<h1 id="toc_1"> 基本使用方法</h1>
-<h2 id="toc_1.1"> 以安装Flask环境为例:</h2>
+<h2 id="toc_0.1"> 基本使用方法</h2>
+<h3 id="toc_0.1.1">1 以安装Flask环境为例:</h3>
 <pre>
 cd project  
 virtualenv env
@@ -218,7 +218,7 @@ easy_install Flask (用easy_install -m Flask卸载)
 <blockquote>
 退出环境：deactivate
 </blockquote>
-<h1 id="toc_2"> 简单分析</h1>
+<h2 id="toc_0.2"> 简单分析</h2>
 <p>
 来自:<a href="http://www.cnblogs.com/babykick/archive/2011/12/05/2276825.html">http://www.cnblogs.com/babykick/archive/2011/12/05/2276825.html</a>
 </p>
@@ -227,7 +227,7 @@ easy_install Flask (用easy_install -m Flask卸载)
 $ virtualenv --no-site-packages test2
 搜索路径中除了 Python 基本库路径外，已经没有了 global site-packages。这样即便我们在安装了大量开发包的的系统里，也可以隔离出一个干净的测试环境。
 </blockquote>
-<h1 id="toc_3"> setup.py的安装和卸载</h1>
+<h2 id="toc_0.3"> setup.py的安装和卸载</h2>
 <pre>
 cd project
 virtualenv env
@@ -268,7 +268,7 @@ cat log ｜ xagrs rm －rf
 <p>
 当然setup模块应该有直接删除的命令。
 </p>
-<h1 id="toc_4"> 隔离环境能否访问全局的site-packages目录？</h1>
+<h2 id="toc_0.4"> 隔离环境能否访问全局的site-packages目录？</h2>
 <p>
 在隔离环境下安装Retext时发现没有pyqt.core模块，但在全局环境下就没有这个问题。
 经过比较,发现默认情况下使用--no-site-packages,于是不能访问系统全局的site-packages目录。
@@ -317,7 +317,7 @@ sys.path看到包含系统全局目录
 <p>
 <a href="http://stackoverflow.com/questions/3371136/revert-the-no-site-packages-option-with-virtualenv">Revert the --no-site-packages option with virtualenv</a>
 </p>
-<h1 id="toc_5"> 隔离环境,但要访问部分全局模块</h1>
+<h2 id="toc_0.5"> 隔离环境,但要访问部分全局模块</h2>
 <p>
 <a href="http://stackoverflow.com/questions/249283/virtualenv-on-ubuntu-with-no-site-packages">site-package</a>
 </p>

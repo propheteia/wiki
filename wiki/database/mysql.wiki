@@ -79,5 +79,5 @@ alter table 表名 default character set 'utf8';
 create database 数据库名 character set gbk collate gbk_chinese_ci;
 }}}
 
-= 推荐网址 =
+== 推荐网址 ==
 [[http://www.perfgeeks.com/?p=460|MySQL索引]]

@@ -1,6 +1,5 @@
 %title Python
-%toc
-= with: =
+== with: ==
 {{{class="brush:python"
 import sys
 class test:
@@ -19,7 +18,7 @@ print "end"
     t is 1, yes, it is 
     exit
     end
-= 当模块与其包含的包重名 =
+== 当模块与其包含的包重名 ==
 创建文件：
     vim logging.py
 编辑脚本：
@@ -40,20 +39,20 @@ AttributeError: 'module' object has no attribute 'warning'
 错误信息中看出，import搜索的路径当前文件夹处于优先位置。因此
 新建的文件名要避免"普通“
 
-= hasattr()和 getattr() =
+== hasattr()和 getattr() ==
 hasattr()和 getattr()分别判断对象是否有某个属性及获得某个属性值。
 In [35]: hasattr(a, 'split')
 Out[35]: True
 In [36]: getattr(a, 'split')
 Out[36]: <built-in method split of str object at 0x831abe0>
 
-= 函式编程 =
+== 函式编程 ==
 在函式编程中,最著名的特色就是高序(High Order)。简单地说,就是定制一个算法,按规则来指定容器中的每一个元素。最常用的 High Order 为:
 * 映射,也就是将算法施于每个元素,将返回值合并为一个新的容器。
 * 过滤,将算法施于每个元素,将返回值为真的元素合并为一个新的容器。
 * 合并,将算法(可能携带一个初值)依次施于每个元素,将返回值作为下一步计算
 * 的参数之一,与下一个元素再计算,直至最终获得一个总的结果。
-== map ==
+=== map ===
  {{{def foo(x):
 
         return x*x
@@ -63,12 +62,11 @@ Out[36]: <built-in method split of str object at 0x831abe0>
 map 允许接收三个或三个以上的参数
 
 用途:函数要执行多次,且参数有一定的规律
-= filter =
+== filter ==
 用途:对结果过滤
-= reduce =
+== reduce ==
 用途:方便地实现了计算结果的重用,节省了大量的 CPU 周期。在实际应用中,reduce 可以用来实现统计计算或时序依赖的遍历行为。
-
-= xlrd =
+== xlrd ==
 Open the workbook
 {{{class="brush:python"
 import xlrd
@@ -95,7 +93,7 @@ cell_C4 = sh.cell(rowx=3,colx=2).value
 }}}
 附文：python 解析xml
 ~                    
-= *args **kwargs =
+== *args **kwargs ==
 *args表示任何多个无名参数，它是一个tuple； **kwargs表示关键字参数，它是一个dict。并且同时使用*args和**kwargs时，必须*args参数列要在**kwargs前.
 {{{
 def foo(*args, **kwargs):
@@ -152,7 +150,7 @@ args.update(args23)
 这里,update将dict args23合并到args
 }}}
 这样返回的就是个dict
-= 函数式编程 =
+== 函数式编程 ==
 {{{
     def good():
         t=good.t
@@ -162,7 +160,7 @@ args.update(args23)
     if __name__=="__main__":
         good()
 }}}
-= yield =
+== yield ==
 带有 yield 的函数在 Python 中被称之为 generator（生成器）
 版本一:
 {{{
@@ -214,7 +212,7 @@ yield版本三:
 我的理解,以上三个版本的本质区别在于,第一个版本按照某种方式产生数据,并将其存放(在List),需要时直接从list中调用.而版本三只在需要时以某种方式产生数据,因此不需要空间来存放.
 转:[[http://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/|developerworks]]
 
-= tuple有什么好处? =
+== tuple有什么好处? ==
     Tuple 比 list 操作速度快。如果您定义了一个值的常量集，并且唯一要用它做的是不断地遍历它，请使用 tuple 代替 list。
 
     如果对不需要修改的数据进行 “写保护”，可以使代码更安全。使用 tuple 而不是 list 如同拥有一个隐含的 assert 语句，说明这一数据是常量。如果必须要改变这些值，则需要执行 tuple 到 list 的转换 (需要使用一个特殊的函数)。
@@ -226,7 +224,7 @@ yield版本三:
     tuple和list可以相互转换. a=[]  b=tuple(a) type(b) --> tuple
 
 
-= wtform的一个getattr =
+== wtform的一个getattr ==
 {{{
 def validate(self):                                                        
     """                                                                    
@@ -242,7 +240,7 @@ def validate(self):
     return super(Form, self).validate(extra)    
 }}}
 
-= 查看api =
+== 查看api ==
     import sys
     help(sys)
     

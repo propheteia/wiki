@@ -1,7 +1,8 @@
-= Bash脚本编写 　=
+%title Bash
+== Bash脚本编写 　==
 * 参考[1]: http://www.cnblogs.com/jianasonic/articles/1212965.html
 * 参考[2]:http://www.freeos.com/guides/lsst/
-= gnome-terminal命令 =
+== gnome-terminal命令 ==
 在bash中进入到某个目录下并且运行程序:
     gnome-terminal --working-directory=/home -e "vim index.html":
     

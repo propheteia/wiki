@@ -101,21 +101,24 @@ h2 {
 	line-height: 1.6em;
 	color: #454544;
 	text-decoration: none;
-	font-size: 13pt;
+  font-weight: bold;
+	font-size: 16pt;
+  padding-top: 15px;
 }
 h3 {
 	font-family: 'Droid Serif', Verdana, Arial, sans-serif;
 	line-height: 1.6em;
 	color: #454544;
 	text-decoration: none;
-	font-size: 16pt;
+  font-weight: bold;
+	font-size: 12pt;
 }
 h4 {
 	font-family: 'Droid Serif', Verdana, Arial, sans-serif;
 	line-height: 1.6em;
 	color: #454544;
 	text-decoration: none;
-	font-size: 14pt;
+	font-size: 11pt;
 }
 h5 {
 	font-family: 'Droid Serif', Verdana, Arial, sans-serif;
@@ -186,6 +189,7 @@ COLUMNS and FEATURES
 	text-align:center;
 	margin:5px 5px 5px 5px;
 }
+
 pre {
 	font-style:normal
 	font-size:10px;

@@ -1,28 +1,28 @@
 %title google命名规范
-= 命名约定 =
-== 通用命名 ==
+== 命名约定 ==
+=== 通用命名 ===
 尽可能给出描述性名称
 
 除非放到项目外也非常明了，否则不要使用缩写
 
 不要用省略字母的缩写
 
-== 文件命名 ==
+=== 文件命名 ===
 文件名要全部小写，可以包含下划线（_）或短线（-），按项目约定来。
 
 通常，尽量让文件名更加明确，http_server_logs.h就比logs.h要好，定义类时文件名一般成对出现，如foo_bar.h和foo_bar.cc，对应类FooBar。
 
-== 类型命名 ==
+=== 类型命名 ===
 类型命名每个单词以大写字母开头，不包含下划线：MyExcitingClass、MyExcitingEnum。
 
 所有类型命名——类、结构体、类型定义（typedef）、枚举——使用相同约定
 
 
-== 变量命名 ==
+=== 变量命名 ===
 
 变量名一律小写，单词间以下划线相连，类的成员变量以下划线结尾，如my_exciting_local_variable、my_exciting_member_variable_。
 
-== 函数命名 ==
+==== 函数命名 ====
 
 普通函数（regular functions，译者注，这里与访问函数等特殊函数相对）大小写混合，存取函数（accessors and mutators）则要求与变量名匹配：MyExcitingFunction()、MyExcitingMethod()、my_exciting_member_variable()、set_my_exciting_member_variable()。
 

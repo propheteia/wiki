@@ -1,7 +1,7 @@
 %title Python正则表达式
-=推荐文章：=
+==推荐文章：==
 [[http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html|AstralWind]] [[http://woodpecker.org.cn/diveintopython/regular_expressions/index.html|Dive into python]]
-=我的应用举例:=
+==我的应用举例:==
 首先的是数值的定义:
 
 

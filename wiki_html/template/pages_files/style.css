@@ -63,7 +63,7 @@ TEXT SELECTION STYLES
  color:#fff;
 }
 a {
-	color: #E095B4;
+	color: #848484;
 	outline: none;
   font-size: 15px;
   text-decoration : none ;
@@ -276,7 +276,7 @@ blockquote {
 	margin-top: 0px;
 }
 a:hover {
-	color: #E35A88;
+	color: #454544;
 }
 .spacer {
 	height: 1px;
@@ -1295,4 +1295,6 @@ form {
 .content dd {                                                                           
     padding-left: 20px;                                                        
 }       
-
+ li{
+  padding:  15px 0 0 0;
+}

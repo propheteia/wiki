@@ -19,3 +19,9 @@ sudo vim /var/log/message
 
 sudo vim /etc/sysconfig/networking/  下删除Dlink_302子类的无线设备
 这可能是之前设置无线网络的失误造成的.
+
+== 终端的显示格式 ==
+在~/.bashrc 中加入:
+    export PS1="\h:\w \u\$"  
+
+\h 表示主机 \w 表示绝对目录(W为近一级目录)  \u 为登录用户

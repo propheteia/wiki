@@ -205,61 +205,30 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>Python</h1></br></br>
+    <h1>拼音输入法fcitx</h1></br></br>
     
-<ul>
-<li>
-<a href="./tips.html">技巧</a>
-
-<li>
-<a href="./unittest.html">测试单元</a>
-
-<li>
-<a href="./regular_exp.html">python正则表达式</a>
-
-<li>
-<a href="./virtualenv.html">python环境隔离virtualenv</a>
-
-<li>
-<a href="./logging.html">日志管理模块</a>
-
-<li>
-<a href="./distutils.html">distutils生成模块</a>
-
-<li>
-<a href="./pep8.html">PEP8标准阅读</a>
-
-<li>
-<a href="./project.html">python构建完整项目</a>
-
-<li>
-<a href="./metaclass.html">深刻理解元类(metaclass)</a>
-
-<li>
-<a href="./and_or.html">and 和 or</a>
-
-<li>
-<a href="./lambda.html">一个实现自省的例子</a>
-
-<li>
-<a href="./autotest.html">用python做自动测试平台</a> 
-
-<li>
-<a href="./basic_data.html">基本数据结构</a>
-
-<li>
-<a href="./topic.html">生成简单的包含文字的图片</a>
-
-<li>
-<a href="./mysqldb.html">MySQLdb</a>
-
-<li>
-<a href="./beautifulsoup.html">Python抓取网页数据</a>
-
-<li>
-<a href="./resources.html">资源汇总</a>
-
-</ul>
+<p>
+由于误删配置文件,导致fcitx拼音输入无法使用.
+</p>
+<h2 id="toc_0.1"> 安装fcitx</h2>
+<pre>
+    sudo yum install fcitx
+    sudo yum install fcitx-pinyin 
+    这里需要安装拼音库
+</pre>
+  
+<h2 id="toc_0.2"> 配置环境变量，与系统建立连接</h2>
+<blockquote>
+sudo vi ~/.bashrc
+</blockquote>
+<p>
+添加以下几行
+</p>
+<pre>
+export GTK_IM_MODULE=xim
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE=xim  
+</pre>
 
 	  <div class="spacer"></div>
   </div>

@@ -1,0 +1,4 @@
+在虚拟环境下安装mysql-python出现找不到my_config.h
+    sudo yum install mysql-devel # 解决
+
+

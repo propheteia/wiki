@@ -5,4 +5,6 @@
 * [[./flask_practice|Flask]]
 * [[./active_account|怎样设计激活邮箱的激活码？]]
 * [[./google_API|google_API]]
+* [[./flaskext|Flask扩展命名]]
+* [[Flask-Babel]]
 * [[./flask_babel|Flask资源汇总]]

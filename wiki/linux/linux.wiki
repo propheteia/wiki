@@ -1,7 +1,6 @@
 =Linux=
 * [[./shell|bash基本命令]]
 * [[./tools|Linux工具]]
-* [[./bash|Bash脚本编写]]
 * [[./tar|tar解压]]
 * [[./linux_operation|深入了解linux系统]]
 * [[./deamon|Linux服务]]
@@ -9,4 +8,5 @@
 * [[./pipe|管道命令]]
 * [[./shell-io|Linux系统的Shell I/O重定向详解]]
 * [[./top|高效使用top]]
+* [[./fcitx|拼音输入法fcitx]]
 * [[./ssh|ssh连接]]

@@ -1,0 +1,2 @@
+%title Google API
+https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&sensor=true&key=AIzaSyBOlFc3DEDPIiK1DQXIEEtdgmWUbHLEizc

@@ -1,0 +1,17 @@
+%title 拼音输入法fcitx
+由于误删配置文件,导致fcitx拼音输入无法使用.
+== 安装fcitx ==
+{{{
+    sudo yum install fcitx
+    sudo yum install fcitx-pinyin 
+    这里需要安装拼音库
+}}}
+  
+== 配置环境变量，与系统建立连接 ==
+    sudo vi ~/.bashrc
+添加以下几行
+{{{
+export GTK_IM_MODULE=xim
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE=xim  
+}}} 

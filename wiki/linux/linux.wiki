@@ -9,3 +9,4 @@
 * [[./shell-io|Linux系统的Shell I/O重定向详解]]
 * [[./top|高效使用top]]
 * [[./fcitx|拼音输入法fcitx]]
+* [[./ssh|ssh连接]]

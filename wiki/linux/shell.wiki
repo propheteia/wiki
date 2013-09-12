@@ -131,3 +131,12 @@ stat bash
 file Bash/client1.sh
     Bash/client1.sh: ASCII text
 
+== 删除某个文件以外的其他文件 ==
+{{{
+rm -rf `ls -I except.txt`
+
+rm -rf `ls *.txt| grep -v 2.txt` (-v 反选)
+
+}}}
+
+来自：http://www.f5ha.com/2010/0115/zNMDAwMDAwMDIzNw.html

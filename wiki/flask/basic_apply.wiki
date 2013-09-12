@@ -132,3 +132,7 @@ else:
 #这里误让其缩进了,导致出现难以追踪的错误.
 
 }}}
+ == 向sae导入MySQL数据库 ==
+ http://blog.csdn.net/xieyan0811/article/details/8208200
+ 
+    mysqldump -h localhost -u root -p 库名表名 > /tmp/tmp.sql

@@ -207,7 +207,7 @@
   <div class="about">
     <h1>Vim</h1></br></br>
     
-<h2 id="toc_0.1"> 中文输入的解决</h2>
+<h2 id="toc_0.1">中文输入的解决</h2>
 <ul>
 <li>
 安装fcitx插件。<a href="http://www.vim.org/scripts/script.php?script_id=3764 ">fcitx插件</a>
@@ -216,13 +216,13 @@
 在.vimrc中插入: set:ttimeoutlen=100 减少退出插入时的延时
 
 </ul>
-<h2 id="toc_0.2"> 将若干行注释</h2>
+<h2 id="toc_0.2">将若干行注释</h2>
 <ul>
 <li>
 将1到10行注释 --&gt; :1,10s/^/#/g 
 
 </ul>
-<h2 id="toc_0.3"> Ctags</h2>
+<h2 id="toc_0.3">Ctags</h2>
 <ul>
 <li>
 To split the current window and jump to the tag under the cursor use this
@@ -234,7 +234,7 @@ command:
 <blockquote>
 CTRL-W ]
 </blockquote>
-<h2 id="toc_0.4"> Taglist</h2>
+<h2 id="toc_0.4">Taglist</h2>
 <ul>
 <li>
 提供函数列表
@@ -247,7 +247,7 @@ let Tlist_Exit_OnlyWindow=1
 
 </ul>
 
-<h2 id="toc_0.5"> Cscope</h2>
+<h2 id="toc_0.5">Cscope</h2>
 <pre>
 0 or s: Find this C symbol
 1 or g: Find this definition
@@ -258,19 +258,19 @@ let Tlist_Exit_OnlyWindow=1
 7 or f: Find this file
 8 or i: Find files #including this file
 </pre>
-<h2 id="toc_0.6"> Substitute</h2>
+<h2 id="toc_0.6">Substitute</h2>
 <blockquote>
 :%s/a/b/gc</br>
 g:行中所有</br>
 %:全文    </br>
 c:Confirm </br>
 </blockquote>
-<h2 id="toc_0.7"> VIM Color Scheme Test</h2>
+<h2 id="toc_0.7">VIM Color Scheme Test</h2>
 <p>
 <strong>原文:</strong> <a href="http://vimcolorschemetest.googlecode.com/svn/html/index-c.html">http://vimcolorschemetest.googlecode.com/svn/html/index-c.html</a>
 </p>
 
-<h2 id="toc_0.8"> python在vim中的代码缩进</h2>
+<h2 id="toc_0.8">python在vim中的代码缩进</h2>
 <table>
 <tr>
 <th>
@@ -353,12 +353,12 @@ set shiftwidth=4<br>
 python是靠缩进来决定语句的层次关系的，所以你的缩进风格一定要统一，并且不能把空格和tab混起来用
 </p>
 
-<h2 id="toc_0.9"> 对于某一文档做特殊的处理，可以在编辑器中设置"：set ..."</h2>
+<h2 id="toc_0.9">对于某一文档做特殊的处理，可以在编辑器中设置"：set ..."</h2>
 <p>
 <strong>参考：</strong><a href="http://tedlogan.com/techblog3.html">Secret of Tabs in Vim</a>
 </p>
 
-<h2 id="toc_0.10"> 来自简明VIM练级攻略</h2>
+<h2 id="toc_0.10">来自简明VIM练级攻略</h2>
 <p>
  转载:<a href="http://coolshell.cn/articles/5426.html">VIM练级攻略</a> 
 </p>
@@ -419,39 +419,46 @@ J → 把所有的行连接起来（变成一行）
 <p>
 <a href="*.html">*</a> ZZ 保存并且退出
 </p>
-<h2 id="toc_0.11"> 快捷键退出保存</h2>
+<h2 id="toc_0.11">快捷键退出保存</h2>
 <pre>
 nmap &lt;leader&gt;s :w!&lt;cr&gt;
 nmap &lt;leader&gt;w :wq!&lt;cr&gt;
 nmap &lt;leader&gt;q :q!&lt;cr&gt;
 </pre>
 
-<h2 id="toc_0.12"> Python 的vim 解决方案</h2>
+<h2 id="toc_0.12">Python 的vim 解决方案</h2>
 <p>
 网站:<a href="http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide">http://sontek.net/blog/detail/turning-vim-into-a-modern-python-ide</a>
 </p>
 
-<h3 id="toc_0.12.1">.1 TODO</h3>
+<h3 id="toc_0.12.1">TODO</h3>
 <blockquote>
 &lt;leader&gt;td
 </blockquote>
     
-<h3 id="toc_0.12.2">.2 查看历史</h3>
+<h3 id="toc_0.12.2">查看历史</h3>
 <blockquote>
 &lt;leader&gt;g
 </blockquote>
 
-<h3 id="toc_0.12.3">.3 查找定义</h3>
+<h3 id="toc_0.12.3">查找定义</h3>
 <blockquote>
 &lt;leader&gt;j
 </blockquote>
 
-<h2 id="toc_0.13"> 折叠</h2>
+<h2 id="toc_0.13">折叠</h2>
 <blockquote>
 set foldmethod=indent
 zM 全部折叠 //set foldlevel=0
 zR 全部展开
 </blockquote>
+
+<h2 id="toc_0.14">vim资源汇总</h2>
+<p>
+<a href="http://www.cnblogs.com/witcxc/archive/2011/12/28/2304704.html">vim配置详解</a>
+<a href="http://code.google.com/p/vimcolorschemetest/">Vimcolorschemetest</a>
+<a href=".html">.html</a>
+</p>
 
 	  <div class="spacer"></div>
   </div>

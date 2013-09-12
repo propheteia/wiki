@@ -10,3 +10,5 @@
 * [[./sizeof|sizeof]]
 * [[异常处理?]]
 * [[函数参数中用对象和引用的区别?]]
+* [[./new_malloc|new 与malloc]]
+* [[./template|模版]]

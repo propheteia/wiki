@@ -1,8 +1,10 @@
 %title FLASK
 * [[./svn|用svn部署代码]]
 * [[./basic_apply|在sae上部署基本web应用]]
+* [[./mac_flask|mac上配置flask]]
 * [[./flask_practice|Flask]]
 * [[./active_account|怎样设计激活邮箱的激活码？]]
 * [[./google_API|google_API]]
 * [[./flaskext|Flask扩展命名]]
 * [[Flask-Babel]]
+* [[./flask_babel|Flask资源汇总]]

@@ -14,3 +14,5 @@
 * [[./basic_data|基本数据结构]]
 * [[./topic|生成简单的包含文字的图片]]
 * [[./mysqldb|MySQLdb]]
+* [[./beautifulsoup|Python抓取网页数据]]
+* [[./resources|资源汇总]]

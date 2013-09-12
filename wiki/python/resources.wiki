@@ -1,0 +1,27 @@
+%title 资源汇总
+[[http://www.cnblogs.com/huxi/archive/2010/06/26/1765808.html|线程指南]]
+
+[[http://blog.jobbole.com/21351/|深刻理解Python中的元类(metaclass)]]
+
+[[http://www.cnblogs.com/wanpython/archive/2010/08/07/1794598.html|python 获取当前时间]]
+
+[[http://www.ibm.com/developerworks/cn/linux/l-pyunit/|Python自动单元测试框架]]
+
+[[http://kenby.iteye.com/blog/1162698|使用python的logging模块]]
+
+[[http://www.ibm.com/developerworks/opensource/library/os-pythonpackaging/index.html|A guide to Python packaging]]
+
+[[http://ilab.cs.byu.edu/python/threadingmodule.html|Python Network Programming]]
+
+[[http://bbs.chinaunix.net/thread-1257503-1-1.html|Python调试技巧介绍]]
+
+[[http://wiki.ubuntu.org.cn/Python正则表达式操作指南|Python正则表达式操作指南]]
+
+[[http://www.cnblogs.com/meibenjin/archive/2013/05/01/3053262.html|关于python抓取google搜索结果的若干问题]]
+
+[[http://www.zhlwish.com/2010/10/11/python_file_md5/|用Python生成文件的MD5校验码]]
+
+[[http://stackoverflow.com/questions/1017388/simple-update-in-sqlalchemy|simple update in sqlalchemy]]
+
+[[http://5iqiong.blog.51cto.com/2999926/806230|遍历python字典几种方法]]
+

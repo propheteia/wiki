@@ -205,61 +205,28 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>Python</h1></br></br>
+    <h1>ssh连接</h1></br></br>
     
-<ul>
-<li>
-<a href="./tips.html">技巧</a>
+<h2 id="toc_0.1">比较远程和本地文件</h2>
+<p>
+ssh user@host cat /path/to/remotefile | diff /path/to/localfile – (短划线的意义？）
+</p>
+<h2 id="toc_0.2">将标准输入（stdin）复制到你的X11缓冲区</h2>
+<p>
+ssh user@host cat /path/to/some/file | xclip
+</p>
+<h2 id="toc_0.3">通过SSH将MySQL数据库复制到新服务器</h2>
+<p>
+mysqldump –add-drop-table –extended-insert –force –log-error=error.log -uUSER -pPASS OLD_DB_NAME | ssh -C user@newhost “mysql -uUSER -pPASS NEW_DB_NAME”
+</p>
 
-<li>
-<a href="./unittest.html">测试单元</a>
+<p>
+部分转自：<a href="http://www.cnblogs.com/weafer/archive/2011/06/10/2077852.html">http://www.cnblogs.com/weafer/archive/2011/06/10/2077852.html</a>
+</p>
 
-<li>
-<a href="./regular_exp.html">python正则表达式</a>
-
-<li>
-<a href="./virtualenv.html">python环境隔离virtualenv</a>
-
-<li>
-<a href="./logging.html">日志管理模块</a>
-
-<li>
-<a href="./distutils.html">distutils生成模块</a>
-
-<li>
-<a href="./pep8.html">PEP8标准阅读</a>
-
-<li>
-<a href="./project.html">python构建完整项目</a>
-
-<li>
-<a href="./metaclass.html">深刻理解元类(metaclass)</a>
-
-<li>
-<a href="./and_or.html">and 和 or</a>
-
-<li>
-<a href="./lambda.html">一个实现自省的例子</a>
-
-<li>
-<a href="./autotest.html">用python做自动测试平台</a> 
-
-<li>
-<a href="./basic_data.html">基本数据结构</a>
-
-<li>
-<a href="./topic.html">生成简单的包含文字的图片</a>
-
-<li>
-<a href="./mysqldb.html">MySQLdb</a>
-
-<li>
-<a href="./beautifulsoup.html">Python抓取网页数据</a>
-
-<li>
-<a href="./resources.html">资源汇总</a>
-
-</ul>
+<p>
+ssh无密码连接
+</p>
 
 	  <div class="spacer"></div>
   </div>

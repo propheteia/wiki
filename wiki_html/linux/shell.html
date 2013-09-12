@@ -207,12 +207,12 @@
   <div class="about">
     <h1>shell</h1></br></br>
     
-<h1 id="toc_1"> shell命令</h1>
-<h2 id="toc_1.1"> 查找目录下的文件是否含有某个字符串</h2>
+<h1 id="toc_1">shell命令</h1>
+<h2 id="toc_1.1">查找目录下的文件是否含有某个字符串</h2>
 <p>
 <strong>(find .|xargs grep -ri "IBM" -l)</strong>
 </p>
-<h3 id="toc_1.1.1">1 xargs:</h3>
+<h3 id="toc_1.1.1">xargs:</h3>
 <p>
 xargs产生grep命令的参数,即:
 </p>
@@ -222,12 +222,12 @@ grep -ri "IBM" (find .　产生的文件）
 <p>
 -l:只列出文件名
 </p>
-<h3 id="toc_1.1.2">2 grep:</h3>
+<h3 id="toc_1.1.2">grep:</h3>
 <blockquote>
 -r:读文件
 -i:忽略大小写
 </blockquote>
-<h3 id="toc_1.1.3">3 如何自定义变量?</h3>
+<h3 id="toc_1.1.3">如何自定义变量?</h3>
 <ul>
 <li>
  /etc/profile 全局用户，应用于所有的Shell。
@@ -248,7 +248,7 @@ source .bashrc
 <p>
 变量strive在所有的shell中都有效
 </p>
-<h2 id="toc_1.2"> 你可能不知道的shell</h2>
+<h2 id="toc_1.2">你可能不知道的shell</h2>
 <ul>
 <li>
 在 bash 里，使用 Ctrl-R 而不是上下光标键来查找历史命令。
@@ -272,7 +272,7 @@ sudo !! 以root的身份执行上一条命令 。
 <p>
 转载:<a href="http://coolshell.cn/articles/8619.html">http://coolshell.cn/articles/8619.html</a>
 </p>
-<h2 id="toc_1.3"> 常用快捷键</h2>
+<h2 id="toc_1.3">常用快捷键</h2>
 <pre>
 Ctrl + 方向键:bash输入命令行时，左/右跳一个单词
 Linux 命令行快捷键
@@ -299,17 +299,17 @@ Ctrl+s 	挂起当前 shell
 Ctrl+q 	重新启用挂起的 shell
 Ctrl+z 	暂停命令 (恢复命令请看后面的说明)
 </pre>
-<h2 id="toc_1.4"> 常用命令</h2>
+<h2 id="toc_1.4">常用命令</h2>
 <pre>
 反选:
 输出结果作为判断:
 </pre>
-<h2 id="toc_1.5"> locate</h2>
+<h2 id="toc_1.5">locate</h2>
 <p>
 locate命令其实是“find -name”的另一种写法，但是要比后者快得多，原因在于它不搜索具体目录，而是搜索一个数据库（/var/lib/locatedb），这个数据库中含有本地所有文件信息。Linux系统自动创建这个数据库，并且每天自动更新一次，所以使用locate命令查不到最新变动过的文件。为了避免这种情况，可以在使用locate之前，先使用updatedb命令，手动更新数据库。
 </p>
 
-<h2 id="toc_1.6"> 用命令行快速切换目录</h2>
+<h2 id="toc_1.6">用命令行快速切换目录</h2>
 <p>
 在.bashrc中加入:
 </p>
@@ -351,9 +351,21 @@ function marks {
 }
 </pre>
 
-<h2 id="toc_1.7"> delete .svn</h2>
+<h2 id="toc_1.7">delete .svn</h2>
 <p>
 find . -type d -name ".svn"|xargs rm -rf
+</p>
+
+<h2 id="toc_1.8">删除某个文件以外的其他文件</h2>
+<pre>
+rm -rf `ls -I except.txt`
+
+rm -rf `ls *.txt| grep -v 2.txt` (-v 反选)
+
+</pre>
+
+<p>
+来自：<a href="http://www.f5ha.com/2010/0115/zNMDAwMDAwMDIzNw.html">http://www.f5ha.com/2010/0115/zNMDAwMDAwMDIzNw.html</a>
 </p>
 
 	  <div class="spacer"></div>

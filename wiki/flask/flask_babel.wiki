@@ -1,0 +1,3 @@
+%title Flask-babel
+[[http://translations.readthedocs.org/en/latest/flask-babel.html|flask-babel]]
+[[http://www.douban.com/group/topic/30629652/|Flask插件库]]

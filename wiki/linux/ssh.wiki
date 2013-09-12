@@ -1,0 +1,12 @@
+%title ssh连接
+== 比较远程和本地文件 ==
+ssh user@host cat /path/to/remotefile | diff /path/to/localfile – (短划线的意义？）
+== 将标准输入（stdin）复制到你的X11缓冲区 ==
+ssh user@host cat /path/to/some/file | xclip
+== 通过SSH将MySQL数据库复制到新服务器 ==
+mysqldump –add-drop-table –extended-insert –force –log-error=error.log -uUSER -pPASS OLD_DB_NAME | ssh -C user@newhost “mysql -uUSER -pPASS NEW_DB_NAME”
+
+部分转自：http://www.cnblogs.com/weafer/archive/2011/06/10/2077852.html
+
+ssh无密码连接
+

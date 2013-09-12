@@ -1,0 +1,15 @@
+easy_install virtualenv
+
+install mysql mysqld
+
+== Mac ==
+export PATH="$PAHT:/usr/local/mysql/bin"
+
+xcode basci tools
+
+== Linux ==
+sudo apt-get install mysql-dev
+
+pip install -r requirements
+
+

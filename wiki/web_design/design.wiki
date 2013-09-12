@@ -1,3 +1,5 @@
 %title 网页设计
 * [[./css|Css]]
 * [[./html|html]]
+* [[./font|简体中文字体]]
+* [[./notices|What should every programmer know about web development?]]

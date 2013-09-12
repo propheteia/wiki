@@ -205,41 +205,45 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>linux</h1></br></br>
+    <h1>Flask-Babel</h1></br></br>
     
-<h1 id="toc_1"> Linux</h1>
-<ul>
-<li>
-<a href="./shell.html">bash基本命令</a>
+<h1 id="toc_1"> 版本</h1>
+<p>
+Babel==0.9.6   
+</p>
 
-<li>
-<a href="./tools.html">Linux工具</a>
+<p>
+Flask-Babel==0.8
+</p>
 
-<li>
-<a href="./tar.html">tar解压</a>
-
-<li>
-<a href="./linux_operation.html">深入了解linux系统</a>
-
-<li>
-<a href="./deamon.html">Linux服务</a>
-
-<li>
-<a href="./video_code.html">视频解码的问题</a>
-
-<li>
-<a href="./pipe.html">管道命令</a>
-
-<li>
-<a href="./shell-io.html">Linux系统的Shell I/O重定向详解</a>
-
-<li>
-<a href="./top.html">高效使用top</a>
-
-<li>
-<a href="./fcitx.html">拼音输入法fcitx</a>
-
-</ul>
+<p>
+用 pybabel 生成要翻译的 PO 模板文件
+</p>
+<blockquote>
+pybabel extract -F babel.cfg -o messages.pot .
+</blockquote>
+    
+<p>
+文件夹中生成一个 translations 文件夹，要确保 flask 能找到翻译内容，translations文件夹要和 templates
+文件夹在同一个目录中。接下来我们就可以进行翻译了，修改 translations/zh_CN/LC_MESSAGES/messages.po
+</p>
+<blockquote>
+pybabel init -i messages.pot -d translations -l zh_CN
+</blockquote>
+    
+<p>
+编译出 message.mo 文件
+</p>
+<blockquote>
+pybabel compile -d translations
+</blockquote>
+<p>
+有时我们需要对程序和模板做修改，翻译也要随之更新。更新后需要用前面的命令重新生成 messages.pot
+文件，然后使用下面的命令将更新的内容 merge 到原来的翻译中
+</p>
+<blockquote>
+pybabel update -i messages.pot -d translations
+</blockquote>
 
 	  <div class="spacer"></div>
   </div>

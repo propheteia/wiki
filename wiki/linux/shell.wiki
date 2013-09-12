@@ -1,4 +1,8 @@
-=shell命令=
+== 删除全部文件,除了选定的 ==
+{{{
+    rm -rf `ls|egrep -v '(file1|file2)'`
+}}}
+[[http://www.f5ha.com/2010/0115/zNMDAwMDAwMDIzNw.html|参考]]
 == 查找目录下的文件是否含有某个字符串 ==
 *(find .|xargs grep -ri "IBM" -l)*
 === xargs: ===
@@ -98,3 +102,32 @@ function marks {
 
 == delete .svn ==
 find . -type d -name ".svn"|xargs rm -rf
+
+== Bash脚本编写 　==                                                           
+* 参考[1]: http://www.cnblogs.com/~/1212965.html                               
+* 参考[2]:http://www.freeos.com/~/lsst/                                        
+== gnome-terminal命令 ==                                                                                                             
+在bash中进入到某个目录下并且运行程序:                                          
+    gnome-terminal --working-directory=/home -e "vim index.html":
+    
+== 补全 ==
+"*"补全多个字符
+
+"?"补全一个字符
+
+== 查看文件内容 ==
+stat bash
+{{{
+  文件："Bash/"
+    大小：4096          块：8          IO 块：4096   目录
+    设备：fd02h/64770d  Inode：1180128     硬链接：3
+    权限：(0775/drwxrwxr-x)  Uid：( 1000/  wenbin)   Gid：( 1000/  wenbin)
+    环境：unconfined_u:object_r:user_home_t:s0
+    最近访问：2013-08-30 10:34:00.007527054 +0800
+    最近更改：2013-06-21 00:36:17.842771187 +0800
+    最近改动：2013-08-18 14:47:21.608523762 +0800
+    创建时间：-
+}}}
+file Bash/client1.sh
+    Bash/client1.sh: ASCII text
+

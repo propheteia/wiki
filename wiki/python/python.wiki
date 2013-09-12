@@ -13,3 +13,4 @@
 * [[./autotest|用python做自动测试平台]] 
 * [[./basic_data|基本数据结构]]
 * [[./topic|生成简单的包含文字的图片]]
+* [[./mysqldb|MySQLdb]]

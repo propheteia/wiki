@@ -205,41 +205,30 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>linux</h1></br></br>
+    <h1>拼音输入法fcitx</h1></br></br>
     
-<h1 id="toc_1"> Linux</h1>
-<ul>
-<li>
-<a href="./shell.html">bash基本命令</a>
-
-<li>
-<a href="./tools.html">Linux工具</a>
-
-<li>
-<a href="./tar.html">tar解压</a>
-
-<li>
-<a href="./linux_operation.html">深入了解linux系统</a>
-
-<li>
-<a href="./deamon.html">Linux服务</a>
-
-<li>
-<a href="./video_code.html">视频解码的问题</a>
-
-<li>
-<a href="./pipe.html">管道命令</a>
-
-<li>
-<a href="./shell-io.html">Linux系统的Shell I/O重定向详解</a>
-
-<li>
-<a href="./top.html">高效使用top</a>
-
-<li>
-<a href="./fcitx.html">拼音输入法fcitx</a>
-
-</ul>
+<p>
+由于误删配置文件,导致fcitx拼音输入无法使用.
+</p>
+<h2 id="toc_0.1"> 安装fcitx</h2>
+<pre>
+    sudo yum install fcitx
+    sudo yum install fcitx-pinyin 
+    这里需要安装拼音库
+</pre>
+  
+<h2 id="toc_0.2"> 配置环境变量，与系统建立连接</h2>
+<blockquote>
+sudo vi ~/.bashrc
+</blockquote>
+<p>
+添加以下几行
+</p>
+<pre>
+export GTK_IM_MODULE=xim
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE=xim  
+</pre>
 
 	  <div class="spacer"></div>
   </div>

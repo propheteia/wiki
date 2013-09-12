@@ -1,0 +1,17 @@
+= 版本 = 
+Babel==0.9.6   
+
+Flask-Babel==0.8
+
+用 pybabel 生成要翻译的 PO 模板文件
+    pybabel extract -F babel.cfg -o messages.pot .
+    
+文件夹中生成一个 translations 文件夹，要确保 flask 能找到翻译内容，translations文件夹要和 templates
+文件夹在同一个目录中。接下来我们就可以进行翻译了，修改 translations/zh_CN/LC_MESSAGES/messages.po
+    pybabel init -i messages.pot -d translations -l zh_CN
+    
+编译出 message.mo 文件
+    pybabel compile -d translations
+有时我们需要对程序和模板做修改，翻译也要随之更新。更新后需要用前面的命令重新生成 messages.pot
+文件，然后使用下面的命令将更新的内容 merge 到原来的翻译中
+    pybabel update -i messages.pot -d translations

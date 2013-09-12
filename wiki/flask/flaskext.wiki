@@ -1,0 +1,34 @@
+== 如何引用如flask-xxxx的模块 ==
+要注意: Flask的模块时常更新, 因此以前的引用方法可能会发生错误. 最简单的方法就是在开始时运用的环境
+
+如果要配置机器,只要:
+    pip freeze > requirements.txt
+结果类似于:
+{{{
+Babel==1.3
+Flask==0.10.1
+Flask-Admin==1.0.6
+Flask-Babel==0.9
+Flask-Login==0.2.7
+Flask-SQLAlchemy==1.0
+Flask-WTF==0.8.3
+Jinja2==2.7.1
+Mako==0.9.0
+MarkupSafe==0.18
+SQLAlchemy==0.8.2
+WTForms==1.0.4
+Werkzeug==0.9.4
+alembic==0.6.0
+itsdangerous==0.23
+pytz==2013b
+speaklater==1.3
+wsgiref==0.1.2
+}}}
+然后在新的环境下:
+    pip install -r requirements.txt
+Instead we now recommend naming packages flask_foo instead of the now deprecated flaskext.foo. Flask
+0.8 introduces a redirect import system that lets uses import from flask.ext.foo and it will try
+flask_foo first and if that fails flaskext.foo.
+
+Flask extensions should urge users to import from flask.ext.foo instead of flask_foo or flaskext_foo
+so that extensions can transition to the new package name without affecting users.

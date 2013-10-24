@@ -100,6 +100,8 @@ function marks {
 }
 }}}
 
+
+http://developer.51cto.com/art/201308/408045.htm
 == delete .svn ==
 find . -type d -name ".svn"|xargs rm -rf
 

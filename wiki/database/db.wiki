@@ -1,2 +1,3 @@
 %title DataBase
 * [[./mysql|MySql的基本使用]]
+* [[有关数据库]]

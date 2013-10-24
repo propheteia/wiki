@@ -13,3 +13,10 @@
 | [[./tools/tools|工具推荐]]                 | [[./tools/software|软件推荐]]    | [[./book/booklist|书单]]       | [[./experience/experience|经验]] |
 
 == 全部维基 ==
+== [[简历投递历史]] ==
+== [[简历]] ==
+== [[课程]] ==
+== [[介绍信]] ==
+
+managed=true
+ sudo service network-manager restart

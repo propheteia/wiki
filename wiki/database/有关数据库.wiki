@@ -1,0 +1,16 @@
+== 什么是SQL ==
+全名是结构化查询语言（Structured QueryLanguage），是用于数据库中的标准數據查询语言
+
+数据库都支持SQL, 但有额外的补充
+
+== 如何用Python操作Mysql ==
+使用Mysqldb库
+
+== 那Sqlalchemy有什么用? ==
+sqlalchemy是python操作数据库的工具箱
+
+它改善了SQL的一些缺陷， 比如没有面向对象的特性等
+
+== Sqlalchemy有哪两部分 ==
+
+

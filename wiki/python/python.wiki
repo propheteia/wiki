@@ -16,3 +16,5 @@
 * [[./mysqldb|MySQLdb]]
 * [[./beautifulsoup|Python抓取网页数据]]
 * [[./resources|资源汇总]]
+* [[收发邮件插件smtplib]]
+* [[字符编码]]

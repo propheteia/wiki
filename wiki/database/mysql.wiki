@@ -82,3 +82,7 @@ create database 数据库名 character set gbk collate gbk_chinese_ci;
 
 == 推荐网址 ==
 [[http://www.perfgeeks.com/?p=460|MySQL索引]]
+== 更改表的unique属性 ==
+ALTER TABLE user DROP INDEX nickname;
+
+ALTER TABLE user ADD unique(username); 

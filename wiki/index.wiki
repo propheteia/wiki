@@ -7,10 +7,10 @@
 
 邮箱:Wenbin.rc AT gmail.com
 == 维基目录 ==
-| [[./datastructure/datastructure|数据结构]] | [[./algorithm/algorithm|算法]]   | [[./simulation/sim|仿真系统]]  | [[./robot/humanoid|仿人机器人]]  |
-| [[./flask/flask|Flask框架]]                | [[./web_design/design|HTML&CSS]] | [[./server/server|服务器架设]] | [[./database/db|数据库]]         |
-| [[./cpp/cpp|C++/C]]                        | [[./linux/linux| Linux]]         | [[./python/python|Python]]     |                                  |
-| [[./tools/tools|工具推荐]]                 | [[./tools/software|软件推荐]]    | [[./book/booklist|书单]]       | [[./experience/experience|经验]] |
+| [[./datastructure/datastructure|数据结构]] | [[./algorithm/algorithm|算法]]   | [[./simulation/sim|仿真系统]] | [[./robot/humanoid|仿人机器人]]  |
+| [[./flask/flask|Flask框架]]                | [[./web_design/design|HTML&CSS]] | [[./test|测试]]               | [[./database/db|数据库]]         |
+| [[./cpp/cpp|C++/C]]                        | [[./linux/linux| Linux]]         | [[./python/python|Python]]    | [[社交]]                         |
+| [[./tools/tools|工具推荐]]                 | [[./tools/software|软件推荐]]    | [[./book/booklist|书单]]      | [[./experience/experience|经验]] |
 
 == 全部维基 ==
 == [[简历投递历史]] ==

@@ -205,65 +205,36 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>Python</h1></br>
+    <h1>字符编码</h1></br>
     
+<p>
+参考：<a href="http://www.cnblogs.com/huxi/archive/2010/12/05/1897271.html">http://www.cnblogs.com/huxi/archive/2010/12/05/1897271.html</a>
+</p>
+<h2 id="toc_0.1">string和unicode</h2>
+<p>
+unicode是码表，比如‘汉’是695c,编码后成为str，是字节序列, 为了传输和存储
+</p>
+
+
+<p>
+str和unicode都是basestring的子类。严格意义上说，str其实是字节串，它是unicode经过编码后的字节组成的序列。对UTF-8编码的str'汉'使用len()函数时，结果是3，因为实际上，UTF-8编码的'汉'
+== '\xE6\xB1\x89'。
+</p>
+
+<p>
+unicode才是真正意义上的字符串，对字节串str使用正确的字符编码进行解码后获得，并且len(u'汉') == 1。
+</p>
+
+<h2 id="toc_0.2">建议</h2>
 <ul>
 <li>
-<a href="./tips.html">技巧</a>
+使用字符编码声明，并且同一工程中的所有源代码文件使用相同的字符编码声明。这点是一定要做到的。
 
 <li>
-<a href="./unittest.html">测试单元</a>
+抛弃str，全部使用unicode。按引号前先按一下u最初做起来确实很不习惯而且经常会忘记再跑回去补，但如果这么做可以减少90%的编码问题。如果编码困扰不严重，可以不参考此条。
 
 <li>
-<a href="./regular_exp.html">python正则表达式</a>
 
-<li>
-<a href="./virtualenv.html">python环境隔离virtualenv</a>
-
-<li>
-<a href="./logging.html">日志管理模块</a>
-
-<li>
-<a href="./distutils.html">distutils生成模块</a>
-
-<li>
-<a href="./pep8.html">PEP8标准阅读</a>
-
-<li>
-<a href="./project.html">python构建完整项目</a>
-
-<li>
-<a href="./metaclass.html">深刻理解元类(metaclass)</a>
-
-<li>
-<a href="./and_or.html">and 和 or</a>
-
-<li>
-<a href="./lambda.html">一个实现自省的例子</a>
-
-<li>
-<a href="./autotest.html">用python做自动测试平台</a> 
-
-<li>
-<a href="./basic_data.html">基本数据结构</a>
-
-<li>
-<a href="./topic.html">生成简单的包含文字的图片</a>
-
-<li>
-<a href="./mysqldb.html">MySQLdb</a>
-
-<li>
-<a href="./beautifulsoup.html">Python抓取网页数据</a>
-
-<li>
-<a href="./resources.html">资源汇总</a>
-
-<li>
-<a href="收发邮件插件smtplib.html">收发邮件插件smtplib</a>
-
-<li>
-<a href="字符编码.html">字符编码</a>
 
 </ul>
 

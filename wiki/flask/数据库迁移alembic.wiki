@@ -1,0 +1,11 @@
+%title  数据库迁移
+== 安装和配置 ==
+参见：[1]https://alembic.readthedocs.org/en/latest/tutorial.html#the-migration-environment
+
+[2]http://my.oschina.net/banxi/blog/126695
+
+== 使用方法 ==
+{{{
+alembic revision --autogenerate -m "Added account table"
+alembic upgrade head
+}}}

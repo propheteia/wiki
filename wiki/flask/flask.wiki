@@ -7,4 +7,7 @@
 * [[./google_API|google_API]]
 * [[./flaskext|Flask扩展命名]]
 * [[Flask-Babel]]
+* [[数据库迁移alembic]]
 * [[./flask_babel|Flask资源汇总]]
+* [[Flask单元测试]]
+* [[草稿]]

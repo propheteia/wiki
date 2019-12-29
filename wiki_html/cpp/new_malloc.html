@@ -205,7 +205,7 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>new 与malloc</h1></br></br>
+    <h1>new 与malloc</h1></br>
     
 <p>
 1.malloc与free是C++/C语言的标准库函数，new/delete是C++的运算符。它们都可用于申请动态内存和释放内存
@@ -243,18 +243,18 @@ new delete在实现上其实调用了malloc,free函数
 ***************************************
 </p>
 
-<h2 id="toc_0.1">相同点：</h2>
+<div id="相同点："><h2 id="相同点：" class="header"><a href="#相同点：">相同点：</a></h2></div>
 <p>
 都可用于申请动态内存和释放内存
 </p>
 
-<h2 id="toc_0.2">不同点：</h2>
-<h3 id="toc_0.2.1">(1)操作对象有所不同。</h3>
+<div id="不同点："><h2 id="不同点：" class="header"><a href="#不同点：">不同点：</a></h2></div>
+<div id="不同点：-(1)操作对象有所不同。"><h3 id="(1)操作对象有所不同。" class="header"><a href="#不同点：-(1)操作对象有所不同。">(1)操作对象有所不同。</a></h3></div>
 <p>
 malloc与free是C++/C 语言的标准库函数，new/delete 是C++的运算符。对于非内部数据类的对象而言，光用maloc/free 无法满足动态对象的要求。对象在创建的同时要自动执行构造函数， 对象消亡之前要自动执行析构函数。由于malloc/free 是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加malloc/free。
 </p>
 
-<h3 id="toc_0.2.2">(2)在用法上也有所不同。</h3>
+<div id="不同点：-(2)在用法上也有所不同。"><h3 id="(2)在用法上也有所不同。" class="header"><a href="#不同点：-(2)在用法上也有所不同。">(2)在用法上也有所不同。</a></h3></div>
 <p>
 函数malloc 的原型如下： 
 void * malloc(size_t size); 

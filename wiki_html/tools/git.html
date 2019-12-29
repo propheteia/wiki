@@ -205,10 +205,10 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>GitHub</h1></br></br>
+    <h1>GitHub</h1></br>
     
-<h2 id="toc_0.1"> GitHub ssh免密码登录</h2>
-<h3 id="toc_0.1.1">1 SSh密钥</h3>
+<div id="GitHub ssh免密码登录"><h2 id="GitHub ssh免密码登录" class="header"><a href="#GitHub ssh免密码登录">GitHub ssh免密码登录</a></h2></div>
+<div id="GitHub ssh免密码登录-SSh密钥"><h3 id="SSh密钥" class="header"><a href="#GitHub ssh免密码登录-SSh密钥">SSh密钥</a></h3></div>
 <p>
 参照 <a href="https://help.github.com/articles/generating-ssh-keys">gitHub:help</a>
 </p>
@@ -220,14 +220,14 @@ Enter same passphrase again: [Type passphrase again]
 	此处直接回车，否则会导致无法自动登录.
 	鉴于这个 key 并不那么容易被泄露，不要 passphrase 还是可以接受的.
 </p>
-<h3 id="toc_0.1.2">2 写自动push的脚本</h3>
+<div id="GitHub ssh免密码登录-写自动push的脚本"><h3 id="写自动push的脚本" class="header"><a href="#GitHub ssh免密码登录-写自动push的脚本">写自动push的脚本</a></h3></div>
 <pre class="brush:python">
 	git add .
 	git commit -a -m "auto"
 	git remote add origin git@github.com:username/name.git
 	git push orign gh-pages
 </pre>
-<h3 id="toc_0.1.3">3 可能出现的问题　</h3>
+<div id="GitHub ssh免密码登录-可能出现的问题　"><h3 id="可能出现的问题　" class="header"><a href="#GitHub ssh免密码登录-可能出现的问题　">可能出现的问题　</a></h3></div>
 <p>
 运行脚本后，在Shell输入:
 </p>
@@ -251,7 +251,7 @@ url = git@github.com:username/name.git
 <a href="http://josephj.com/article/understand-ssh-key/">更多ssh免密码登录</a> 
 </p>
 
-<h2 id="toc_0.2"> 不错的网站　</h2>
+<div id="不错的网站　"><h2 id="不错的网站　" class="header"><a href="#不错的网站　">不错的网站　</a></h2></div>
 <ul>
 <li>
 <a href="http://rogerdudler.github.com/git-guide/index.zh.html">简易指南</a>
@@ -270,14 +270,14 @@ url = git@github.com:username/name.git
  一些常用命令 ==
 
 </ul>
-<h2 id="toc_0.3"> Git强制推送</h2>
+<div id="Git强制推送"><h2 id="Git强制推送" class="header"><a href="#Git强制推送">Git强制推送</a></h2></div>
 <p>
 创建了一个新的仓库，要替代原先的内容。
 </p>
 <blockquote>
 git push -f origin master
 </blockquote>
-<h2 id="toc_0.4"> Git多人协作</h2>
+<div id="Git多人协作"><h2 id="Git多人协作" class="header"><a href="#Git多人协作">Git多人协作</a></h2></div>
 <pre class="brush:python">
     mkdir project.git
     cd project.git
@@ -305,20 +305,20 @@ filemode = true
 bare = false
 logallrefupdates = true
 </blockquote>
-<h2 id="toc_0.5"> Git版本恢复</h2>
+<div id="Git版本恢复"><h2 id="Git版本恢复" class="header"><a href="#Git版本恢复">Git版本恢复</a></h2></div>
 <blockquote>
 git log --pretty=oneline 文件名 (查看某个文件变动)
 git show 版本号 (并查看改动细节)
 </blockquote>
 
-<h2 id="toc_0.6"> 常用</h2>
+<div id="常用"><h2 id="常用" class="header"><a href="#常用">常用</a></h2></div>
 <blockquote>
 git reset --hard HEAD~ 退回到前一个commit
 git branch -D develop 删除分支
 git show HEAD 当前分支最新更新
 </blockquote>
     
-<h2 id="toc_0.7"> 一次实验</h2>
+<div id="一次实验"><h2 id="一次实验" class="header"><a href="#一次实验">一次实验</a></h2></div>
 <pre>
         git init 
         git add .

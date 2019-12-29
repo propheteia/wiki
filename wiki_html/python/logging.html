@@ -205,9 +205,9 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>日志管理模块-logging </h1></br></br>
+    <h1>日志管理模块-logging </h1></br>
     
-<h2 id="toc_0.1"> 简介</h2>
+<div id="简介"><h2 id="简介" class="header"><a href="#简介">简介</a></h2></div>
 <p>
 在较大型的程序调试过程中，希望让它输出一些信息。我们可以通过信息判断程序运行的情况。通过python中的logging模块，将想要的信息分类保存到若干个文件中。
 代码：
@@ -251,9 +251,9 @@ The Handler.setLevel() method, just as in logger objects, specifies the lowest s
 </blockquote>
 
 <p>
-<img src="file:///home/wenbin/Wiki/wiki/python/../../python/logging_flow.png" alt="cool stuff" style="width:650px; height: 620px;" />
+<img src="../../python/logging_flow.png" alt="cool stuff" style="width:650px; height: 620px;" />
 </p>
-<h2 id="toc_0.2"> logger等级</h2>
+<div id="logger等级"><h2 id="logger等级" class="header"><a href="#logger等级">logger等级</a></h2></div>
 <p>
 对于Logger的等级，下面可以清楚反应其分级：
 </p>
@@ -308,10 +308,10 @@ filemode:
 
 <p>
 还有一种方法是创建config文件，将配置信息写入config，再通过fileConfig函数来读取该文件。
-<strong>来源:</strong> <a href="http://docs.python.org/2/howto/logging.html">HowTo</a>
+<span id="logger等级-来源:"></span><strong id="来源:">来源:</strong> <a href="http://docs.python.org/2/howto/logging.html">HowTo</a>
 </p>
 
-<h2 id="toc_0.3"> 多个log在同一日志文件输出</h2>
+<div id="多个log在同一日志文件输出"><h2 id="多个log在同一日志文件输出" class="header"><a href="#多个log在同一日志文件输出">多个log在同一日志文件输出</a></h2></div>
 <p>
 有时候需要在同一个日志文件下分别输出系统级日志（它的级别设定为INFO），同时也要输出测试结果(设定级别为INFO）。如果测试结果出错，出错输出级别设定为(WARNING).这时候可以使用两个日志名共用一个handler.
 </p>

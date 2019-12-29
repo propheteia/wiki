@@ -205,9 +205,9 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>Linux管道命令</h1></br></br>
+    <h1>Linux管道命令</h1></br>
     
-<h2 id="toc_0.1"> 命名管道fifo</h2>
+<div id="命名管道fifo"><h2 id="命名管道fifo" class="header"><a href="#命名管道fifo">命名管道fifo</a></h2></div>
 <p>
 可以把管道想象为两个实体之间的单向连接器。管道是半双工的，如果需要全双工通讯，应该转而考虑套接字。 
 </p>
@@ -248,13 +248,13 @@ A FIFO special file (a named pipe) is similar to a pipe, except that
        deadlocks.
 </pre>
 
-<h2 id="toc_0.2"> FIFI和PIPE</h2>
-<h3 id="toc_0.2.1">1 共同点</h3>
+<div id="FIFI和PIPE"><h2 id="FIFI和PIPE" class="header"><a href="#FIFI和PIPE">FIFI和PIPE</a></h2></div>
+<div id="FIFI和PIPE-共同点"><h3 id="共同点" class="header"><a href="#FIFI和PIPE-共同点">共同点</a></h3></div>
 <p>
 他们的核心数据结构是一样的，pipe_inode_info，并且，FIFO的读写函数和pipe的读写函数也一致。
 </p>
 
-<h3 id="toc_0.2.2">2 区别</h3>
+<div id="FIFI和PIPE-区别"><h3 id="区别" class="header"><a href="#FIFI和PIPE-区别">区别</a></h3></div>
 <p>
 第一，fifo出现在系统目录树中，是个特殊的文件,因为它不具备内容.而pipe则在特殊文件系统pipefs中。
 </p>
@@ -263,7 +263,7 @@ A FIFO special file (a named pipe) is similar to a pipe, except that
 第二，fifo是双向通信管道，而pipe是单向的。
 </p>
 
-<h1 id="toc_1"> Pipe和FIFO有对应的disk image吗？有对应的indoe吗？他们属于同一个文件系统吗？</h1>
+<div id="Pipe和FIFO有对应的disk image吗？有对应的indoe吗？他们属于同一个文件系统吗？"><h1 id="Pipe和FIFO有对应的disk image吗？有对应的indoe吗？他们属于同一个文件系统吗？" class="header"><a href="#Pipe和FIFO有对应的disk image吗？有对应的indoe吗？他们属于同一个文件系统吗？">Pipe和FIFO有对应的disk image吗？有对应的indoe吗？他们属于同一个文件系统吗？</a></h1></div>
 <p>
 pipe和fifo都没有对应的disk image。
 </p>
@@ -276,7 +276,7 @@ pipe和fifo都没有对应的disk image。
 pipe属于pipefs文件系统，fifo不是。所以他们不属于同一个文件系统。
 </p>
 
-<h1 id="toc_2"> Pipe和FIFO使用的多吗？</h1>
+<div id="Pipe和FIFO使用的多吗？"><h1 id="Pipe和FIFO使用的多吗？" class="header"><a href="#Pipe和FIFO使用的多吗？">Pipe和FIFO使用的多吗？</a></h1></div>
 
 <p>
 Pipe就不用说了，shell中经常用到，实际编程中如果遇到重定向或者父子进程通信，pipe也是一个不错的选择。就我目前看到过的代码而言，shell中pipe使用较多，c中pipe也有用到，但明显没有semaphore，socket等普遍。
@@ -285,7 +285,7 @@ Pipe就不用说了，shell中经常用到，实际编程中如果遇到重定�
 <p>
 FIFO的话，说实话，基本没见过。我认为原因是他能做的，socket也一定能做，并且能做的更好。所以FIFO就有点累赘了。另外，从本文开头的两篇链接中，我们可以看到，FIFO的编程有点麻烦，要对读写进行比较精确的控制，防止死锁或者竞争。
 </p>
-<h2 id="toc_2.1"> 使用注意</h2>
+<div id="Pipe和FIFO使用的多吗？-使用注意"><h2 id="使用注意" class="header"><a href="#Pipe和FIFO使用的多吗？-使用注意">使用注意</a></h2></div>
 <pre>
        When a process tries to write to a FIFO that is not opened for read
        on the other side, the process is sent a SIGPIPE signal.

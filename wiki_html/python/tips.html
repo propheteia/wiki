@@ -205,9 +205,9 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>Python</h1></br></br>
+    <h1>Python</h1></br>
     
-<h2 id="toc_0.1"> with:</h2>
+<div id="with:"><h2 id="with:" class="header"><a href="#with:">with:</a></h2></div>
 <pre class="brush:python">
 import sys
 class test:
@@ -230,7 +230,7 @@ t is 1, yes, it is
 exit
 end
 </blockquote>
-<h2 id="toc_0.2"> 当模块与其包含的包重名</h2>
+<div id="当模块与其包含的包重名"><h2 id="当模块与其包含的包重名" class="header"><a href="#当模块与其包含的包重名">当模块与其包含的包重名</a></h2></div>
 <p>
 创建文件：
 </p>
@@ -261,7 +261,7 @@ AttributeError: 'module' object has no attribute 'warning'
 新建的文件名要避免"普通“
 </p>
 
-<h2 id="toc_0.3"> hasattr()和 getattr()</h2>
+<div id="hasattr()和 getattr()"><h2 id="hasattr()和 getattr()" class="header"><a href="#hasattr()和 getattr()">hasattr()和 getattr()</a></h2></div>
 <p>
 hasattr()和 getattr()分别判断对象是否有某个属性及获得某个属性值。
 In [35]: hasattr(a, 'split')
@@ -270,7 +270,7 @@ In [36]: getattr(a, 'split')
 Out[36]: &lt;built-in method split of str object at 0x831abe0&gt;
 </p>
 
-<h2 id="toc_0.4"> 函式编程</h2>
+<div id="函式编程"><h2 id="函式编程" class="header"><a href="#函式编程">函式编程</a></h2></div>
 <p>
 在函式编程中,最著名的特色就是高序(High Order)。简单地说,就是定制一个算法,按规则来指定容器中的每一个元素。最常用的 High Order 为:
 </p>
@@ -288,7 +288,7 @@ Out[36]: &lt;built-in method split of str object at 0x831abe0&gt;
 的参数之一,与下一个元素再计算,直至最终获得一个总的结果。
 
 </ul>
-<h3 id="toc_0.4.1">1 map</h3>
+<div id="函式编程-map"><h3 id="map" class="header"><a href="#函式编程-map">map</a></h3></div>
 <pre def foo(x):>
 
         return x*x
@@ -302,15 +302,15 @@ map 允许接收三个或三个以上的参数
 <p>
 用途:函数要执行多次,且参数有一定的规律
 </p>
-<h2 id="toc_0.5"> filter</h2>
+<div id="filter"><h2 id="filter" class="header"><a href="#filter">filter</a></h2></div>
 <p>
 用途:对结果过滤
 </p>
-<h2 id="toc_0.6"> reduce</h2>
+<div id="reduce"><h2 id="reduce" class="header"><a href="#reduce">reduce</a></h2></div>
 <p>
 用途:方便地实现了计算结果的重用,节省了大量的 CPU 周期。在实际应用中,reduce 可以用来实现统计计算或时序依赖的遍历行为。
 </p>
-<h2 id="toc_0.7"> xlrd</h2>
+<div id="xlrd"><h2 id="xlrd" class="header"><a href="#xlrd">xlrd</a></h2></div>
 <p>
 Open the workbook
 </p>
@@ -347,7 +347,7 @@ cell_C4 = sh.cell(rowx=3,colx=2).value
 附文：python 解析xml
 ~                    
 </p>
-<h2 id="toc_0.8"> *args **kwargs</h2>
+<div id="*args **kwargs"><h2 id="*args **kwargs" class="header"><a href="#*args **kwargs">*args **kwargs</a></h2></div>
 <p>
 *args表示任何多个无名参数，它是一个tuple； **kwargs表示关键字参数，它是一个dict。并且同时使用*args和**kwargs时，必须*args参数列要在**kwargs前.
 </p>
@@ -410,7 +410,7 @@ args.update(args23)
 <p>
 这样返回的就是个dict
 </p>
-<h2 id="toc_0.9"> 函数式编程</h2>
+<div id="函数式编程"><h2 id="函数式编程" class="header"><a href="#函数式编程">函数式编程</a></h2></div>
 <pre>
     def good():
         t=good.t
@@ -420,7 +420,7 @@ args.update(args23)
     if __name__=="__main__":
         good()
 </pre>
-<h2 id="toc_0.10"> yield</h2>
+<div id="yield"><h2 id="yield" class="header"><a href="#yield">yield</a></h2></div>
 <p>
 带有 yield 的函数在 Python 中被称之为 generator（生成器）
 版本一:
@@ -482,7 +482,7 @@ yield版本三:
 转:<a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/">developerworks</a>
 </p>
 
-<h2 id="toc_0.11"> tuple有什么好处?</h2>
+<div id="tuple有什么好处?"><h2 id="tuple有什么好处?" class="header"><a href="#tuple有什么好处?">tuple有什么好处?</a></h2></div>
 <blockquote>
 Tuple 比 list 操作速度快。如果您定义了一个值的常量集，并且唯一要用它做的是不断地遍历它，请使用 tuple 代替 list。
 </blockquote>
@@ -500,7 +500,7 @@ tuple和list可以相互转换. a=[]  b=tuple(a) type(b) --&gt; tuple
 </blockquote>
 
 
-<h2 id="toc_0.12"> wtform的一个getattr</h2>
+<div id="wtform的一个getattr"><h2 id="wtform的一个getattr" class="header"><a href="#wtform的一个getattr">wtform的一个getattr</a></h2></div>
 <pre>
 def validate(self):                                                        
     """                                                                    
@@ -516,7 +516,7 @@ def validate(self):
     return super(Form, self).validate(extra)    
 </pre>
 
-<h2 id="toc_0.13"> 查看api</h2>
+<div id="查看api"><h2 id="查看api" class="header"><a href="#查看api">查看api</a></h2></div>
 <blockquote>
 import sys
 help(sys)

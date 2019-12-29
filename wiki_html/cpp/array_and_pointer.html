@@ -205,14 +205,14 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>数组和指针</h1></br></br>
+    <h1>数组和指针</h1></br>
     
-<h2 id="toc_0.1"> 数组</h2>
-<h3 id="toc_0.1.1">1 通常的数组</h3>
+<div id="数组"><h2 id="数组" class="header"><a href="#数组">数组</a></h2></div>
+<div id="数组-通常的数组"><h3 id="通常的数组" class="header"><a href="#数组-通常的数组">通常的数组</a></h3></div>
 <p>
 数组的长度是固定的!
 </p>
-<h4 id="toc_0.1.1.1">1.1 定义方法:</h4>
+<div id="数组-通常的数组-定义方法:"><h4 id="定义方法:" class="header"><a href="#数组-通常的数组-定义方法:">定义方法:</a></h4></div>
 <blockquote>
 int a[] = {1,2,3};//显示初始化时,可以省略维数(编译器确定数组长度) 
 </blockquote>
@@ -224,7 +224,7 @@ int a[4] = {1,2}; //只初始化a[0],a[1]. a[2],a[3]不会初始化(函数体内
 如果是类类型,自动调用默认构造函数初始化
 </p>
 
-<h4 id="toc_0.1.1.2">1.2 数组一种类型, 它具备哪些特性</h4>
+<div id="数组-通常的数组-数组一种类型, 它具备哪些特性"><h4 id="数组一种类型, 它具备哪些特性" class="header"><a href="#数组-通常的数组-数组一种类型, 它具备哪些特性">数组一种类型, 它具备哪些特性</a></h4></div>
 <p>
 int a[] = {1,2,3};
 </p>
@@ -239,8 +239,8 @@ a是一个数组
     cout&lt;&lt;size(a)&lt;&lt;endl; // 12(数组的大小)
 </pre>
     
-<h3 id="toc_0.1.2">2 特殊的数组--字符数组</h3>
-<h4 id="toc_0.1.2.1">2.1 字符数组还可以用字符串字面值初始化</h4>
+<div id="数组-特殊的数组--字符数组"><h3 id="特殊的数组--字符数组" class="header"><a href="#数组-特殊的数组--字符数组">特殊的数组--字符数组</a></h3></div>
+<div id="数组-特殊的数组--字符数组-字符数组还可以用字符串字面值初始化"><h4 id="字符数组还可以用字符串字面值初始化" class="header"><a href="#数组-特殊的数组--字符数组-字符数组还可以用字符串字面值初始化">字符数组还可以用字符串字面值初始化</a></h4></div>
 <p>
   char a1[] = "C++";(同char a1[] = {'C','+','+','\0'})
 </p>
@@ -258,7 +258,7 @@ a1是字符数组, 大小又填充值决定,这里是4字节
 
 </ul>
     
-<h4 id="toc_0.1.2.2">2.2 用char*类型的指针操纵C风格字符串</h4>
+<div id="数组-特殊的数组--字符数组-用char*类型的指针操纵C风格字符串"><h4 id="用char*类型的指针操纵C风格字符串" class="header"><a href="#数组-特殊的数组--字符数组-用char*类型的指针操纵C风格字符串">用char*类型的指针操纵C风格字符串</a></h4></div>
 <p>
 以null结尾的字符数组,就是C风格字符串.上面以null结尾的字符数组是C风格字符串
 </p>
@@ -269,7 +269,7 @@ char *a2 = "C++";
 同a1唯一不同在于,a1是数组,sizeof(a1)是数组的大小.a2是字符指针,sizeof(a2)是指针的大小.在操纵字符串上的方法一致
 </p>
 
-<h2 id="toc_0.2"> 一个区别</h2>
+<div id="一个区别"><h2 id="一个区别" class="header"><a href="#一个区别">一个区别</a></h2></div>
 <pre>
     string s = "abc";
     string *sp = &amp;s; //把string对象s的地址附给sp
@@ -277,7 +277,7 @@ char *a2 = "C++";
     *sp = "A new word";//把sp指向的内容用字符串字面值替代
     cout&lt;&lt;*sp&lt;&lt;endl; //得到"A new word"
 </pre>
-<h2 id="toc_0.3"> 不要忘记字符串结束符null</h2>
+<div id="不要忘记字符串结束符null"><h2 id="不要忘记字符串结束符null" class="header"><a href="#不要忘记字符串结束符null">不要忘记字符串结束符null</a></h2></div>
 <p>
 标准库函数(#include&lt;cstring&gt;)是string.h头文件的c++版本
 </p>
@@ -287,7 +287,7 @@ cout&lt;&lt;strlen(a)&lt;&lt;endl;//disaster:a is not null-terminated
 标准库函数总是假定其参数字符串以null结尾 
 </blockquote>
 
-<h2 id="toc_0.4"> 新旧代码的兼容</h2>
+<div id="新旧代码的兼容"><h2 id="新旧代码的兼容" class="header"><a href="#新旧代码的兼容">新旧代码的兼容</a></h2></div>
 <p>
 C风格字符串与字符串字面值有相同的数据结构,而且都以null结束,因此可以互相代替.
 </p>

@@ -205,10 +205,10 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>Awesome 平铺式面板</h1></br></br>
+    <h1>Awesome 平铺式面板</h1></br>
     
-<h2 id="toc_0.1"> 安装</h2>
-<h3 id="toc_0.1.1"> rpm包安装</h3>
+<div id="安装"><h2 id="安装" class="header"><a href="#安装">安装</a></h2></div>
+<div id="安装-rpm包安装"><h3 id="rpm包安装" class="header"><a href="#安装-rpm包安装">rpm包安装</a></h3></div>
 <p>
 <a href="http://awesome.naquadah.org/wiki/Awesome-3-fedora">安装包</a>
 </p>
@@ -216,7 +216,7 @@
 u -c 'wget -nd -P /etc/yum.repos.d <a href="http://repos.fedorapeople.org/repos/thm/awesome/fedora-awesome.repo'">http://repos.fedorapeople.org/repos/thm/awesome/fedora-awesome.repo'</a>  <br>
 su -c 'yum install awesome'
 </blockquote>
-<h3 id="toc_0.1.2"> 在gnome-session中用awesome的命令（我的GNOME是3.2版本）</h3>
+<div id="安装-在gnome-session中用awesome的命令（我的GNOME是3.2版本）"><h3 id="在gnome-session中用awesome的命令（我的GNOME是3.2版本）" class="header"><a href="#安装-在gnome-session中用awesome的命令（我的GNOME是3.2版本）">在gnome-session中用awesome的命令（我的GNOME是3.2版本）</a></h3></div>
 <p>
  <a href="http://awesome.naquadah.org/wiki/Quickly_Setting_up_Awesome_with_Gnome">Quickly Setting up Awesome with Gnome</a>
 </p>
@@ -232,9 +232,9 @@ su -c 'yum install awesome'
 <p>
 如果选择登录Gnome，同样会登录awesome.可通过将指令中的“awesome"改为”gnome"恢复Gnome登录。
 </p>
-<h2 id="toc_0.2"> 配置</h2>
+<div id="配置"><h2 id="配置" class="header"><a href="#配置">配置</a></h2></div>
 <p>
-<strong>参考：</strong> <a href="http://josephpan.net/blog/?p=992">Joseph Pan's Blog </a>
+<span id="配置-参考："></span><strong id="参考：">参考：</strong> <a href="http://josephpan.net/blog/?p=992">Joseph Pan's Blog</a>
 </p>
 
 <p>
@@ -242,10 +242,10 @@ su -c 'yum install awesome'
 </p>
 
 <p>
-<strong>我的必要配置</strong> 
+<span id="配置-我的必要配置"></span><strong id="我的必要配置">我的必要配置</strong> 
 </p>
 
-<h4 id="toc_0.2.0.1">1 终端:</h4>
+<div id="配置-终端:"><h4 id="终端:" class="header"><a href="#配置-终端:">终端:</a></h4></div>
 <blockquote>
 terminal="gnome-terminal"
 </blockquote>
@@ -254,9 +254,9 @@ terminal="gnome-terminal"
  　　并且在gnome-terminal首选项中将菜单栏和滚条去掉，美观一点。
 </p>
 
-<h4 id="toc_0.2.0.2">2 加入widget一些注意的地方:</h4>
+<div id="配置-加入widget一些注意的地方:"><h4 id="加入widget一些注意的地方:" class="header"><a href="#配置-加入widget一些注意的地方:">加入widget一些注意的地方:</a></h4></div>
 <p>
-<strong>参考：</strong> <a href="http://awesome.naquadah.org/wiki/Wicked/zh-hans#Source_Mage_GNU.2FLinux">http://awesome.naquadah.org/wiki/Wicked/zh-hans#Source_Mage_GNU.2FLinux</a>
+<span id="配置-加入widget一些注意的地方:-参考："></span><strong id="参考：">参考：</strong> <a href="http://awesome.naquadah.org/wiki/Wicked/zh-hans#Source_Mage_GNU.2FLinux">http://awesome.naquadah.org/wiki/Wicked/zh-hans#Source_Mage_GNU.2FLinux</a>
 </p>
 
 <p>
@@ -274,7 +274,7 @@ mywibox2.widgets={memwidget,cpuwidget,layout = awful.widget.layout.horizontal.ri
 可以添加在默认的mywibox[s]执行完毕（end）之后
 </p>
 
-<h4 id="toc_0.2.0.3">3 开机自启动:</h4>
+<div id="配置-开机自启动:"><h4 id="开机自启动:" class="header"><a href="#配置-开机自启动:">开机自启动:</a></h4></div>
 <pre class="brush:python">
 -- Autorun programs
 autorun = true
@@ -291,7 +291,7 @@ if autorun then
     end
 end
 </pre>
-<h4 id="toc_0.2.0.4">4 某个tag下固定的工作环境创建:</h4>
+<div id="配置-某个tag下固定的工作环境创建:"><h4 id="某个tag下固定的工作环境创建:" class="header"><a href="#配置-某个tag下固定的工作环境创建:">某个tag下固定的工作环境创建:</a></h4></div>
 <p>
 增加快捷键，自动在某个工作界面下(tag)打开需要的应用。代码如下:
 </p>
@@ -308,9 +308,9 @@ awful.key({ modkey, "Shift" }, "n",
 </pre>
 <p>
 这里注意lua语言字符串相加是用' .. ',由于spawn_with_shell是用shell脚本打开的，所以要注意命令要有空格
-参考: <img src="http://stackoverflow.com/questions/5120399/setting-windows-layout-for-a-specific-application-in-awesome-wm" alt="stackoverflow" />
+参考: <img src="../../wiki/cpp/{http://stackoverflow.com/questions/5120399/setting-windows-layout-for-a-specific-application-in-awesome-wm" alt="stackoverflow" />
 </p>
-<h4 id="toc_0.2.0.5">5 自定义快捷键:</h4>
+<div id="配置-自定义快捷键:"><h4 id="自定义快捷键:" class="header"><a href="#配置-自定义快捷键:">自定义快捷键:</a></h4></div>
 <p>
 增加xlock锁屏和firefox的快捷键
 </p>
@@ -318,7 +318,7 @@ awful.key({ modkey, "Shift" }, "n",
     awful.key({  }, "F12", function () awful.util.spawn("xlock") end),
     awful.key({  }, "F11", function () awful.util.spawn("firefox") end),
 </pre>
-<h2 id="toc_0.3"> 使用感想:</h2>
+<div id="使用感想:"><h2 id="使用感想:" class="header"><a href="#使用感想:">使用感想:</a></h2></div>
 <p>
 用了两个月了，Awesome给我工作和学习带来了极大的方便。难以想像没有它，我需要在不同的窗口中切来切去。同时查看code,debug,log，节省了大量时间。
 </p>
@@ -327,8 +327,8 @@ awful.key({ modkey, "Shift" }, "n",
 除此之外，它还具有众多 <a href="http://awesome.naquadah.org/wiki/Main_Page">插件</a> ，一切都替你做好了，你可以变得更“懒”-.-
 </p>
 
-<h2 id="toc_0.4"> 配置脚本</h2>
-<h4 id="toc_0.4.0.1">1 有关lua语言</h4>
+<div id="配置脚本"><h2 id="配置脚本" class="header"><a href="#配置脚本">配置脚本</a></h2></div>
+<div id="配置脚本-有关lua语言"><h4 id="有关lua语言" class="header"><a href="#配置脚本-有关lua语言">有关lua语言</a></h4></div>
 <p>
 网址:<a href="http://www.cnblogs.com/ly4cn/archive/2006/08/04/467550.html">http://www.cnblogs.com/ly4cn/archive/2006/08/04/467550.html</a>
 </p>
@@ -336,7 +336,7 @@ awful.key({ modkey, "Shift" }, "n",
 <p>
 Table是怎样定义的?<br>
 </p>
-<h4 id="toc_0.4.0.2">2 添加vicious.widget.hddtemp</h4>
+<div id="配置脚本-添加vicious.widget.hddtemp"><h4 id="添加vicious.widget.hddtemp" class="header"><a href="#配置脚本-添加vicious.widget.hddtemp">添加vicious.widget.hddtemp</a></h4></div>
 <p>
 首先要安装hddtemp
 </p>

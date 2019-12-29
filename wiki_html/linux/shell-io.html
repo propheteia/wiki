@@ -205,9 +205,9 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>Linux系统的Shell I/O重定向详解</h1></br></br>
+    <h1>Linux系统的Shell I/O重定向详解</h1></br>
     
-<h2 id="toc_0.1"> 基本概念</h2>
+<div id="基本概念"><h2 id="基本概念" class="header"><a href="#基本概念">基本概念</a></h2></div>
 <ul>
 <li>
 I/O重定向通常与 FD有关，shell的FD通常为10个，即 0～9；
@@ -241,7 +241,7 @@ exec 命令：常用来替代当前 shell 并重新启动一个 shell，换句�
 
 </ul>
 
-<h2 id="toc_0.2"> 基本IO</h2>
+<div id="基本IO"><h2 id="基本IO" class="header"><a href="#基本IO">基本IO</a></h2></div>
 <ul>
 <li>
 cmd &gt; file 把 stdout 重定向到 file 文件中；
@@ -278,7 +278,7 @@ cmd &lt;&lt; delimiter Here document，从 stdin 中读入，直至遇到 delimi
 
 </ul>
 
-<h2 id="toc_0.3"> 进阶IO</h2>
+<div id="进阶IO"><h2 id="进阶IO" class="header"><a href="#进阶IO">进阶IO</a></h2></div>
 <ul>
 <li>
 &gt;&amp;n 使用系统调用 dup (2) 复制文件描述符 n 并把结果用作标准输出；

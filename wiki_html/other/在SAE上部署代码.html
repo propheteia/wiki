@@ -205,22 +205,22 @@
   <div class="team-text">
   </div>
   <div class="about">
-    <h1>在SAE上部署代码</h1></br></br>
+    <h1>在SAE上部署代码</h1></br>
     
-<h1 id="toc_1"> svn基本操作</h1>
-<h1 id="toc_2"> 如何使用virtualenv管理依赖关系</h1>
+<div id="svn基本操作"><h1 id="svn基本操作" class="header"><a href="#svn基本操作">svn基本操作</a></h1></div>
+<div id="如何使用virtualenv管理依赖关系"><h1 id="如何使用virtualenv管理依赖关系" class="header"><a href="#如何使用virtualenv管理依赖关系">如何使用virtualenv管理依赖关系</a></h1></div>
 <p>
 <a href="http://python.sinaapp.com/doc/faq.html#id5">http://python.sinaapp.com/doc/faq.html#id5</a>
 pip 和 easy_install 分别用作什么？区别？
 </p>
 
-<h1 id="toc_3"> 导出virtualenv.bundle时出错</h1>
+<div id="导出virtualenv.bundle时出错"><h1 id="导出virtualenv.bundle时出错" class="header"><a href="#导出virtualenv.bundle时出错">导出virtualenv.bundle时出错</a></h1></div>
 <p>
 <a href="http://www.douban.com/group/topic/27994689/">http://www.douban.com/group/topic/27994689/</a>
 svn co <a href="https://svn.sinaapp.com/winoi">https://svn.sinaapp.com/winoi</a>
 </p>
 
-<h1 id="toc_4"> 不是工作副本</h1>
+<div id="不是工作副本"><h1 id="不是工作副本" class="header"><a href="#不是工作副本">不是工作副本</a></h1></div>
 <p>
 创建版本:
 	wino
@@ -250,15 +250,31 @@ SVN出现这个错误的原因是我删除了一个文件夹后又创建了一�
 解决方法：
 </p>
 
+<ol>
+<li>
+删除出现错误的文件夹 
+
+<li>
+SVN Update 
+
+<li>
+这时服务器上存在的文件夹会出现在本地 
+
+<li>
+删除原有的文件夹 
+
+<li>
+SVN Commit 
+
+</ol>
 <p>
-1. 删除出现错误的文件夹 
-2. SVN Update 
-3. 这时服务器上存在的文件夹会出现在本地 
-4. 删除原有的文件夹 
-5. SVN Commit 
 6、重新创建文件夹 
-7. SVN Commit
 </p>
+<ol>
+<li>
+SVN Commit
+
+</ol>
 
 <p>
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -276,13 +292,13 @@ from flask.ext.sqlalchemy import SQLAlchemy
 config.py
 <a href="http://stackoverflow.com/questions/9845102/using-mysql-in-flask">http://stackoverflow.com/questions/9845102/using-mysql-in-flask</a>
 </p>
-<h1 id="toc_5"> 增加MySQLdb环境</h1>
+<div id="增加MySQLdb环境"><h1 id="增加MySQLdb环境" class="header"><a href="#增加MySQLdb环境">增加MySQLdb环境</a></h1></div>
 <p>
 Adding MySQLdb to sys.path in a virtualenv?
 Copy anything start with mysql* from C:\Python27\Lib\site-packages to V_ENV\Lib\site-packages
 </p>
 
-<h1 id="toc_6"> 流程</h1>
+<div id="流程"><h1 id="流程" class="header"><a href="#流程">流程</a></h1></div>
 <ul>
 <li>
 查看服务器端提供的库，哪些已经具备，哪些版本不够要重新

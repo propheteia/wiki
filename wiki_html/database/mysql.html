@@ -207,7 +207,7 @@
   <div class="about">
     <h1>MySql基本操作 </h1></br>
     
-<h2 id="toc_0.1">创建数据库</h2>
+<div id="创建数据库"><h2 id="创建数据库" class="header"><a href="#创建数据库">创建数据库</a></h2></div>
 <p>
 使用管理员权限新建数据库,并给予账户权限
 </p>
@@ -215,41 +215,41 @@
 CREATE DATABASE test;
 GRANT ALL ON test.* TO 'user'@'localhost';
 </blockquote>
-<h2 id="toc_0.2">查看数据库</h2>
+<div id="查看数据库"><h2 id="查看数据库" class="header"><a href="#查看数据库">查看数据库</a></h2></div>
 <blockquote>
 SHOW DATABASES;
 </blockquote>
-<h2 id="toc_0.3">选中数据库</h2>
+<div id="选中数据库"><h2 id="选中数据库" class="header"><a href="#选中数据库">选中数据库</a></h2></div>
 <blockquote>
 USE test
 </blockquote>
-<h2 id="toc_0.4">查看表</h2>
+<div id="查看表"><h2 id="查看表" class="header"><a href="#查看表">查看表</a></h2></div>
 <blockquote>
 SHOW TABLES;
 </blockquote>
-<h2 id="toc_0.5">创建表</h2>
+<div id="创建表"><h2 id="创建表" class="header"><a href="#创建表">创建表</a></h2></div>
 <blockquote>
 -&gt; CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),
 -&gt; species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
 </blockquote>
-<h2 id="toc_0.6">查看表的项目</h2>
+<div id="查看表的项目"><h2 id="查看表的项目" class="header"><a href="#查看表的项目">查看表的项目</a></h2></div>
 <blockquote>
 DESCRIBE pet;
 </blockquote>
-<h2 id="toc_0.7">查看表的数据</h2>
+<div id="查看表的数据"><h2 id="查看表的数据" class="header"><a href="#查看表的数据">查看表的数据</a></h2></div>
 <blockquote>
 SELECT * FROM pet;
 </blockquote>
-<h2 id="toc_0.8">删除表</h2>
+<div id="删除表"><h2 id="删除表" class="header"><a href="#删除表">删除表</a></h2></div>
 <blockquote>
 DROP TABLE pet; 如果有外键,则要注意删除的顺序
 </blockquote>
-<h2 id="toc_0.9">创建和删除用户</h2>
+<div id="创建和删除用户"><h2 id="创建和删除用户" class="header"><a href="#创建和删除用户">创建和删除用户</a></h2></div>
 <blockquote>
 <a href="http://minfirefox.iteye.com/blog/267329">http://minfirefox.iteye.com/blog/267329</a>
 </blockquote>
 
-<h2 id="toc_0.10">ERROR 1044 (42000)</h2>
+<div id="ERROR 1044 (42000)"><h2 id="ERROR 1044 (42000)" class="header"><a href="#ERROR 1044 (42000)">ERROR 1044 (42000)</a></h2></div>
 <pre>
 Access denied for user ''@'localhost' to database 'mysql'  
 方法二：
@@ -265,12 +265,12 @@ Access denied for user ''@'localhost' to database 'mysql'
    mysql&gt; FLUSH PRIVILEGES;//记得要这句话，否则如果关闭先前的终端，又会出现原来的错误
    mysql&gt; \q
 </pre>
-<h2 id="toc_0.11">增加字段</h2>
+<div id="增加字段"><h2 id="增加字段" class="header"><a href="#增加字段">增加字段</a></h2></div>
 <blockquote>
 ALTER TABLE table_name ADD file_name varchar(10);
 ALTER TABLE table_name DROP field_name
 </blockquote>
-<h2 id="toc_0.12">中文字符显示问号???</h2>
+<div id="中文字符显示问号???"><h2 id="中文字符显示问号???" class="header"><a href="#中文字符显示问号???">中文字符显示问号???</a></h2></div>
 <p>
 中文编码的问题.查看数据库
 </p>
@@ -326,11 +326,11 @@ alter table 表名 default character set 'utf8';
 create database 数据库名 character set gbk collate gbk_chinese_ci;
 </pre>
 
-<h2 id="toc_0.13">推荐网址</h2>
+<div id="推荐网址"><h2 id="推荐网址" class="header"><a href="#推荐网址">推荐网址</a></h2></div>
 <p>
 <a href="http://www.perfgeeks.com/?p=460">MySQL索引</a>
 </p>
-<h2 id="toc_0.14">更改表的unique属性</h2>
+<div id="更改表的unique属性"><h2 id="更改表的unique属性" class="header"><a href="#更改表的unique属性">更改表的unique属性</a></h2></div>
 <p>
 ALTER TABLE user DROP INDEX nickname;
 </p>

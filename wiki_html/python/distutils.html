@@ -207,7 +207,7 @@
   <div class="about">
     <h1>distutils 模块 </h1></br>
     
-<h2 id="toc_0.1"> 包和模块的文件模型</h2>
+<div id="包和模块的文件模型"><h2 id="包和模块的文件模型" class="header"><a href="#包和模块的文件模型">包和模块的文件模型</a></h2></div>
 <p>
 如果你发现自己正在用 Python 编写一个大型的子系统 (或者，很有可能，当你意识到你的小型子系统已经成长为一个大型子系统时)，你应该花费些时间设计一个好的包架构。它是 Python 所擅长的事情之一，所以应该好好利用它。 
 </p>
@@ -233,7 +233,7 @@
         from exercise import football
 </pre>
 
-<h3 id="toc_0.1.1"> setup.py</h3>
+<div id="包和模块的文件模型-setup.py"><h3 id="setup.py" class="header"><a href="#包和模块的文件模型-setup.py">setup.py</a></h3></div>
 <pre>
 from distutils.core import setup
 setup(
@@ -262,7 +262,7 @@ setup(
     Platform: UNKNOWN
 </pre>
 
-<h2 id="toc_0.2"> python寻找模块的顺序</h2>
+<div id="python寻找模块的顺序"><h2 id="python寻找模块的顺序" class="header"><a href="#python寻找模块的顺序">python寻找模块的顺序</a></h2></div>
 <pre>
 1. 首先判断这个module是不是built-in即内建模块，
 　 如果是则引入内建模块，如果不是则在一个称为sys.path的list中寻找
@@ -277,7 +277,7 @@ setup(
 2. 生成egg-info的文件,包含包的信息
 </pre>
 
-<h2 id="toc_0.3"> 上传包,pip安装</h2>
+<div id="上传包,pip安装"><h2 id="上传包,pip安装" class="header"><a href="#上传包,pip安装">上传包,pip安装</a></h2></div>
 <ul>
 <li>
 <a href="http://www.ibm.com/developerworks/opensource/library/os-pythonpackaging/index.html">http://www.ibm.com/developerworks/opensource/library/os-pythonpackaging/index.html</a> ,
@@ -292,7 +292,7 @@ setup(
  
 
 
-<h2 id="toc_0.4"> 特殊的_<em>init</em>_.py</h2>
+<div id="特殊的__init__.py"><h2 id="特殊的__init__.py" class="header"><a href="#特殊的__init__.py">特殊的_<em>init</em>_.py</a></h2></div>
 <pre>
 run.py
 |--app
@@ -373,7 +373,7 @@ run.py
 这里可见_<em>init</em>_.py不易被察觉的特殊性
 </p>
 
-<h2 id="toc_0.5"> 脚本的安装</h2>
+<div id="脚本的安装"><h2 id="脚本的安装" class="header"><a href="#脚本的安装">脚本的安装</a></h2></div>
 <pre>
 setup(
     scripts=['test.py'],

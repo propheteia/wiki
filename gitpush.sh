@@ -2,7 +2,7 @@
 cd ~/wiki
 git add .
 git commit -a -m "auto"
-git remote add origin git@github.com:propheteia/wiki.git
+#git remote add origin git@github.com:propheteia/wiki.git
 git pull origin gh-pages
 git push origin gh-pages
 echo "****************************************************"

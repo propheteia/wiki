@@ -5,4 +5,5 @@
 * [[./awesome|Awesome平铺式桌面系统]] 
 * [[./vimwiki|用Vim写维基]] 
 * [[./matplotlib|画图工具matplotlib]] 
+* [[./matplotlib2zzz|test 2matplotlib]] 
 

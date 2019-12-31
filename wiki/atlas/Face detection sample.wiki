@@ -1,0 +1,8 @@
+
+python3 presenterserver/presenter_server.py --app face_detection &
+
+bash run_facedetectionapp.sh 192.168.1.2 video Channel-1 &
+
+bash stop_facedetectionapp.sh 192.168.1.2
+
+ps -ef | grep presenter | grep face_detection

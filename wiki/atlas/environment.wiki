@@ -1,0 +1,19 @@
+=Environment Configuration=
+ifconfig enp0s26u1u1 192.168.1.5 netmask 255.255.255.0
+
+=Module Understanding=
+
+==What's Mind Studio and DDK?==
+Mind Studio: An IDE(integrated developmente environment)
+
+Like a housemaid, prepare everything ready for ya before develpment.
+
+DDK: like JDK of Java
+
+NPU: Neural Network Processing Unit: Acsend 310
+
+DVPP: Digital Vision Pre-Processing图片预处理
+
+Caffe网络模型:https://blog.csdn.net/a1809032425/article/details/81158470
+
+

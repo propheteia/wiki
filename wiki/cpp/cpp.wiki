@@ -11,6 +11,3 @@
 * [[异常处理?]]
 * [[函数参数中用对象和引用的区别?]]
 * [[./new_malloc|new 与malloc]]
-* [[./template|模版]]
-* [[./testnew|最新测试]]
-* [[./testnew_all|最新测试]]

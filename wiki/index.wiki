@@ -5,8 +5,8 @@ Ascend学习笔记
 
 邮箱:Wenbin.rc AT gmail.com
 == 目录 ==
-|[[./flask/flask|Flask框架]] | [[./web_design/design|HTML&CSS]] | [[./python/python|Python]] | [[./cpp/cpp|C++/C]]
-|[[./linux/linux| Linux]]|[[./tools/tools|工具推荐]]|[[./tools/software|软件推荐]]|[[./book/booklist|书单]]|[[./atlas/atlas|Atlas]] 
-|[[./experience/experience|经验]]|
+| [[./flask/flask|Flask框架]]      | [[./web_design/design|HTML&CSS]] | [[./python/python|Python]]    | [[./cpp/cpp|C++/C]]      |
+| [[./linux/linux| Linux]]         | [[./tools/tools|工具推荐]]       | [[./tools/software|软件推荐]] | [[./book/booklist|书单]] |
+| [[./experience/experience|经验]] | [[./atlas/atlas|Atlas]]          |                               |                          |
 
 
